@@ -385,6 +385,7 @@
 
 <!-- FLOATING ACTION BUTTONS -->
 <div id="edit-fab">
+  <button class="edit-btn" id="btn-github" onclick="saveToGitHub()" style="display:none;background:#238636;color:#fff;">🚀 GitHub에 저장</button>
   <button class="edit-btn" id="btn-export" onclick="exportHTML()" style="display:none;">💾 수정본 HTML 저장</button>
   <button class="edit-btn" id="btn-toggle" onclick="toggleEdit()">✏️ 편집 모드</button>
 </div>
@@ -1765,6 +1766,7 @@ function toggleEdit(){
     btn.classList.add('on');
     btn.textContent = '✏️ 편집 종료';
     exportBtn.style.display = 'flex';
+    document.getElementById('btn-github').style.display = 'flex';
     hint.classList.add('show');
     setTimeout(()=>hint.classList.remove('show'), 3000);
   } else {
@@ -1775,24 +1777,9 @@ function toggleEdit(){
     document.body.classList.remove('edit-mode');
     btn.classList.remove('on');
     btn.textContent = '✏️ 편집 모드';
-    // 편집 종료 시 edit.html로 자동 저장
-    _saveEditFile();
+    document.getElementById('btn-github').style.display = 'none';
+    exportBtn.style.display = 'none';
   }
-}
-
-function _saveEditFile(){
-  const clone = document.documentElement.cloneNode(true);
-  clone.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
-  clone.querySelector('body').classList.remove('edit-mode');
-  const toggleBtn = clone.querySelector('#btn-toggle');
-  if(toggleBtn){ toggleBtn.classList.remove('on'); toggleBtn.textContent='✏️ 편집 모드'; }
-  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-  const blob = new Blob([html], {type:'text/html;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'edit.html';
-  document.body.appendChild(a); a.click();
-  setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},1000);
 }
 
 function exportHTML(){
@@ -1823,6 +1810,77 @@ function exportHTML(){
   document.body.appendChild(a);
   a.click();
   setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},1000);
+}
+
+async function saveToGitHub(){
+  const OWNER = 'storelink-global';
+  const REPO  = 'conchwear-jp';
+  const PATH  = 'edit.html';
+
+  // 토큰 확인 (localStorage에 저장)
+  let token = localStorage.getItem('gh_pat');
+  if(!token){
+    token = prompt('GitHub Personal Access Token을 입력하세요.\n(최초 1회만 입력하면 저장됩니다)');
+    if(!token) return;
+    localStorage.setItem('gh_pat', token);
+  }
+
+  const btn = document.getElementById('btn-github');
+  btn.textContent = '⏳ 저장 중...';
+  btn.disabled = true;
+
+  try {
+    // 현재 파일 SHA 가져오기
+    const meta = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
+      { headers: { Authorization: `token ${token}` } }
+    ).then(r => r.json());
+
+    if(meta.message === 'Bad credentials'){
+      localStorage.removeItem('gh_pat');
+      alert('토큰이 올바르지 않습니다. 다시 시도하면 토큰을 다시 입력할 수 있어요.');
+      btn.textContent = '🚀 GitHub에 저장'; btn.disabled = false; return;
+    }
+
+    // 현재 페이지 HTML 생성 (contenteditable 제거)
+    const clone = document.documentElement.cloneNode(true);
+    clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+    clone.querySelector('body').classList.remove('edit-mode');
+    const toggleBtn = clone.querySelector('#btn-toggle');
+    if(toggleBtn){ toggleBtn.classList.remove('on'); toggleBtn.textContent='✏️ 편집 모드'; }
+    const githubBtn = clone.querySelector('#btn-github');
+    if(githubBtn){ githubBtn.style.display='none'; githubBtn.disabled=false; githubBtn.textContent='🚀 GitHub에 저장'; }
+    const exportBtn2 = clone.querySelector('#btn-export');
+    if(exportBtn2) exportBtn2.style.display='none';
+    const htmlContent = '<!DOCTYPE html>\n' + clone.outerHTML;
+
+    // base64 인코딩
+    const encoded = btoa(unescape(encodeURIComponent(htmlContent)));
+
+    // GitHub API로 파일 업데이트
+    const res = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
+      {
+        method: 'PUT',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: '편집 모드에서 직접 저장',
+          content: encoded,
+          sha: meta.sha
+        })
+      }
+    ).then(r => r.json());
+
+    if(res.content){
+      btn.textContent = '✅ 저장 완료!';
+      setTimeout(()=>{ btn.textContent='🚀 GitHub에 저장'; btn.disabled=false; }, 2500);
+    } else {
+      throw new Error(res.message || '저장 실패');
+    }
+  } catch(e) {
+    alert('저장 실패: ' + e.message);
+    btn.textContent = '🚀 GitHub에 저장'; btn.disabled = false;
+  }
 }
 
 renderSidebar('sum');
