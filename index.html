@@ -274,7 +274,7 @@
   .role-table tr:nth-child(even) td{background:var(--bg-gray)}
   .task-name{font-weight:600;color:var(--txt-head);font-size:12px}
   .task-sub{font-size:10px;color:var(--txt-muted);margin-top:2px}
-  .role-select{width:100%;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11px;font-family:var(--ff);color:var(--txt-body);background:#fff;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath stroke='%236B7280' stroke-width='1.5' d='M1 1l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;padding-right:24px}
+  .role-select{width:100%;min-width:80px;border:1px solid var(--border);border-radius:6px;padding:5px 6px;font-size:10px;font-family:var(--ff);color:var(--txt-body);background:#fff;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath stroke='%236B7280' stroke-width='1.5' d='M1 1l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px center;padding-right:20px}
   .role-select:focus{outline:none;border-color:var(--sl-red)}
   .role-select.sl{background-color:#FFF2F2;color:var(--sl-red-dark);border-color:var(--sl-red-mid)}
   .role-select.brand{background-color:#ECFDF5;color:#065F46;border-color:#A7F3D0}
@@ -382,17 +382,6 @@
 
 <!-- EDIT HINT BANNER -->
 
-
-<!-- FLOATING ACTION BUTTONS -->
-
-
-<!-- GNB -->
-<nav class="gnav">
-  <div class="gnav-logo" spellcheck="false">storelink<span class="dot">.</span></div>
-  <div class="gnav-right">
-    <span class="gnav-badge">Japan Roadmap</span>
-    <span class="gnav-sub" spellcheck="false">콘치웨어 · 2026.07 ~ 2027.06</span>
-  </div>
 </nav>
 
 <!-- HERO -->
@@ -454,7 +443,7 @@
 
 <!-- TIMELINE NAV -->
 <nav class="timeline-nav" id="timelineNav">
-  <div class="tl-btn active" style="--phase-c:#2563EB" onclick="switchPhase('sum',this)">
+  <div class="tl-btn" style="--phase-c:#2563EB" onclick="switchPhase('sum',this)">
     <div class="tl-dot" style="background:#EFF6FF;color:#2563EB">요약</div>
     <div><div class="tl-name">전체 요약</div><div class="tl-period">로드맵 한눈에</div></div>
   </div>
@@ -470,7 +459,7 @@
     <div class="tl-dot" style="background:#ECFDF5;color:#059669">H2</div>
     <div><div class="tl-name">2027 상반기</div><div class="tl-period">01 ~ 06월</div></div>
   </div>
-  <div class="tl-btn" style="--phase-c:#D97706" onclick="switchPhase('role',this)">
+  <div class="tl-btn active" style="--phase-c:#D97706" onclick="switchPhase('role',this)">
     <div class="tl-dot" style="background:#FFFBEB;color:#D97706">R</div>
     <div><div class="tl-name">업무 분장</div><div class="tl-period">콘치웨어 / 스토어링크</div></div>
   </div>
@@ -478,11 +467,11 @@
 
 <!-- MAIN LAYOUT -->
 <div class="layout">
-<aside class="sidebar" id="sidebar"><div class="sidebar-section"><div class="sidebar-eyebrow">전체 요약</div><div class="sidebar-item" style="--phase-c:#2563EB;--phase-bg:#EFF6FF"><div class="nav-dot" style="background:#2563EB"></div>매출 목표 (하반기/상반기)</div><div class="sidebar-item" style="--phase-c:#2563EB;--phase-bg:#EFF6FF"><div class="nav-dot" style="background:#2563EB"></div>실행 단계 요약</div><div class="sidebar-item" style="--phase-c:#2563EB;--phase-bg:#EFF6FF"><div class="nav-dot" style="background:#2563EB"></div>시장 전제 &amp; 현황</div><div class="sidebar-item" style="--phase-c:#2563EB;--phase-bg:#EFF6FF"><div class="nav-dot" style="background:#2563EB"></div>핵심 인사이트</div></div></aside>
+<aside class="sidebar" id="sidebar"><div class="sidebar-section"><div class="sidebar-eyebrow">업무 분장</div><div class="sidebar-item" style="--phase-c:#D97706;--phase-bg:#FFFBEB"><div class="nav-dot" style="background:#D97706"></div>스토어링크 제공 서비스</div><div class="sidebar-item" style="--phase-c:#D97706;--phase-bg:#FFFBEB"><div class="nav-dot" style="background:#D97706"></div>후생노동성 인증 지원</div><div class="sidebar-item" style="--phase-c:#D97706;--phase-bg:#FFFBEB"><div class="nav-dot" style="background:#D97706"></div>3PL 물류 연계 지원</div><div class="sidebar-item" style="--phase-c:#D97706;--phase-bg:#FFFBEB"><div class="nav-dot" style="background:#D97706"></div>업무 항목별 담당 분장</div></div></aside>
 <main class="content">
 
 <!-- ===== 전체 요약 ===== -->
-<section class="phase-view active" id="view-sum" style="--phase-c:#2563EB">
+<section class="phase-view" id="view-sum" style="--phase-c:#2563EB">
   <div class="chap">
     <div class="chap-num" style="background:#2563EB" spellcheck="false">전체 요약</div>
     <div class="chap-info">
@@ -1037,13 +1026,13 @@
   </div>
 
   <div class="stabs" id="tabs-h2">
-    <div class="stab active" onclick="switchTab('h2','hatsuri',this)">① 하츠우리·메가와리</div>
+    <div class="stab" onclick="switchTab('h2','hatsuri',this)">① 하츠우리·메가와리</div>
     <div class="stab" onclick="switchTab('h2','popup',this)">② 팝업 스토어</div>
     <div class="stab" onclick="switchTab('h2','pr',this)">③ PR·미디어</div>
-    <div class="stab" onclick="switchTab('h2','expand',this)">④ 유통 확장·CRM</div>
+    <div class="stab active" onclick="switchTab('h2','expand',this)">④ 유통 확장·CRM</div>
   </div>
 
-  <div id="h2-hatsuri" class="stab-body active">
+  <div id="h2-hatsuri" class="stab-body">
     <div class="season-band h2" spellcheck="false"><span class="season-icon">🎍</span><strong>1~3월 공략 포인트</strong> — 1월 하츠우리·후쿠부쿠로, 2~3월 큐텐 메가와리</div>
     <div class="tgroup">
       <div class="tgroup-label">1월 하츠우리·후쿠부쿠로 연계</div>
@@ -1178,7 +1167,7 @@
    
   </div>
 
-  <div id="h2-expand" class="stab-body">
+  <div id="h2-expand" class="stab-body active">
     <div class="season-band h2" spellcheck="false"><span class="season-icon">🏬</span><strong>유통 확장 — ZOZOTOWN · 백화점 입점 플랜</strong> · 2027년 5~6월 목표</div>
 
     <div class="tgroup">
@@ -1260,7 +1249,7 @@
 </div></section>
 
 <!-- ===== 업무 분장 ===== -->
-<section class="phase-view" id="view-role" style="--phase-c:#D97706">
+<section class="phase-view active" id="view-role" style="--phase-c:#D97706">
   <div class="chap">
     <div class="chap-num" style="background:#D97706" spellcheck="false">업무 분장</div>
     <div class="chap-info">
@@ -1318,7 +1307,7 @@
   </div>
 
   <div class="sec">
-    <div class="ins ins-a" style="margin-top:0;margin-bottom:14px" spellcheck="false">콘치웨어와 스토어링크의 항목별 역할을 협의합니다.</div>
+    <div class="ins ins-a" style="margin-top:0;margin-bottom:14px" spellcheck="false">콘치웨어와 스토어링크가 업무 항목별 역할을 협의합니다.</div>
     <div class="card" style="padding:0;overflow:hidden">
       <table class="role-table">
         <thead>
@@ -1330,259 +1319,259 @@
             <th style="width:170px" spellcheck="false">메모</th>
           </tr>
         </thead>
-        <tbody id="roleTableBody"><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">전략·기획</td></tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">1</td>
-      <td><div class="task-name">일본 진출 전략 수립</div><div class="task-sub">로드맵·채널 전략·예산</div></td>
-      <td class="c"><select class="role-select shared" data-idx="0" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
+        <tbody id="roleTableBody"><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">전략·기획</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">1</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">일본 진출 전략 수립</div><div class="task-sub" spellcheck="false">로드맵·채널 전략·예산</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="0" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
-        <option value="shared" selected="">공동</option>
+        <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">Qoo10·아마존·SNS 바이럴 전략 전반</td>
-      <td><textarea class="role-memo" data-idx="0" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">Qoo10·아마존·SNS 바이럴 전략 전반</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="0" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">2</td>
-      <td><div class="task-name">월별 KPI 설정 및 리뷰</div><div class="task-sub">성과 지표 관리</div></td>
-      <td class="c"><select class="role-select brand" data-idx="1" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">월간 매출·리뷰 수·팔로워·광고 ROAS</td>
-      <td><textarea class="role-memo" data-idx="1" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">플랫폼 운영</td></tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">3</td>
-      <td><div class="task-name">Qoo10 스토어 운영</div><div class="task-sub">상품 등록·CS·타임세일</div></td>
-      <td class="c"><select class="role-select brand" data-idx="2" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">현지화 재작성, 메가와리 대응 포함</td>
-      <td><textarea class="role-memo" data-idx="2" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">4</td>
-      <td><div class="task-name">아마존 재팬 FBA 입점·운영</div><div class="task-sub">리스팅·재고·광고</div></td>
-      <td class="c"><select class="role-select brand" data-idx="3" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">브랜드 등록·Vine·Sponsored Products</td>
-      <td><textarea class="role-memo" data-idx="3" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">콘텐츠</td></tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">5</td>
-      <td><div class="task-name">SNS 계정 재활성화</div><div class="task-sub">인스타·X·틱톡 콘텐츠 제작</div></td>
-      <td class="c"><select class="role-select brand" data-idx="4" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">재오픈 선제작 10개+ 포함. 7월 착수</td>
-      <td><textarea class="role-memo" data-idx="4" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">6</td>
-      <td><div class="task-name">일본어 상세페이지 작성</div><div class="task-sub">번역·현지화 재창작</div></td>
-      <td class="c"><select class="role-select shared" data-idx="5" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">2</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">월별 KPI 설정 및 리뷰</div><div class="task-sub" spellcheck="false">성과 지표 관리</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="1" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
-        <option value="shared" selected="">공동</option>
+        <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">美脚·ヒップアップ 키워드 중심</td>
-      <td><textarea class="role-memo" data-idx="5" onchange="onMemo(this)" placeholder="메모...">스토어링크 진행 가능</textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">7</td>
-      <td><div class="task-name">A+ 페이지·크리에이티브</div><div class="task-sub">아마존 A+ / 광고 소재</div></td>
-      <td class="c"><select class="role-select shared" data-idx="6" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">월간 매출·리뷰 수·팔로워·광고 ROAS</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="1" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">플랫폼 운영</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">3</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">Qoo10 스토어 운영</div><div class="task-sub" spellcheck="false">상품 등록·CS·타임세일</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="2" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
-        <option value="shared" selected="">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">착용 전후 비교·사이즈 차트</td>
-      <td><textarea class="role-memo" data-idx="6" onchange="onMemo(this)" placeholder="메모...">스토어링크 진행 가능</textarea></td>
-    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">체험단·리뷰 (포인테일)</td></tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">8</td>
-      <td><div class="task-name">EC 구매 체험단 운영</div><div class="task-sub">Qoo10·아마존 구매+리뷰</div></td>
-      <td class="c"><select class="role-select sl" data-idx="7" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand">콘치웨어</option>
-        <option value="sl" selected="">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">포인테일 A·B항. 하반기 목표 500건+</td>
-      <td><textarea class="role-memo" data-idx="7" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">현지화 재작성, 메가와리 대응 포함</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="2" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">9</td>
-      <td><div class="task-name">나노 인플루언서 시딩</div><div class="task-sub">팔로워 1만 미만, SNS 포스팅</div></td>
-      <td class="c"><select class="role-select sl" data-idx="8" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand">콘치웨어</option>
-        <option value="sl" selected="">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">포인테일 C항. 월 50~200건. 7월 착수</td>
-      <td><textarea class="role-memo" data-idx="8" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">10</td>
-      <td><div class="task-name">오프라인 방문 체험단</div><div class="task-sub">팝업 스토어 현장 체험단</div></td>
-      <td class="c"><select class="role-select sl" data-idx="9" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand">콘치웨어</option>
-        <option value="sl" selected="">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">포인테일 오프라인 서비스. 2027년 4~5월</td>
-      <td><textarea class="role-memo" data-idx="9" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">11</td>
-      <td><div class="task-name">인플루언서 비딩 (D항)</div><div class="task-sub">마이크로급 입찰 방식 섭외</div></td>
-      <td class="c"><select class="role-select sl" data-idx="10" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand">콘치웨어</option>
-        <option value="sl" selected="">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">포인테일 D항. 상반기 스텝업 단계</td>
-      <td><textarea class="role-memo" data-idx="10" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">인플루언서·광고</td></tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">12</td>
-      <td><div class="task-name">나노→마이크로 스텝업 협의</div><div class="task-sub">1만~5만 장기 파트너십</div></td>
-      <td class="c"><select class="role-select shared" data-idx="11" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">4</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">아마존 재팬 FBA 입점·운영</div><div class="task-sub" spellcheck="false">리스팅·재고·광고</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="3" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
-        <option value="shared" selected="">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">하반기 성과 기반 27년 상반기 진행</td>
-      <td><textarea class="role-memo" data-idx="11" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">13</td>
-      <td><div class="task-name">Meta Ads 운영</div><div class="task-sub">파트너십 광고·유사타겟</div></td>
-      <td class="c"><select class="role-select brand" data-idx="12" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">시딩 UGC 2차 활용. CTR 5~11% 목표</td>
-      <td><textarea class="role-memo" data-idx="12" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">14</td>
-      <td><div class="task-name">Amazon SP·SB 광고</div><div class="task-sub">Sponsored Products·Brands</div></td>
-      <td class="c"><select class="role-select sl" data-idx="13" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand">콘치웨어</option>
-        <option value="sl" selected="">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">키워드 타겟팅·Deal 신청</td>
-      <td><textarea class="role-memo" data-idx="13" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">물류·CS</td></tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">15</td>
-      <td><div class="task-name">3PL 협력사 선정·계약</div><div class="task-sub">현지 배송 인프라 구축</div></td>
-      <td class="c"><select class="role-select brand" data-idx="14" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">스토어링크 협력업체 연계 가능. 리드타임 3일</td>
-      <td><textarea class="role-memo" data-idx="14" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">16</td>
-      <td><div class="task-name">FBA 재고 관리</div><div class="task-sub">FBA 입고·재고 산정</div></td>
-      <td class="c"><select class="role-select brand" data-idx="15" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">메가와리·블프 시즌 버퍼 재고</td>
-      <td><textarea class="role-memo" data-idx="15" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">17</td>
-      <td><div class="task-name">CS 대응 체계 구축</div><div class="task-sub">일본어 응대 프로세스</div></td>
-      <td class="c"><select class="role-select brand" data-idx="16" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">번역 툴 + 표준 템플릿</td>
-      <td><textarea class="role-memo" data-idx="16" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">오프라인·PR</td></tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">18</td>
-      <td><div class="task-name">팝업 스토어 기획·섭외</div><div class="task-sub">시부야 PARCO 장소 협의</div></td>
-      <td class="c"><select class="role-select brand" data-idx="17" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">2027년 봄 오픈 목표</td>
-      <td><textarea class="role-memo" data-idx="17" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">19</td>
-      <td><div class="task-name">팝업 시공·인테리어</div><div class="task-sub">현지 시공사 관리</div></td>
-      <td class="c"><select class="role-select brand" data-idx="18" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">피트니스 클래스 공간·포토존</td>
-      <td><textarea class="role-memo" data-idx="18" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">20</td>
-      <td><div class="task-name">프레스데이·미디어 초청</div><div class="task-sub">현지 PR 대행사 연계</div></td>
-      <td class="c"><select class="role-select brand" data-idx="19" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">WWD Japan 등 10건+ 목표</td>
-      <td><textarea class="role-memo" data-idx="19" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">기타 지원</td></tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">21</td>
-      <td><div class="task-name">후생노동성 인증 지원</div><div class="task-sub">협력업체 연계</div></td>
-      <td class="c"><select class="role-select brand" data-idx="20" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">스토어링크 협력업체. 기능성 소재 표기 시 필요</td>
-      <td><textarea class="role-memo" data-idx="20" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">CRM</td></tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">22</td>
-      <td><div class="task-name">LINE 공식 계정 운영</div><div class="task-sub">재구매 전환 캠페인</div></td>
-      <td class="c"><select class="role-select brand" data-idx="21" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
-        <option value="brand" selected="">콘치웨어</option>
-        <option value="sl">스토어링크</option>
-        <option value="shared">공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">팝업 방문자 등록 유도</td>
-      <td><textarea class="role-memo" data-idx="21" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
-    </tr><tr>
-      <td style="font-size:10px;color:var(--txt-muted)">23</td>
-      <td><div class="task-name">앰버서더 계약 협의</div><div class="task-sub">RS 매출 연동 계약</div></td>
-      <td class="c"><select class="role-select shared" data-idx="22" onchange="onOwner(this)">
-        <option value="">— 미정 —</option>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">브랜드 등록·Vine·Sponsored Products</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="3" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">콘텐츠</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">5</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">SNS 계정 재활성화</div><div class="task-sub" spellcheck="false">인스타·X·틱톡 콘텐츠 제작</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="4" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
-        <option value="shared" selected="">공동</option>
+        <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">기획사 직접 계약. 2027년 상반기</td>
-      <td><textarea class="role-memo" data-idx="22" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">재오픈 선제작 10개+ 포함. 7월 착수</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="4" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">6</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">일본어 상세페이지 작성</div><div class="task-sub" spellcheck="false">번역·현지화 재창작</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="5" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">美脚·ヒップアップ 키워드 중심</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="5" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">7</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">A+ 페이지·크리에이티브</div><div class="task-sub" spellcheck="false">아마존 A+ / 광고 소재</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="6" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">착용 전후 비교·사이즈 차트 등&nbsp;</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="6" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">체험단·리뷰 (포인테일)</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">8</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">EC 구매 체험단 운영</div><div class="task-sub" spellcheck="false">Qoo10·아마존 구매+리뷰</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="7" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">하반기 목표 500건+</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="7" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">9</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">나노 인플루언서 시딩</div><div class="task-sub" spellcheck="false">팔로워 1만 미만, SNS 포스팅</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="8" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">월 50~200건. 7월 착수</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="8" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">10</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">오프라인 방문 체험단</div><div class="task-sub" spellcheck="false">팝업 스토어 현장 체험단</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="9" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">포인테일 오프라인 서비스. 2027년 4~5월</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="9" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">11</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">인플루언서 비딩 (D항)</div><div class="task-sub" spellcheck="false">마이크로급 입찰 방식 섭외</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="10" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">상반기 스텝업 단계</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="10" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">인플루언서·광고</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">12</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">나노→마이크로 스텝업 협의</div><div class="task-sub" spellcheck="false">1만~5만 장기 파트너십</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="11" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">하반기 성과 기반 27년 상반기 진행</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="11" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">13</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">Meta Ads 운영</div><div class="task-sub" spellcheck="false">파트너십 광고·유사타겟</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="12" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">시딩 UGC 2차 활용. CTR 5~11% 목표</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="12" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">14</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">Amazon Sponsored 광고</div><div class="task-sub" spellcheck="false">Sponsored Products·Brands</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="13" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">캠페인 전략 수립 및 운영·광고 최적화</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="13" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">물류·CS</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">15</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">3PL 협력사 선정·계약</div><div class="task-sub" spellcheck="false">현지 배송 인프라 구축</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="14" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">스토어링크 협력업체 연계 가능.</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="14" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">16</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">재고 관리</div><div class="task-sub" spellcheck="false">FBA 입고·현지3PL 관리</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="15" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">재고 소진현황을 파악하고 판매량을 예측하여<br>최소 2개월 운영 가능한 재고를 확보</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="15" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">17</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">CS 대응 체계 구축</div><div class="task-sub" spellcheck="false">일본어 응대 프로세스</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="16" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">현지 소비자에 맞춘 CS 프로세스 구축</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="16" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">오프라인·PR</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">18</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">팝업 스토어 기획·섭외</div><div class="task-sub" spellcheck="false">오프라인 팝업 장소 협의</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="17" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">2027년 봄 오픈 목표로 팝업 스토어 기획 및 장소 협의</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="17" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">19</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">팝업 시공·인테리어</div><div class="task-sub" spellcheck="false">현지 시공사 관리</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="18" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">현지 시공업체 연계하여 팝업 스토어 시공 진행</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="18" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">20</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">프레스데이·미디어 초청</div><div class="task-sub" spellcheck="false">현지 PR 대행사 연계</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="19" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">WWD Japan 등 10건+ 목표</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="19" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">기타 지원</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">21</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">후생노동성 인증 지원</div><div class="task-sub" spellcheck="false">협력업체 연계</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="20" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">스토어링크 협력업체. 기능성 소재 표기 시 필요</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="20" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">CRM</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">22</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">LINE 공식 계정 운영</div><div class="task-sub" spellcheck="false">재구매 전환 캠페인</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="21" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">핵심 CRM 채널<br></td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="21" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">23</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">앰버서더 계약 협의</div><div class="task-sub" spellcheck="false">RS 매출 연동 계약</div></td>
+      <td class="c" spellcheck="false"><select class="role-select " data-idx="22" onchange="onOwner(this)">
+        <option value="" selected="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">기획사 직접 계약. 2027년 상반기</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="22" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr></tbody>
       </table>
     </div>
@@ -1598,214 +1587,8 @@
   <div class="footer-copy" spellcheck="false">© Storelink. All rights reserved.</div>
 </footer>
 
-<script>
-const sidebarData = {
-  sum:  { eyebrow:'전체 요약', items:['매출 목표 (하반기/상반기)','실행 단계 요약','시장 전제 & 현황','핵심 인사이트'] },
-  media:{ eyebrow:'미디어믹스', items:['포인테일 체험단 서비스','체험단 강화 플랜','12개월 채널 타임라인','예산 배분 개요','SNS 재활성화 전략'] },
-  h1:   { eyebrow:'2026 하반기 07~12월', items:['① 기반 구축·SNS 재활성화','② 체험단·리뷰 강화','③ SNS 바이럴'], kpis:['현실 ¥35M~¥45M','도전 ¥70M~¥90M','예산 50,750,000원','리뷰 목표 960건+'] },
-  h2:   { eyebrow:'2027 상반기 01~06월', items:['① 하츠우리·메가와리','② 팝업 스토어','③ PR·미디어','④ 유통 확장·CRM'], kpis:['현실 ¥80M~¥100M','도전 ¥140M~¥180M','예산 67,500,000원+α'] },
-  role: { eyebrow:'업무 분장', items:['스토어링크 제공 서비스','후생노동성 인증 지원','3PL 물류 연계 지원','업무 항목별 담당 분장'] }
-};
-const phaseColors = { sum:'#2563EB', media:'#EC4899', h1:'#FF4444', h2:'#059669', role:'#D97706' };
-const phaseBgs    = { sum:'#EFF6FF', media:'#FDF2F8', h1:'#FFF2F2', h2:'#ECFDF5', role:'#FFFBEB' };
-
-function renderSidebar(phase){
-  const d=sidebarData[phase], color=phaseColors[phase], bg=phaseBgs[phase];
-  let html=`<div class="sidebar-section"><div class="sidebar-eyebrow">${d.eyebrow}</div>`;
-  d.items.forEach(i=>{ html+=`<div class="sidebar-item" style="--phase-c:${color};--phase-bg:${bg}"><div class="nav-dot" style="background:${color}"></div>${i}</div>`; });
-  html+='</div>';
-  if(d.kpis){
-    html+=`<div class="sidebar-section"><div class="sidebar-eyebrow">KPI 목표</div>`;
-    d.kpis.forEach(k=>{ html+=`<div class="kpi-mini"><div class="kpi-mini-label">목표</div><div class="kpi-mini-val" style="color:${color}">${k}</div></div>`; });
-    html+='</div>';
-  }
-  document.getElementById('sidebar').innerHTML=html;
-}
-
-function switchPhase(phase,el){
-  document.querySelectorAll('.phase-view').forEach(v=>v.classList.remove('active'));
-  document.querySelectorAll('.tl-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('view-'+phase).classList.add('active');
-  el.classList.add('active');
-  renderSidebar(phase);
-  window.scrollTo({top:document.querySelector('.timeline-nav').offsetTop-52,behavior:'smooth'});
-}
-
-function switchTab(phase,tab,el){
-  document.getElementById('tabs-'+phase).querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  ['base','review','tiktok','ad','logistics','sns','hatsuri','popup','pr','live','expand'].forEach(id=>{
-    const e=document.getElementById(phase+'-'+id); if(e) e.classList.remove('active');
-  });
-  const t=document.getElementById(phase+'-'+tab); if(t) t.classList.add('active');
-}
-
-// 업무분장
-const roleItems=[
-  {cat:'전략·기획', task:'일본 진출 전략 수립', sub:'로드맵·채널 전략·예산', detail:'Qoo10·아마존·SNS 바이럴 전략 전반'},
-  {cat:'전략·기획', task:'월별 KPI 설정 및 리뷰', sub:'성과 지표 관리', detail:'월간 매출·리뷰 수·팔로워·광고 ROAS'},
-  {cat:'플랫폼 운영', task:'Qoo10 스토어 운영', sub:'상품 등록·CS·타임세일', detail:'현지화 재작성, 메가와리 대응 포함'},
-  {cat:'플랫폼 운영', task:'아마존 재팬 FBA 입점·운영', sub:'리스팅·재고·광고', detail:'브랜드 등록·Vine·Sponsored Products'},
-  {cat:'콘텐츠', task:'SNS 계정 재활성화', sub:'인스타·X·틱톡 콘텐츠 제작', detail:'재오픈 선제작 10개+ 포함. 7월 착수'},
-  {cat:'콘텐츠', task:'일본어 상세페이지 작성', sub:'번역·현지화 재창작', detail:'美脚·ヒップアップ 키워드 중심'},
-  {cat:'콘텐츠', task:'A+ 페이지·크리에이티브', sub:'아마존 A+ / 광고 소재', detail:'착용 전후 비교·사이즈 차트'},
-  {cat:'체험단·리뷰 (포인테일)', task:'EC 구매 체험단 운영', sub:'Qoo10·아마존 구매+리뷰', detail:'포인테일 A·B항. 하반기 목표 500건+'},
-  {cat:'체험단·리뷰 (포인테일)', task:'나노 인플루언서 시딩', sub:'팔로워 1만 미만, SNS 포스팅', detail:'포인테일 C항. 월 50~200건. 7월 착수'},
-  {cat:'체험단·리뷰 (포인테일)', task:'오프라인 방문 체험단', sub:'팝업 스토어 현장 체험단', detail:'포인테일 오프라인 서비스. 2027년 4~5월'},
-  {cat:'체험단·리뷰 (포인테일)', task:'인플루언서 비딩 (D항)', sub:'마이크로급 입찰 방식 섭외', detail:'포인테일 D항. 상반기 스텝업 단계'},
-  {cat:'인플루언서·광고', task:'나노→마이크로 스텝업 협의', sub:'1만~5만 장기 파트너십', detail:'하반기 성과 기반 27년 상반기 진행'},
-  {cat:'인플루언서·광고', task:'Meta Ads 운영', sub:'파트너십 광고·유사타겟', detail:'시딩 UGC 2차 활용. CTR 5~11% 목표'},
-  {cat:'인플루언서·광고', task:'Amazon SP·SB 광고', sub:'Sponsored Products·Brands', detail:'키워드 타겟팅·Deal 신청'},
-  {cat:'물류·CS', task:'3PL 협력사 선정·계약', sub:'현지 배송 인프라 구축', detail:'스토어링크 협력업체 연계 가능. 리드타임 3일'},
-  {cat:'물류·CS', task:'FBA 재고 관리', sub:'FBA 입고·재고 산정', detail:'메가와리·블프 시즌 버퍼 재고'},
-  {cat:'물류·CS', task:'CS 대응 체계 구축', sub:'일본어 응대 프로세스', detail:'번역 툴 + 표준 템플릿'},
-  {cat:'오프라인·PR', task:'팝업 스토어 기획·섭외', sub:'시부야 PARCO 장소 협의', detail:'2027년 봄 오픈 목표'},
-  {cat:'오프라인·PR', task:'팝업 시공·인테리어', sub:'현지 시공사 관리', detail:'피트니스 클래스 공간·포토존'},
-  {cat:'오프라인·PR', task:'프레스데이·미디어 초청', sub:'현지 PR 대행사 연계', detail:'WWD Japan 등 10건+ 목표'},
-  {cat:'기타 지원', task:'후생노동성 인증 지원', sub:'협력업체 연계', detail:'스토어링크 협력업체. 기능성 소재 표기 시 필요'},
-  {cat:'CRM', task:'LINE 공식 계정 운영', sub:'재구매 전환 캠페인', detail:'팝업 방문자 등록 유도'},
-  {cat:'CRM', task:'앰버서더 계약 협의', sub:'RS 매출 연동 계약', detail:'기획사 직접 계약. 2027년 상반기'},
-];
-
-const STORAGE_KEY='conchwear_role_v3';
-function loadData(){ try{return JSON.parse(localStorage.getItem(STORAGE_KEY))||{};}catch(e){return{};} }
-function saveData(d){ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(d));}catch(e){} }
-function getCls(v){ return v==='sl'?'sl':v==='brand'?'brand':v==='shared'?'shared':''; }
-
-function buildTable(){
-  const saved=loadData(); const tbody=document.getElementById('roleTableBody');
-  let lastCat=''; let html='';
-  roleItems.forEach((item,i)=>{
-    const s=saved[i]||{}; const sv=s.owner||''; const memo=s.memo||'';
-    if(item.cat!==lastCat){
-      html+=`<tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">${item.cat}</td></tr>`;
-      lastCat=item.cat;
-    }
-    html+=`<tr>
-      <td style="font-size:10px;color:var(--txt-muted)">${i+1}</td>
-      <td><div class="task-name">${item.task}</div><div class="task-sub">${item.sub}</div></td>
-      <td class="c"><select class="role-select ${getCls(sv)}" data-idx="${i}" onchange="onOwner(this)">
-        <option value="" ${!sv?'selected':''}>— 미정 —</option>
-        <option value="brand" ${sv==='brand'?'selected':''}>콘치웨어</option>
-        <option value="sl" ${sv==='sl'?'selected':''}>스토어링크</option>
-        <option value="shared" ${sv==='shared'?'selected':''}>공동</option>
-      </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)">${item.detail}</td>
-      <td><textarea class="role-memo" data-idx="${i}" onchange="onMemo(this)" placeholder="메모...">${memo}</textarea></td>
-    </tr>`;
-  });
-  tbody.innerHTML=html;
-}
-
-function onOwner(sel){
-  sel.className='role-select '+getCls(sel.value);
-  const d=loadData(); if(!d[sel.dataset.idx])d[sel.dataset.idx]={};
-  d[sel.dataset.idx].owner=sel.value; saveData(d);
-}
-function onMemo(ta){
-  const d=loadData(); if(!d[ta.dataset.idx])d[ta.dataset.idx]={};
-  d[ta.dataset.idx].memo=ta.value; saveData(d);
-}
 
 
-/* ===== INLINE EDIT LOGIC ===== */
-let editMode = false;
-
-// 편집 가능한 텍스트 요소 선택자
-const EDITABLE_SELECTORS = [
-  '.chap-title','.chap-sub','.chap-period',
-  '.hero-title','.hero-desc',
-  '.gnav-logo','.gnav-sub',
-  '.sum-phase','.sum-title','.sum-items','.sum-kpi',
-  '.kpi-l','.kpi-v','.kpi-s',
-  '.ttext','.ins','.ins-card-title','.ins-card-body',
-  '.ct','.slabel',
-  '.ctx-title',
-  '.pt-card-name','.pt-card-cond','.pt-card-price','.pt-card-desc','.pt-card-label',
-  '.pink-box',
-  '.warn-box','.notice-box','.amz-box','.red-box',
-  '.notice-box',
-  '.season-band',
-  '.mm-bar',
-  '.kpi-mini-val',
-  '.chap-num',
-  '.hero-stat-box-label','.hero-stat-period',
-  '.hero-stat-end-val','.hero-stat-end-label',
-  '.footer-meta','.footer-copy',
-  'th','td',
-  '.titem .ttext',
-  '.decision-item',
-  '.support-title','.support-desc',
-  '.sl-service-name','.sl-service-type',
-  '.task-name','.task-sub',
-  'h1','h2','h3','p',
-  '.ins-card-icon'
-];
-
-function toggleEdit(){
-  editMode = !editMode;
-  const btn = document.getElementById('btn-toggle');
-  const exportBtn = document.getElementById('btn-export');
-  const hint = document.getElementById('edit-hint');
-
-  if(editMode){
-    // 편집 가능하게 설정
-    EDITABLE_SELECTORS.forEach(sel => {
-      document.querySelectorAll(sel).forEach(el => {
-        // role-select, role-memo, input 등은 건드리지 않음
-        if(el.tagName === 'SELECT' || el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
-        el.setAttribute('contenteditable','true');
-        el.setAttribute('spellcheck','false');
-      });
-    });
-    document.body.classList.add('edit-mode');
-    btn.classList.add('on');
-    btn.textContent = '✏️ 편집 종료';
-    exportBtn.style.display = 'flex';
-    hint.classList.add('show');
-    setTimeout(()=>hint.classList.remove('show'), 3000);
-  } else {
-    // 편집 불가로 되돌리기
-    document.querySelectorAll('[contenteditable]').forEach(el=>{
-      el.removeAttribute('contenteditable');
-    });
-    document.body.classList.remove('edit-mode');
-    btn.classList.remove('on');
-    btn.textContent = '✏️ 편집 모드';
-  }
-}
-
-function exportHTML(){
-  // 편집 상태에서 내보내기 시 contenteditable 속성 제거한 클린 버전 생성
-  const clone = document.documentElement.cloneNode(true);
-
-  // clone에서 contenteditable 제거
-  clone.querySelectorAll('[contenteditable]').forEach(el=>{
-    el.removeAttribute('contenteditable');
-  });
-  // edit-mode 클래스 제거
-  clone.querySelector('body').classList.remove('edit-mode');
-  // edit FAB 제거
-  const fab = clone.querySelector('#edit-fab');
-  if(fab) fab.remove();
-  const hint2 = clone.querySelector('#edit-hint');
-  if(hint2) hint2.remove();
-  // 내보내기 버튼 '저장' → '편집 모드' 원래대로 (이미 FAB 제거했으므로 불필요)
-
-  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-  const blob = new Blob([html], {type:'text/html;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'conchwear_japan_roadmap_edited.html';
-  document.body.appendChild(a);
-  a.click();
-  setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},1000);
-}
-
-renderSidebar('sum');
-buildTable();
-</script>
 
 
 </body></html>
