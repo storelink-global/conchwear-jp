@@ -385,8 +385,8 @@
 
 <!-- FLOATING ACTION BUTTONS -->
 <div id="edit-fab">
-  <button class="edit-btn" id="btn-github" onclick="saveToGitHub()" style="display:none;background:#238636;color:#fff;">🚀 GitHub에 저장</button>
-  <button class="edit-btn" id="btn-export" onclick="exportHTML()" style="display:none;">💾 수정본 HTML 저장</button>
+  <button class="edit-btn" id="btn-publish" onclick="publishIndex()" style="display:none;background:#7C3AED;color:#fff;">📤 index.html 게시</button>
+  <button class="edit-btn" id="btn-github" onclick="saveToGitHub()" style="display:none;background:#238636;color:#fff;">🚀 edit.html 저장</button>
   <button class="edit-btn" id="btn-toggle" onclick="toggleEdit()">✏️ 편집 모드</button>
 </div>
 
@@ -1765,8 +1765,8 @@ function toggleEdit(){
     document.body.classList.add('edit-mode');
     btn.classList.add('on');
     btn.textContent = '✏️ 편집 종료';
-    exportBtn.style.display = 'flex';
     document.getElementById('btn-github').style.display = 'flex';
+    document.getElementById('btn-publish').style.display = 'flex';
     hint.classList.add('show');
     setTimeout(()=>hint.classList.remove('show'), 3000);
   } else {
@@ -1778,38 +1778,73 @@ function toggleEdit(){
     btn.classList.remove('on');
     btn.textContent = '✏️ 편집 모드';
     document.getElementById('btn-github').style.display = 'none';
-    exportBtn.style.display = 'none';
+    document.getElementById('btn-publish').style.display = 'none';
   }
 }
 
-function exportHTML(){
-  // 편집 상태에서 내보내기 시 contenteditable 속성 제거한 클린 버전 생성
+function makeCleanHTML(){
+  // 편집 내용이 반영된 클린 버전(index용) 생성
   const clone = document.documentElement.cloneNode(true);
-
-  // clone에서 contenteditable 제거
-  clone.querySelectorAll('[contenteditable]').forEach(el=>{
-    el.removeAttribute('contenteditable');
-  });
-  // edit-mode 클래스 제거
+  clone.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
   clone.querySelector('body').classList.remove('edit-mode');
-  // edit FAB 제거
-  const fab = clone.querySelector('#edit-fab');
-  if(fab) fab.remove();
-  const hint2 = clone.querySelector('#edit-hint');
-  if(hint2) hint2.remove();
-  // 업무분장 담당 선택 및 메모 잠금 (수정 불가)
+  // 편집 UI 제거
+  const fab = clone.querySelector('#edit-fab'); if(fab) fab.remove();
+  const hint2 = clone.querySelector('#edit-hint'); if(hint2) hint2.remove();
+  // 업무분장 담당/메모 잠금
   clone.querySelectorAll('.role-select').forEach(el=>el.setAttribute('disabled',''));
   clone.querySelectorAll('.role-memo').forEach(el=>{ el.setAttribute('readonly',''); el.setAttribute('disabled',''); });
+  return '<!DOCTYPE html>\n' + clone.outerHTML;
+}
 
-  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-  const blob = new Blob([html], {type:'text/html;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'conchwear_japan_roadmap_edited.html';
-  document.body.appendChild(a);
-  a.click();
-  setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},1000);
+async function publishIndex(){
+  const OWNER = 'storelink-global';
+  const REPO  = 'conchwear-jp';
+  const PATH  = 'index.html';
+
+  let token = localStorage.getItem('gh_pat');
+  if(!token){
+    token = prompt('GitHub Personal Access Token을 입력하세요.\n(최초 1회만 입력하면 저장됩니다)');
+    if(!token) return;
+    localStorage.setItem('gh_pat', token);
+  }
+
+  const btn = document.getElementById('btn-publish');
+  btn.textContent = '⏳ 게시 중...';
+  btn.disabled = true;
+
+  try {
+    const meta = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
+      { headers: { Authorization: `token ${token}` } }
+    ).then(r => r.json());
+
+    if(meta.message === 'Bad credentials'){
+      localStorage.removeItem('gh_pat');
+      alert('토큰이 올바르지 않습니다. 다시 시도해주세요.');
+      btn.textContent = '📤 index.html 게시'; btn.disabled = false; return;
+    }
+
+    const encoded = btoa(unescape(encodeURIComponent(makeCleanHTML())));
+
+    const res = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
+      {
+        method: 'PUT',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: 'index.html 게시', content: encoded, sha: meta.sha })
+      }
+    ).then(r => r.json());
+
+    if(res.content){
+      btn.textContent = '✅ 게시 완료!';
+      setTimeout(()=>{ btn.textContent='📤 index.html 게시'; btn.disabled=false; }, 2500);
+    } else {
+      throw new Error(res.message || '게시 실패');
+    }
+  } catch(e) {
+    alert('게시 실패: ' + e.message);
+    btn.textContent = '📤 index.html 게시'; btn.disabled = false;
+  }
 }
 
 async function saveToGitHub(){
@@ -1842,16 +1877,15 @@ async function saveToGitHub(){
       btn.textContent = '🚀 GitHub에 저장'; btn.disabled = false; return;
     }
 
-    // 현재 페이지 HTML 생성 (contenteditable 제거)
+    // 현재 edit.html 상태 저장 (편집 UI 유지, contenteditable만 제거)
     const clone = document.documentElement.cloneNode(true);
     clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
     clone.querySelector('body').classList.remove('edit-mode');
     const toggleBtn = clone.querySelector('#btn-toggle');
     if(toggleBtn){ toggleBtn.classList.remove('on'); toggleBtn.textContent='✏️ 편집 모드'; }
-    const githubBtn = clone.querySelector('#btn-github');
-    if(githubBtn){ githubBtn.style.display='none'; githubBtn.disabled=false; githubBtn.textContent='🚀 GitHub에 저장'; }
-    const exportBtn2 = clone.querySelector('#btn-export');
-    if(exportBtn2) exportBtn2.style.display='none';
+    clone.querySelectorAll('#btn-github,#btn-publish,#btn-export').forEach(el=>{
+      if(el){ el.style.display='none'; el.disabled=false; }
+    });
     const htmlContent = '<!DOCTYPE html>\n' + clone.outerHTML;
 
     // base64 인코딩
@@ -1873,13 +1907,13 @@ async function saveToGitHub(){
 
     if(res.content){
       btn.textContent = '✅ 저장 완료!';
-      setTimeout(()=>{ btn.textContent='🚀 GitHub에 저장'; btn.disabled=false; }, 2500);
+      setTimeout(()=>{ btn.textContent='🚀 edit.html 저장'; btn.disabled=false; }, 2500);
     } else {
       throw new Error(res.message || '저장 실패');
     }
   } catch(e) {
     alert('저장 실패: ' + e.message);
-    btn.textContent = '🚀 GitHub에 저장'; btn.disabled = false;
+    btn.textContent = '🚀 edit.html 저장'; btn.disabled = false;
   }
 }
 
