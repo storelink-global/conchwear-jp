@@ -381,10 +381,13 @@
 <body class="">
 
 <!-- EDIT HINT BANNER -->
-
+<div id="edit-hint" class="">✏️ 편집 모드 ON — 텍스트를 클릭해서 바로 수정하세요</div>
 
 <!-- FLOATING ACTION BUTTONS -->
-
+<div id="edit-fab">
+  <button class="edit-btn" id="btn-export" onclick="exportHTML()" style="display:none;">💾 수정본 HTML 저장</button>
+  <button class="edit-btn" id="btn-toggle" onclick="toggleEdit()">✏️ 편집 모드</button>
+</div>
 
 <!-- GNB -->
 <nav class="gnav">
