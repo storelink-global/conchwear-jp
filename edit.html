@@ -1815,29 +1815,41 @@ async function ghPut(path, htmlContent, commitMsg, btnEl, doneText){
   }
 }
 
-// edit.html 저장 (편집 UI 유지, 수정 내용 반영)
-async function saveToGitHub(){
+// 공통: 현재 DOM 상태를 HTML 문자열로 변환 (buildTable 재실행 방지)
+function makeHTML(keepEditUI){
   const clone = document.documentElement.cloneNode(true);
   clone.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
   clone.querySelector('body').classList.remove('edit-mode');
-  const tb = clone.querySelector('#btn-toggle');
-  if(tb){ tb.classList.remove('on'); tb.textContent='✏️ 편집 모드'; }
-  clone.querySelectorAll('#btn-github,#btn-publish').forEach(el=>{ if(el) el.style.display='none'; });
-  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-  await ghPut('edit.html', html, 'edit.html 저장', document.getElementById('btn-github'), '✅ 저장 완료!');
+
+  if(keepEditUI){
+    // edit.html용: 버튼 초기화만
+    const tb = clone.querySelector('#btn-toggle');
+    if(tb){ tb.classList.remove('on'); tb.textContent='✏️ 편집 모드'; }
+    clone.querySelectorAll('#btn-github,#btn-publish').forEach(el=>{ if(el) el.style.display='none'; });
+  } else {
+    // index.html용: 편집 UI 제거 + 담당/메모 잠금
+    const fab = clone.querySelector('#edit-fab'); if(fab) fab.remove();
+    const hint2 = clone.querySelector('#edit-hint'); if(hint2) hint2.remove();
+    clone.querySelectorAll('.role-select').forEach(el=>el.setAttribute('disabled',''));
+    clone.querySelectorAll('.role-memo').forEach(el=>{ el.setAttribute('readonly',''); el.setAttribute('disabled',''); });
+  }
+
+  // 저장된 파일을 열 때 buildTable()이 편집 내용을 덮어쓰지 않도록 제거
+  clone.querySelectorAll('script').forEach(s=>{
+    s.textContent = s.textContent.replace(/\bbuildTable\(\s*\)\s*;?/g, '/* table pre-built */');
+  });
+
+  return '<!DOCTYPE html>\n' + clone.outerHTML;
+}
+
+// edit.html 저장 (편집 UI 유지, 수정 내용 반영)
+async function saveToGitHub(){
+  await ghPut('edit.html', makeHTML(true), 'edit.html 저장', document.getElementById('btn-github'), '✅ 저장 완료!');
 }
 
 // index.html 게시 (편집 UI 제거, 담당/메모 잠금)
 async function publishIndex(){
-  const clone = document.documentElement.cloneNode(true);
-  clone.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
-  clone.querySelector('body').classList.remove('edit-mode');
-  const fab = clone.querySelector('#edit-fab'); if(fab) fab.remove();
-  const hint2 = clone.querySelector('#edit-hint'); if(hint2) hint2.remove();
-  clone.querySelectorAll('.role-select').forEach(el=>el.setAttribute('disabled',''));
-  clone.querySelectorAll('.role-memo').forEach(el=>{ el.setAttribute('readonly',''); el.setAttribute('disabled',''); });
-  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-  await ghPut('index.html', html, 'index.html 게시', document.getElementById('btn-publish'), '✅ 게시 완료!');
+  await ghPut('index.html', makeHTML(false), 'index.html 게시', document.getElementById('btn-publish'), '✅ 게시 완료!');
 }
 
 renderSidebar('sum');
