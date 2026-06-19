@@ -1677,7 +1677,9 @@ function saveData(d){ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(d));}c
 function getCls(v){ return v==='sl'?'sl':v==='brand'?'brand':v==='shared'?'shared':''; }
 
 function buildTable(){
-  const saved=loadData(); const tbody=document.getElementById('roleTableBody');
+  const tbody=document.getElementById('roleTableBody');
+  if(tbody && tbody.getAttribute('data-pre-built')) return; // 이미 편집된 테이블 유지
+  const saved=loadData();
   let lastCat=''; let html='';
   roleItems.forEach((item,i)=>{
     const s=saved[i]||{}; const sv=s.owner||''; const memo=s.memo||'';
@@ -1834,10 +1836,9 @@ function makeHTML(keepEditUI){
     clone.querySelectorAll('.role-memo').forEach(el=>{ el.setAttribute('readonly',''); el.setAttribute('disabled',''); });
   }
 
-  // 저장된 파일을 열 때 buildTable()이 편집 내용을 덮어쓰지 않도록 제거
-  clone.querySelectorAll('script').forEach(s=>{
-    s.textContent = s.textContent.replace(/\bbuildTable\(\s*\)\s*;?/g, '/* table pre-built */');
-  });
+  // tbody에 표시만 달아두면 buildTable()이 스스로 건너뜀 (스크립트 수정 없음)
+  const tbody = clone.querySelector('#roleTableBody');
+  if(tbody) tbody.setAttribute('data-pre-built', '1');
 
   return '<!DOCTYPE html>\n' + clone.outerHTML;
 }
