@@ -385,8 +385,8 @@
 
 <!-- FLOATING ACTION BUTTONS -->
 <div id="edit-fab">
-  <button class="edit-btn" id="btn-publish" onclick="publishIndex()" style="display:none;background:#7C3AED;color:#fff;">📤 index.html 게시</button>
-  <button class="edit-btn" id="btn-github" onclick="saveToGitHub()" style="display:none;background:#238636;color:#fff;">🚀 edit.html 저장</button>
+  <button class="edit-btn" id="btn-publish" onclick="publishIndex()" style="display: none; background: rgb(124, 58, 237); color: rgb(255, 255, 255);">📤 index.html 게시</button>
+  <button class="edit-btn" id="btn-github" onclick="saveToGitHub()" style="display: none; background: rgb(35, 134, 54); color: rgb(255, 255, 255);">🚀 edit.html 저장</button>
   <button class="edit-btn" id="btn-toggle" onclick="toggleEdit()">✏️ 편집 모드</button>
 </div>
 
@@ -921,12 +921,12 @@
   </div>
 
   <div class="stabs" id="tabs-h1">
-    <div class="stab" onclick="switchTab('h1','base',this)">① 기반 구축</div>
+    <div class="stab active" onclick="switchTab('h1','base',this)">① 기반 구축</div>
     <div class="stab" onclick="switchTab('h1','review',this)">② 체험단·리뷰 강화</div>
-    <div class="stab active" onclick="switchTab('h1','sns',this)">③ SNS 바이럴</div>
+    <div class="stab" onclick="switchTab('h1','sns',this)">③ SNS 바이럴</div>
   </div>
 
-  <div id="h1-base" class="stab-body">
+  <div id="h1-base" class="stab-body active">
     <div class="season-band h1" spellcheck="false"><span class="season-icon">☀️</span><strong>7~8월 공략 포인트</strong> — 7월 여름 보너스·오본 연휴(8월 중순), SNS 더블 데이(7/7, 8/8) 저격</div>
     <div class="tgroup">
       <div class="tgroup-label">Qoo10 현지화 및 최적화</div>
@@ -984,7 +984,7 @@
     </div>
   </div>
 
-  <div id="h1-sns" class="stab-body active">
+  <div id="h1-sns" class="stab-body">
     <div class="season-band h1" spellcheck="false"><span class="season-icon">📱</span><strong>SNS 바이럴 — 하반기 전 기간 지속 가동</strong></div>
     <div class="tgroup">
       <div class="tgroup-label">비딩형 인플루언서 협업 콘텐츠 생산 (필요 시 진행)</div>
@@ -1041,13 +1041,13 @@
   </div>
 
   <div class="stabs" id="tabs-h2">
-    <div class="stab" onclick="switchTab('h2','hatsuri',this)">① 하츠우리·메가와리</div>
+    <div class="stab active" onclick="switchTab('h2','hatsuri',this)">① 하츠우리·메가와리</div>
     <div class="stab" onclick="switchTab('h2','popup',this)">② 팝업 스토어</div>
     <div class="stab" onclick="switchTab('h2','pr',this)">③ PR·미디어</div>
-    <div class="stab active" onclick="switchTab('h2','expand',this)">④ 유통 확장·CRM</div>
+    <div class="stab" onclick="switchTab('h2','expand',this)">④ 유통 확장·CRM</div>
   </div>
 
-  <div id="h2-hatsuri" class="stab-body">
+  <div id="h2-hatsuri" class="stab-body active">
     <div class="season-band h2" spellcheck="false"><span class="season-icon">🎍</span><strong>1~3월 공략 포인트</strong> — 1월 하츠우리·후쿠부쿠로, 2~3월 큐텐 메가와리</div>
     <div class="tgroup">
       <div class="tgroup-label">1월 하츠우리·후쿠부쿠로 연계</div>
@@ -1182,7 +1182,7 @@
    
   </div>
 
-  <div id="h2-expand" class="stab-body active">
+  <div id="h2-expand" class="stab-body">
     <div class="season-band h2" spellcheck="false"><span class="season-icon">🏬</span><strong>유통 확장 — ZOZOTOWN · 백화점 입점 플랜</strong> · 2027년 5~6월 목표</div>
 
     <div class="tgroup">
@@ -1369,7 +1369,7 @@
       <td spellcheck="false"><textarea class="role-memo" data-idx="2" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">4</td>
-      <td spellcheck="false"><div class="task-name" spellcheck="false">아마존 재팬 입점·운영</div><div class="task-sub" spellcheck="false">계정·리스팅·프로모션 관리</div></td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">아마존 재팬 FBA 입점·운영</div><div class="task-sub" spellcheck="false">계정·리스팅·프로모션 관리</div></td>
       <td class="c" spellcheck="false"><select class="role-select " data-idx="3" onchange="onOwner(this)">
         <option value="" selected="">협의 필요</option>
         <option value="brand">콘치웨어</option>
@@ -1380,25 +1380,25 @@
       <td spellcheck="false"><textarea class="role-memo" data-idx="3" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">콘텐츠</td></tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">5</td>
-      <td spellcheck="false"><div class="task-name" spellcheck="false">SNS 계정 활성화</div><div class="task-sub" spellcheck="false">인스타·X·틱톡 콘텐츠 제작</div></td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">SNS 계정 재활성화</div><div class="task-sub" spellcheck="false">인스타·X·틱톡 운영</div></td>
       <td class="c" spellcheck="false"><select class="role-select " data-idx="4" onchange="onOwner(this)">
         <option value="" selected="">협의 필요</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">오픈 후 주기적인 콘텐츠 업데이트 필요.<br>팔로워 관리 및 SNS 이벤트 진행</td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false"><div>오픈 후 주기적인 콘텐츠 업데이트 필요.</div><div>팔로워 관리 및 SNS 이벤트 진행</div></td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="4" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">6</td>
-      <td spellcheck="false"><div class="task-name" spellcheck="false">일본어 상세페이지 작성</div><div class="task-sub" spellcheck="false">번역·현지화 재창작</div></td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">일본어 상세페이지 작성</div><div class="task-sub" spellcheck="false">현지 최적</div></td>
       <td class="c" spellcheck="false"><select class="role-select " data-idx="5" onchange="onOwner(this)">
         <option value="" selected="">협의 필요</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">일본 소비자 고려한 소구점/키워드 현지화 진행<br>착용 전후 비교·사이즈 차트 포함 필요</td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false"><div>일본 소비자 고려한 소구점/키워드 현지화 진행</div><div>착용 전후 비교·사이즈 차트 포함 필요</div></td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="5" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">7</td>
@@ -1446,29 +1446,29 @@
       <td spellcheck="false"><textarea class="role-memo" data-idx="9" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">11</td>
-      <td spellcheck="false"><div class="task-name" spellcheck="false">비딩형 인플루언서 협업</div><div class="task-sub" spellcheck="false">마이크로급 입찰 방식 섭외</div></td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">비딩형 인플루언서 협업</div><div class="task-sub" spellcheck="false">입찰 방식 인플루언서 섭외</div></td>
       <td class="c" spellcheck="false"><select class="role-select " data-idx="10" onchange="onOwner(this)">
         <option value="" selected="">협의 필요</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">26년 하반기는 필요 시 운영 하며<br>27년 상반기 스텝업 단계에 적극 진행</td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false"><div>26년 하반기는 필요 시 운영 하며</div><div>27년 상반기 스텝업 단계에 적극 진행</div></td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="10" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">인플루언서·광고</td></tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">12</td>
-      <td spellcheck="false"><div class="task-name" spellcheck="false">나노→마이크로 스텝업 협의</div><div class="task-sub" spellcheck="false">1만~5만 장기 파트너십</div></td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">나노→마이크로 스텝업</div><div class="task-sub" spellcheck="false">1만~10만 장기 파트너십</div></td>
       <td class="c" spellcheck="false"><select class="role-select " data-idx="11" onchange="onOwner(this)">
         <option value="" selected="">협의 필요</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">1만~5만 팔로워 인플루언서는 <br>인플루언서 바이럴을 통한 매출 확장의 핵심 요소<br><br></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false"><div><span style="white-space: normal;">1만~10만 팔로워 인플루언서는</span></div><div>인플루언서 바이럴을 통한 매출 확장의 핵심 요소</div></td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="11" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">13</td>
-      <td spellcheck="false"><div class="task-name" spellcheck="false">Meta Ads 운영</div><div class="task-sub" spellcheck="false">파트너십 광고·유사타겟</div></td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">Meta&amp;TikTok Ads 운영</div><div class="task-sub" spellcheck="false">파트너십 광고·유사타겟</div></td>
       <td class="c" spellcheck="false"><select class="role-select " data-idx="12" onchange="onOwner(this)">
         <option value="" selected="">협의 필요</option>
         <option value="brand">콘치웨어</option>
@@ -1486,7 +1486,7 @@
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">캠페인 전략 수립·운영·최적화</td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">캠페인 전략 수립, 운영, 최적화</td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="13" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">물류·CS</td></tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">15</td>
@@ -1508,7 +1508,7 @@
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">아마존의 경우 제품 품절 시, 상품 랭킹에 안좋은 영향.<br>판매량을 측정하여 최소 2개월 운영 가능한 재고 확보 필요.</td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false"><div>아마존의 경우 제품 품절 시, 상품 랭킹에 안좋은 영향.</div><div>판매량을 측정하여 최소 2개월 운영 가능한 재고 확보 필요.</div></td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="15" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">17</td>
@@ -1530,7 +1530,7 @@
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">2027년 봄 오픈 목표로 준비</td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">2027년 봄 오픈 목표로 준비. <br>팝업 장소, 컨셉 등 기획</td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="17" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">19</td>
@@ -1552,18 +1552,18 @@
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">WWD Japan 등 10건+ 목표</td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">WWD Japan 등</td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="19" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">기타 지원</td></tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">21</td>
-      <td spellcheck="false"><div class="task-name" spellcheck="false">후생노동성 인증 지원</div><div class="task-sub" spellcheck="false">협력업체 연계</div></td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">후생노동성 인증 지원</div><div class="task-sub" spellcheck="false">의약외품·화장품·의료기기</div></td>
       <td class="c" spellcheck="false"><select class="role-select " data-idx="20" onchange="onOwner(this)">
         <option value="" selected="">협의 필요</option>
         <option value="brand">콘치웨어</option>
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">스토어링크 현지 법인 연계하여 진행 가능. <br>기능성 소재 표기 시 필요.</td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false"><div>스토어링크 현지 법인 연계하여 진행 가능.</div><div>기능성 소재 표기 시 필요.</div></td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="20" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">CRM</td></tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">22</td>
@@ -1574,7 +1574,7 @@
         <option value="sl">스토어링크</option>
         <option value="shared">공동</option>
       </select></td>
-      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">재구매 전환 캠페인 운영 및 행사 홍보</td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">CRM의 핵심 채널로 지속적인 관리 필요.<br>재구매 전환 캠페인 운영 및 행사 홍보.</td>
       <td spellcheck="false"><textarea class="role-memo" data-idx="21" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
     </tr><tr>
       <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">23</td>
