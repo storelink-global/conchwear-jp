@@ -1,0 +1,58 @@
+name: edit.html → index.html 자동 동기화
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'edit.html'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: edit.html을 index.html로 복사
+        run: |
+          python3 - <<'EOF'
+          import re
+
+          with open('edit.html', 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          # 편집 버튼(FAB) 제거
+          content = re.sub(
+              r'<!-- FLOATING ACTION BUTTONS -->.*?</div>\s*\n',
+              '<!-- FLOATING ACTION BUTTONS -->\n\n',
+              content, flags=re.DOTALL
+          )
+
+          # 편집 힌트 배너 제거
+          content = re.sub(
+              r'<!-- EDIT HINT BANNER -->.*?</div>\s*\n',
+              '<!-- EDIT HINT BANNER -->\n\n',
+              content, flags=re.DOTALL
+          )
+
+          # 편집 모드 JS 스크립트 제거
+          content = re.sub(
+              r'<script>.*?function exportHTML.*?</script>',
+              '',
+              content, flags=re.DOTALL
+          )
+
+          with open('index.html', 'w', encoding='utf-8') as f:
+              f.write(content)
+
+          print("index.html 업데이트 완료!")
+          EOF
+
+      - name: 변경사항 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "자동 동기화: edit.html → index.html"
+          git push
