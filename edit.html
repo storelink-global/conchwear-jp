@@ -1829,11 +1829,9 @@ function makeHTML(keepEditUI){
     if(tb){ tb.classList.remove('on'); tb.textContent='✏️ 편집 모드'; }
     clone.querySelectorAll('#btn-github,#btn-publish').forEach(el=>{ if(el) el.style.display='none'; });
   } else {
-    // index.html용: 편집 UI 제거 + 담당/메모 잠금
+    // index.html용: 편집 UI만 제거 (담당/메모는 수정 가능 유지)
     const fab = clone.querySelector('#edit-fab'); if(fab) fab.remove();
     const hint2 = clone.querySelector('#edit-hint'); if(hint2) hint2.remove();
-    clone.querySelectorAll('.role-select').forEach(el=>el.setAttribute('disabled',''));
-    clone.querySelectorAll('.role-memo').forEach(el=>{ el.setAttribute('readonly',''); el.setAttribute('disabled',''); });
   }
 
   // tbody에 표시만 달아두면 buildTable()이 스스로 건너뜀 (스크립트 수정 없음)
