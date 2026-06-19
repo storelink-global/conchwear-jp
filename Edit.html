@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<!-- saved from url=(0121)file:///C:/Users/jungd/Downloads/conchwear_japan_roadmap_v8%20%EC%88%98%EC%A0%95%EA%B0%80%EB%8A%A5%EB%B2%84%EC%A0%84.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스토어링크 · 콘치웨어 일본 진출 로드맵</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --sl-red:#FF4444;--sl-red-dark:#D63030;--sl-red-bg:#FFF2F2;--sl-red-mid:#FFE0E0;
+    --txt-head:#111827;--txt-body:#374151;--txt-sub:#6B7280;--txt-muted:#9CA3AF;
+    --bg:#FFFFFF;--bg-gray:#F9FAFB;--bg-card:#FFFFFF;
+    --border:#E5E7EB;--border2:#D1D5DB;
+    --blue:#2563EB;--blue-bg:#EFF6FF;
+    --green:#059669;--green-bg:#ECFDF5;
+    --purple:#7C3AED;--purple-bg:#F5F3FF;
+    --amber:#D97706;--amber-bg:#FFFBEB;
+    --coral:#DC2626;--coral-bg:#FEF2F2;
+    --pink:#EC4899;--pink-bg:#FDF2F8;
+    --ff:'DM Sans','Noto Sans KR',sans-serif;
+    --radius:10px;
+    --shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.06);
+    --shadow-md:0 4px 16px rgba(0,0,0,.08);
+  }
+  body{font-family:var(--ff);background:var(--bg-gray);color:var(--txt-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+  /* GNB */
+  .gnav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:52px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+  .gnav-logo{font-size:18px;font-weight:800;color:var(--txt-head);letter-spacing:-0.04em}
+  .gnav-logo .dot{color:var(--sl-red)}
+  .gnav-right{display:flex;align-items:center;gap:10px}
+  .gnav-badge{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;background:var(--sl-red-bg);color:var(--sl-red);border:1px solid var(--sl-red-mid);border-radius:20px;padding:3px 10px}
+  .gnav-sub{font-size:11px;color:var(--txt-muted)}
+
+  /* HERO */
+  .hero{background:#fff;border-bottom:1px solid var(--border);padding:44px 40px 40px}
+  .hero-inner{max-width:1100px;margin:0 auto}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sl-red);margin-bottom:14px}
+  .hero-eyebrow::before{content:'';width:18px;height:2px;background:var(--sl-red);display:block}
+  .hero-title{font-size:clamp(22px,3vw,36px);font-weight:900;line-height:1.2;letter-spacing:-0.03em;color:var(--txt-head);margin-bottom:10px}
+  .hero-title .hl{color:var(--sl-red)}
+  .hero-desc{font-size:13px;color:var(--txt-sub);max-width:640px;margin-bottom:28px;line-height:1.7}
+  /* 상단 4박스 */
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+  .hero-stat-box{padding:16px 20px;border-right:1px solid var(--border);background:#fff}
+  .hero-stat-box:last-child{border-right:none}
+  .hero-stat-box-label{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt-muted);margin-bottom:8px}
+  .hero-stat-period{font-size:10px;color:var(--txt-muted);margin-bottom:4px}
+  .hero-stat-row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .hero-stat-item{display:flex;flex-direction:column}
+  .hero-stat-chip{font-size:9px;font-weight:600;border-radius:4px;padding:1px 6px;margin-bottom:2px;width:fit-content}
+  .chip-real{background:var(--green-bg);color:var(--green)}
+  .chip-str{background:var(--sl-red-bg);color:var(--sl-red)}
+  .hero-stat-num{font-size:19px;font-weight:800;letter-spacing:-0.03em;line-height:1}
+  .hero-stat-num.green{color:var(--green)}
+  .hero-stat-num.red{color:var(--sl-red)}
+  .hero-stat-div{width:1px;height:36px;background:var(--border);margin:0 6px;align-self:center}
+  .hero-stat-end{padding:16px 20px;background:#fff}
+  .hero-stat-end-val{font-size:20px;font-weight:800;color:var(--sl-red);letter-spacing:-0.03em;line-height:1}
+  .hero-stat-end-label{font-size:10px;color:var(--txt-muted);margin-top:4px}
+
+  /* TIMELINE NAV */
+  .timeline-nav{background:var(--txt-head);padding:0 40px;display:flex;overflow-x:auto;border-bottom:1px solid rgba(255,255,255,.08)}
+  .tl-btn{display:flex;align-items:center;gap:10px;padding:12px 16px 12px 0;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;border-right:1px solid rgba(255,255,255,.08);white-space:nowrap}
+  .tl-btn:last-child{border-right:none}
+  .tl-btn+.tl-btn{padding-left:16px}
+  .tl-btn:hover{background:rgba(255,255,255,.04)}
+  .tl-btn.active{border-bottom-color:var(--phase-c,var(--sl-red));background:rgba(255,255,255,.05)}
+  .tl-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}
+  .tl-name{font-size:11px;font-weight:500;color:#fff}
+  .tl-period{font-size:9px;color:rgba(255,255,255,.45)}
+
+  /* LAYOUT */
+  .layout{display:grid;grid-template-columns:200px 1fr;max-width:1100px;margin:0 auto;min-height:calc(100vh - 200px)}
+  .sidebar{background:#fff;border-right:1px solid var(--border);padding:22px 0;position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto}
+  .sidebar-section{padding:0 14px 18px;border-bottom:1px solid var(--border);margin-bottom:18px}
+  .sidebar-section:last-child{border-bottom:none;margin-bottom:0}
+  .sidebar-eyebrow{font-size:9px;font-weight:700;letter-spacing:0.12em;color:var(--txt-muted);text-transform:uppercase;margin-bottom:8px}
+  .sidebar-item{display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:6px;font-size:11px;color:var(--txt-sub);margin-bottom:2px;cursor:pointer;transition:all .12s}
+  .sidebar-item:hover{background:var(--bg-gray)}
+  .sidebar-item.active{background:var(--phase-bg,#F5F3FF);color:var(--phase-c,#7C3AED);font-weight:600}
+  .nav-dot{width:5px;height:5px;border-radius:50%;background:var(--phase-c,#7C3AED);flex-shrink:0}
+  .kpi-mini{background:var(--bg-gray);border-radius:7px;padding:8px 10px;margin-bottom:5px}
+  .kpi-mini-label{font-size:9px;color:var(--txt-muted);margin-bottom:1px}
+  .kpi-mini-val{font-size:11px;font-weight:700}
+
+  /* CONTENT */
+  .content{padding:28px 32px 60px}
+  .phase-view{display:none}
+  .phase-view.active{display:block}
+
+  /* CHAPTER HEADER */
+  .chap{display:flex;align-items:center;gap:12px;padding:0 0 20px;margin-bottom:22px;border-bottom:1px solid var(--border)}
+  .chap-num{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;border-radius:6px;padding:4px 10px;flex-shrink:0}
+  .chap-title{font-size:19px;font-weight:800;color:var(--txt-head);letter-spacing:-0.02em}
+  .chap-sub{font-size:11px;color:var(--txt-muted);margin-top:2px}
+  .chap-period{margin-left:auto;font-size:11px;color:var(--txt-muted);background:var(--bg-gray);padding:4px 12px;border-radius:20px;border:1px solid var(--border);white-space:nowrap;flex-shrink:0}
+
+  /* SECTION LABEL */
+  .slabel{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt-muted);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px}
+  .slabel::before{content:'';display:block;width:3px;height:12px;background:var(--sl-red);border-radius:2px}
+  .sec{margin-bottom:26px}
+
+  /* CARDS */
+  .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+
+  /* KPI CARDS */
+  .kpi{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:15px 16px;border-top:3px solid;box-shadow:var(--shadow)}
+  .kpi-r{border-top-color:var(--sl-red)}.kpi-b{border-top-color:var(--blue)}.kpi-p{border-top-color:var(--purple)}.kpi-a{border-top-color:var(--amber)}.kpi-g{border-top-color:var(--green)}.kpi-pk{border-top-color:var(--pink)}
+  .kpi-l{font-size:10px;color:var(--txt-muted);margin-bottom:4px}
+  .kpi-v{font-size:20px;font-weight:800;color:var(--txt-head);letter-spacing:-0.03em;line-height:1.1}
+  .kpi-s{font-size:10px;color:var(--txt-sub);margin-top:4px;line-height:1.5}
+
+  /* BADGES */
+  .bd{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap}
+  .bd-r{background:var(--sl-red-bg);color:var(--sl-red-dark)}.bd-b{background:var(--blue-bg);color:var(--blue)}.bd-g{background:var(--green-bg);color:var(--green)}.bd-p{background:var(--purple-bg);color:var(--purple)}.bd-a{background:var(--amber-bg);color:var(--amber)}.bd-pk{background:var(--pink-bg);color:var(--pink)}.bd-gray{background:var(--bg-gray);color:var(--txt-sub);border:1px solid var(--border)}
+
+  /* INSIGHT BOXES */
+  .ins{font-size:12px;line-height:1.75;border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin-top:12px}
+  .ins b{font-weight:700}
+  .ins-g{background:var(--green-bg);border-left:3px solid var(--green);color:#065F46}
+  .ins-b{background:var(--blue-bg);border-left:3px solid var(--blue);color:#1E40AF}
+  .ins-a{background:var(--amber-bg);border-left:3px solid var(--amber);color:#92400E}
+  .ins-p{background:var(--purple-bg);border-left:3px solid var(--purple);color:#5B21B6}
+  .ins-r{background:var(--sl-red-bg);border-left:3px solid var(--sl-red);color:var(--sl-red-dark)}
+  .ins-pk{background:var(--pink-bg);border-left:3px solid var(--pink);color:#9D174D}
+
+  /* CARD TITLE */
+  .ct{font-size:12px;font-weight:700;color:var(--txt-head);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+  .ct::before{content:'';width:3px;height:13px;background:var(--sl-red);border-radius:2px;display:block}
+
+  /* STABS */
+  .stabs{display:flex;gap:0;margin-bottom:22px;border-bottom:1px solid var(--border);overflow-x:auto}
+  .stab{padding:9px 16px;font-size:11px;font-weight:400;color:var(--txt-muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .12s;margin-bottom:-1px}
+  .stab:hover{color:var(--txt-sub)}
+  .stab.active{color:var(--phase-c,var(--purple));border-bottom-color:var(--phase-c,var(--purple));font-weight:600}
+  .stab-body{display:none}
+  .stab-body.active{display:block}
+
+  /* TASK */
+  .tgroup{margin-bottom:22px}
+  .tgroup-label{font-size:10px;letter-spacing:0.12em;color:var(--txt-muted);text-transform:uppercase;margin-bottom:9px;display:flex;align-items:center;gap:8px}
+  .tgroup-label::after{content:'';flex:1;height:1px;background:var(--border)}
+  .tlist{display:flex;flex-direction:column;gap:5px}
+  .titem{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;background:#fff;border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--txt-sub);line-height:1.6;transition:border-color .12s}
+  .titem:hover{border-color:var(--border2)}
+  .titem.key{border-left:3px solid var(--phase-c,var(--purple));padding-left:10px}
+  .tdash{color:var(--txt-muted);flex-shrink:0;margin-top:1px;font-size:11px}
+  .ttext em{color:var(--txt-head);font-style:normal;font-weight:600}
+  .tag{display:inline-block;font-size:9px;padding:1px 7px;border-radius:20px;font-weight:500;margin-left:4px;vertical-align:middle;white-space:nowrap}
+  .tag-key{background:var(--purple-bg);color:var(--purple)}.tag-new{background:var(--green-bg);color:var(--green)}.tag-ref{background:var(--amber-bg);color:var(--amber)}.tag-warn{background:var(--sl-red-bg);color:var(--sl-red-dark)}.tag-pk{background:var(--pink-bg);color:var(--pink)}
+
+  /* SPECIAL BOXES */
+  .notice-box{background:var(--purple-bg);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:11px 15px;margin:14px 0;font-size:12px;color:#5B21B6;line-height:1.7}
+  .notice-box strong{color:#4C1D95;font-weight:700}
+  .warn-box{background:var(--amber-bg);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:11px 15px;margin:14px 0;font-size:12px;color:#92400E;line-height:1.7}
+  .warn-box strong{color:#78350F;font-weight:700}
+  .amz-box{background:var(--blue-bg);border:1px solid #BFDBFE;border-radius:8px;padding:11px 15px;margin:0 0 14px;font-size:12px;color:var(--blue);line-height:1.7}
+  .amz-box strong{font-weight:700}
+  .red-box{background:var(--sl-red-bg);border-left:3px solid var(--sl-red);border-radius:0 8px 8px 0;padding:11px 15px;margin:14px 0;font-size:12px;color:var(--sl-red-dark);line-height:1.7}
+  .red-box strong{color:#991B1B;font-weight:700}
+  .pink-box{background:var(--pink-bg);border:1px solid #FBCFE8;border-radius:8px;padding:14px 16px;margin:0 0 18px;font-size:12px;color:#9D174D;line-height:1.75}
+  .pink-box strong{color:#831843;font-weight:700}
+  .pink-box .pk-title{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--pink);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+
+  /* KPI ROW */
+  .kpi-row{display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 0;margin-top:18px;border-top:1px solid var(--border)}
+  .kpi-tag{font-size:11px;padding:4px 12px;border-radius:20px;font-weight:500;border:1px solid}
+
+  /* CTX GRID */
+  .ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+  .ctx-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:15px;box-shadow:var(--shadow)}
+  .ctx-title{font-size:11px;font-weight:700;color:var(--purple);letter-spacing:0.04em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+  .ctx-title::before{content:'';width:3px;height:11px;background:var(--sl-red);border-radius:2px;display:block}
+
+  /* SUMMARY */
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+  .sum-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+  .sum-phase{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px}
+  .sum-title{font-size:14px;font-weight:800;color:var(--txt-head);margin-bottom:8px}
+  .sum-items{font-size:11px;color:var(--txt-sub);line-height:1.9}
+  .sum-kpi{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;font-weight:600}
+
+  /* DECISION BOX */
+  .decision-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-top:14px}
+  .decision-title{font-size:10px;font-weight:700;color:var(--txt-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px}
+  .decision-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--txt-sub);line-height:1.6}
+  .decision-item:last-child{border-bottom:none}
+  .decision-item em{color:var(--txt-head);font-style:normal;font-weight:600}
+  .decision-arrow{color:var(--sl-red);flex-shrink:0;font-weight:700}
+
+  /* INS CARD */
+  .ins-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+  .ins-card-icon{font-size:20px;margin-bottom:8px}
+  .ins-card-title{font-size:13px;font-weight:800;margin-bottom:8px;color:var(--txt-head)}
+  .ins-card-body{font-size:11px;color:var(--txt-sub);line-height:1.85}
+
+  /* BUDGET TABLE */
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#fff;background:var(--txt-head);padding:9px 12px;text-align:left}
+  th.r{text-align:right}
+  td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--txt-body);vertical-align:middle}
+  td.r{text-align:right;font-weight:600;color:var(--txt-head);white-space:nowrap}
+  td.c{text-align:center}
+  tr:last-child td{border-bottom:none}
+  tr:nth-child(even) td{background:var(--bg-gray)}
+  .total-row td{background:var(--txt-head) !important;color:#fff;font-weight:700}
+  .total-row td.r{color:#fff}
+  .sub-total-row td{background:#FFF7ED !important;font-weight:600}
+  .sub-total-row td.r{color:var(--amber)}
+
+  /* MM TIMELINE */
+  .mm-header{background:var(--bg-gray);border-bottom:1px solid var(--border);display:grid;grid-template-columns:150px 1fr}
+  .mm-header-label{border-right:1px solid var(--border);padding:8px 14px;font-size:10px;font-weight:700;color:var(--txt-muted);text-transform:uppercase;letter-spacing:0.08em}
+  .mm-months{display:grid;grid-template-columns:repeat(12,1fr)}
+  .mm-month{padding:8px 4px;text-align:center;font-size:9px;font-weight:600;color:var(--txt-muted);border-right:1px solid var(--border)}
+  .mm-month:last-child{border-right:none}
+  .mm-month.h1{background:#FFF2F2;color:var(--sl-red)}
+  .mm-month.h2{background:#EFF6FF;color:var(--blue)}
+  .mm-row{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--border)}
+  .mm-row:last-child{border-bottom:none}
+  .mm-row-label{padding:10px 14px;font-size:11px;font-weight:600;color:var(--txt-head);border-right:1px solid var(--border);display:flex;align-items:center}
+  .mm-cells{display:grid;grid-template-columns:repeat(12,1fr)}
+  .mm-cell{padding:5px 3px;border-right:1px solid var(--border)}
+  .mm-cell:last-child{border-right:none}
+  .mm-bar{border-radius:3px;height:20px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:#fff}
+  .mm-empty{height:20px}
+
+  /* POINTAIL SERVICE BOX */
+  .pt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:6px}
+  .pt-card{border-radius:8px;padding:12px 14px;border:1px solid}
+  .pt-card-label{font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px}
+  .pt-card-name{font-size:12px;font-weight:700;color:var(--txt-head);margin-bottom:4px}
+  .pt-card-cond{font-size:10px;color:var(--txt-sub);margin-bottom:4px}
+  .pt-card-price{font-size:14px;font-weight:800;letter-spacing:-0.02em}
+  .pt-card-desc{font-size:10px;color:var(--txt-sub);margin-top:4px;line-height:1.5}
+
+  /* SL SERVICE BOX */
+  .sl-service-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:16px}
+  .sl-service-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;box-shadow:var(--shadow)}
+  .sl-service-icon{font-size:22px;margin-bottom:6px}
+  .sl-service-name{font-size:11px;font-weight:700;color:var(--txt-head);line-height:1.4}
+  .sl-service-type{font-size:9px;margin-top:4px;padding:2px 6px;border-radius:4px;display:inline-block;font-weight:600}
+  .type-direct{background:var(--green-bg);color:var(--green)}
+  .type-partner{background:var(--blue-bg);color:var(--blue)}
+
+  /* TARGET BOX */
+  .target-box{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+  .target-card{border-radius:var(--radius);padding:16px;border:1px solid}
+  .target-card.realistic{background:#F0FDF4;border-color:#86EFAC}
+  .target-card.stretch{background:#FFF2F2;border-color:var(--sl-red-mid)}
+  .target-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px}
+  .target-label.realistic{color:var(--green)}
+  .target-label.stretch{color:var(--sl-red)}
+  .target-val{font-size:22px;font-weight:900;letter-spacing:-0.03em;line-height:1.1}
+  .target-val.realistic{color:var(--green)}
+  .target-val.stretch{color:var(--sl-red)}
+  .target-desc{font-size:10px;color:var(--txt-sub);margin-top:6px;line-height:1.6}
+
+  /* SEASON BAND */
+  .season-band{display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;margin-bottom:14px;font-size:12px;font-weight:600}
+  .season-band.h1{background:var(--sl-red-bg);color:var(--sl-red-dark);border:1px solid var(--sl-red-mid)}
+  .season-band.h2{background:var(--blue-bg);color:#1E40AF;border:1px solid #BFDBFE}
+  .season-icon{font-size:16px}
+
+  /* ROLE TABLE */
+  .role-table{width:100%;border-collapse:collapse;font-size:12px}
+  .role-table th{padding:10px 14px;background:var(--txt-head);color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em}
+  .role-table td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+  .role-table tr:last-child td{border-bottom:none}
+  .role-table tr:nth-child(even) td{background:var(--bg-gray)}
+  .task-name{font-weight:600;color:var(--txt-head);font-size:12px}
+  .task-sub{font-size:10px;color:var(--txt-muted);margin-top:2px}
+  .role-select{width:100%;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11px;font-family:var(--ff);color:var(--txt-body);background:#fff;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath stroke='%236B7280' stroke-width='1.5' d='M1 1l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;padding-right:24px}
+  .role-select:focus{outline:none;border-color:var(--sl-red)}
+  .role-select.sl{background-color:#FFF2F2;color:var(--sl-red-dark);border-color:var(--sl-red-mid)}
+  .role-select.brand{background-color:#ECFDF5;color:#065F46;border-color:#A7F3D0}
+  .role-select.shared{background-color:#EFF6FF;color:#1E40AF;border-color:#BFDBFE}
+  .role-memo{width:100%;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11px;font-family:var(--ff);color:var(--txt-body);resize:none;min-height:32px}
+  .role-memo:focus{outline:none;border-color:var(--sl-red)}
+
+  /* SUPPORT BOX */
+  .support-banner{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+  .support-card{border-radius:var(--radius);padding:14px 16px;border:1px solid;display:flex;gap:12px;align-items:flex-start}
+  .support-card.blue{background:var(--blue-bg);border-color:#BFDBFE}
+  .support-card.green{background:var(--green-bg);border-color:#A7F3D0}
+  .support-icon{font-size:20px;flex-shrink:0}
+  .support-title{font-size:11px;font-weight:700;margin-bottom:3px}
+  .support-card.blue .support-title{color:var(--blue)}
+  .support-card.green .support-title{color:var(--green)}
+  .support-desc{font-size:10px;color:var(--txt-sub);line-height:1.6}
+
+  /* FOOTER */
+  .footer{background:var(--txt-head);padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .footer-logo{font-size:15px;font-weight:800;letter-spacing:-0.04em;color:#fff}
+  .footer-logo .dot{color:var(--sl-red)}
+  .footer-meta{font-size:11px;color:rgba(255,255,255,.5)}
+  .footer-copy{font-size:10px;color:rgba(255,255,255,.3)}
+
+  /* ===== INLINE EDIT MODE ===== */
+  body.edit-mode [contenteditable]{
+    outline:2px dashed #FF4444;
+    outline-offset:2px;
+    border-radius:3px;
+    background:rgba(255,68,68,.04);
+    cursor:text;
+    transition:outline-color .15s,background .15s;
+  }
+  body.edit-mode [contenteditable]:focus{
+    outline:2px solid #FF4444;
+    background:rgba(255,68,68,.07);
+  }
+  body.edit-mode [contenteditable]:hover{
+    background:rgba(255,68,68,.06);
+  }
+  #edit-fab{
+    position:fixed;
+    bottom:28px;
+    right:28px;
+    z-index:9999;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:8px;
+  }
+  .edit-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    border-radius:30px;
+    border:none;
+    font-family:var(--ff);
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 4px 16px rgba(0,0,0,.18);
+    transition:transform .12s,box-shadow .12s;
+    white-space:nowrap;
+  }
+  .edit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.22)}
+  .edit-btn:active{transform:translateY(0)}
+  #btn-toggle{background:var(--txt-head);color:#fff}
+  #btn-toggle.on{background:#FF4444;color:#fff}
+  #btn-export{background:#fff;color:var(--txt-head);border:1px solid var(--border)}
+  #btn-export:hover{border-color:var(--txt-head)}
+  #edit-hint{
+    position:fixed;
+    top:60px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(255,68,68,.92);
+    color:#fff;
+    font-size:11px;
+    font-weight:600;
+    padding:6px 18px;
+    border-radius:20px;
+    z-index:9998;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .2s;
+    white-space:nowrap;
+  }
+  #edit-hint.show{opacity:1}
+
+  @media(max-width:768px){
+    .layout{grid-template-columns:1fr}
+    .sidebar{position:static;height:auto}
+    .content{padding:20px 16px 40px}
+    .ctx-grid,.g2,.g3,.g4,.target-box,.sum-grid,.hero-stats,.pt-grid,.sl-service-grid,.support-banner{grid-template-columns:1fr}
+    .timeline-nav{padding:0 16px}
+    .hero{padding:28px 16px}
+    .mm-row{grid-template-columns:90px 1fr}
+    .mm-header{grid-template-columns:90px 1fr}
+  }
+</style>
+</head>
+<body class="">
+
+<!-- EDIT HINT BANNER -->
+<div id="edit-hint" class="">✏️ 편집 모드 ON — 텍스트를 클릭해서 바로 수정하세요</div>
+
+<!-- FLOATING ACTION BUTTONS -->
+<div id="edit-fab">
+  <button class="edit-btn" id="btn-export" onclick="exportHTML()" style="display: flex;">💾 수정본 HTML 저장</button>
+  <button class="edit-btn" id="btn-toggle" onclick="toggleEdit()">✏️ 편집 모드</button>
+</div>
+
+<!-- GNB -->
+<nav class="gnav">
+  <div class="gnav-logo" spellcheck="false">storelink<span class="dot">.</span></div>
+  <div class="gnav-right">
+    <span class="gnav-badge">Japan Roadmap</span>
+    <span class="gnav-sub" spellcheck="false">콘치웨어 · 2026.07 ~ 2027.06</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Marketing Strategy Document</div>
+    <h1 class="hero-title" spellcheck="false">콘치웨어 <span class="hl">일본 진출</span> 로드맵</h1>
+    <p class="hero-desc" spellcheck="false">Qoo10 · Amazon Japan · SNS 바이럴 기반 12개월 단계별 전략&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; — 2026년 하반기 성수기 볼륨업 → 2027년 상반기 오프라인 그랜드 런칭</p>
+    <div class="hero-stats">
+      <!-- 박스 1: 2026 하반기 -->
+      <div class="hero-stat-box">
+        <div class="hero-stat-box-label" spellcheck="false">2026 하반기 · 07~12월</div>
+        <div class="hero-stat-period" spellcheck="false">예산 50,750,000원</div>
+        <div class="hero-stat-row" style="margin-top:8px">
+          <div class="hero-stat-item">
+            <span class="hero-stat-chip chip-real">현실적</span>
+            <span class="hero-stat-num green">¥35M<span style="font-size:12px;font-weight:500;color:var(--txt-sub)">~45M</span></span>
+          </div>
+          <div class="hero-stat-div"></div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-chip chip-str">도전적</span>
+            <span class="hero-stat-num red">¥70M<span style="font-size:12px;font-weight:500;color:var(--txt-sub)">~90M</span></span>
+          </div>
+        </div>
+      </div>
+      <!-- 박스 2: 2027 상반기 -->
+      <div class="hero-stat-box">
+        <div class="hero-stat-box-label" spellcheck="false">2027 상반기 · 01~06월</div>
+        <div class="hero-stat-period" spellcheck="false">예산 67,500,000원+α</div>
+        <div class="hero-stat-row" style="margin-top:8px">
+          <div class="hero-stat-item">
+            <span class="hero-stat-chip chip-real">현실적</span>
+            <span class="hero-stat-num green">¥80M<span style="font-size:12px;font-weight:500;color:var(--txt-sub)">~100M</span></span>
+          </div>
+          <div class="hero-stat-div"></div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-chip chip-str">도전적</span>
+            <span class="hero-stat-num red">¥140M<span style="font-size:12px;font-weight:500;color:var(--txt-sub)">~180M</span></span>
+          </div>
+        </div>
+      </div>
+      <!-- 박스 3: 최종 목표 -->
+      <div class="hero-stat-box">
+        <div class="hero-stat-box-label" spellcheck="false">최종 목표 · 2027년 상반기 종료</div>
+        <div class="hero-stat-period" style="margin-bottom:8px" spellcheck="false">오프라인 그랜드 런칭 완료</div>
+        <div class="hero-stat-num red" style="font-size:24px">월 1억원+</div>
+        <div style="font-size:10px;color:var(--txt-muted);margin-top:4px">오거닉 매출 기준</div>
+      </div>
+      <!-- 박스 4: 총 예산 -->
+      <div class="hero-stat-box" style="border-right:none">
+        <div class="hero-stat-box-label" spellcheck="false">총 마케팅 예산</div>
+        <div class="hero-stat-period" style="margin-bottom:8px" spellcheck="false">12개월 합계</div>
+        <div class="hero-stat-num" style="color:var(--txt-head);font-size:22px">118,250,000원</div>
+        <div style="font-size:10px;color:var(--txt-muted);margin-top:4px">+α 앰버서더 RS 별도</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE NAV -->
+<nav class="timeline-nav" id="timelineNav">
+  <div class="tl-btn" style="--phase-c:#2563EB" onclick="switchPhase(&#39;sum&#39;,this)">
+    <div class="tl-dot" style="background:#EFF6FF;color:#2563EB">요약</div>
+    <div><div class="tl-name">전체 요약</div><div class="tl-period">로드맵 한눈에</div></div>
+  </div>
+  <div class="tl-btn" style="--phase-c:#EC4899" onclick="switchPhase(&#39;media&#39;,this)">
+    <div class="tl-dot" style="background:#FDF2F8;color:#EC4899">MM</div>
+    <div><div class="tl-name">미디어믹스</div><div class="tl-period">채널 전략 개요</div></div>
+  </div>
+  <div class="tl-btn" style="--phase-c:#FF4444" onclick="switchPhase(&#39;h1&#39;,this)">
+    <div class="tl-dot" style="background:#FFF2F2;color:#FF4444">H1</div>
+    <div><div class="tl-name">2026 하반기</div><div class="tl-period">07 ~ 12월</div></div>
+  </div>
+  <div class="tl-btn" style="--phase-c:#059669" onclick="switchPhase(&#39;h2&#39;,this)">
+    <div class="tl-dot" style="background:#ECFDF5;color:#059669">H2</div>
+    <div><div class="tl-name">2027 상반기</div><div class="tl-period">01 ~ 06월</div></div>
+  </div>
+  <div class="tl-btn active" style="--phase-c:#D97706" onclick="switchPhase(&#39;role&#39;,this)">
+    <div class="tl-dot" style="background:#FFFBEB;color:#D97706">R</div>
+    <div><div class="tl-name">업무 분장</div><div class="tl-period">콘치웨어 / 스토어링크</div></div>
+  </div>
+</nav>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+<aside class="sidebar" id="sidebar"><div class="sidebar-section"><div class="sidebar-eyebrow">업무 분장</div><div class="sidebar-item" style="--phase-c:#D97706;--phase-bg:#FFFBEB"><div class="nav-dot" style="background:#D97706"></div>스토어링크 제공 서비스</div><div class="sidebar-item" style="--phase-c:#D97706;--phase-bg:#FFFBEB"><div class="nav-dot" style="background:#D97706"></div>후생노동성 인증 지원</div><div class="sidebar-item" style="--phase-c:#D97706;--phase-bg:#FFFBEB"><div class="nav-dot" style="background:#D97706"></div>3PL 물류 연계 지원</div><div class="sidebar-item" style="--phase-c:#D97706;--phase-bg:#FFFBEB"><div class="nav-dot" style="background:#D97706"></div>업무 항목별 담당 분장</div></div></aside>
+<main class="content">
+
+<!-- ===== 전체 요약 ===== -->
+<section class="phase-view" id="view-sum" style="--phase-c:#2563EB">
+  <div class="chap">
+    <div class="chap-num" style="background:#2563EB" spellcheck="false">전체 요약</div>
+    <div class="chap-info">
+      <div class="chap-title" spellcheck="false">로드맵 한눈에 보기</div>
+      <div class="chap-sub" spellcheck="false">2026 하반기 ~ 2027 상반기 · 시장 전제 · 핵심 판단 포인트</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="slabel" spellcheck="false">실행 단계 요약</div>
+    <div class="sum-grid">
+      <div class="sum-card" style="border-top:3px solid var(--sl-red)">
+        <div class="sum-phase" style="color:var(--sl-red)" spellcheck="false">2026 하반기 ① · 07~09월</div>
+        <div class="sum-title" spellcheck="false">기반 구축 + 성수기 진입</div>
+        <div class="sum-items" spellcheck="false"><div>Qoo10 상품페이지 현지화/최적화</div><div>아마존 재팬 입점 완료</div><div>SNS 채널(인스타그램, 틱톡, X, LINE 등) 활성화</div><div>나노 인플루언서 시딩 가동</div><div>EC 구매 체험단 운영</div><div>7월 오본·9월 메가와리 대응</div><div>3PL·FBA 물류 셋업 및 재고 입고</div></div>
+        <div class="sum-kpi" style="color:var(--sl-red)" spellcheck="false">제품 리뷰 및 SNS 콘텐츠 총 960건 이상 확보 목표 &amp; 신뢰 자산 확보로 기초 체력 확보</div>
+      </div>
+      <div class="sum-card" style="border-top:3px solid #DC2626">
+        <div class="sum-phase" style="color:#DC2626" spellcheck="false">2026 하반기 ② · 10~12월</div>
+        <div class="sum-title" spellcheck="false">블프·겨울 보너스 드라이브</div>
+        <div class="sum-items" spellcheck="false"><div>SNS 바이럴 콘텐츠 집중 확보</div><div>나노→마이크로 스텝업</div><div>X(트위터) 바이럴 캠페인</div><div>11월 블랙프라이데이 리뷰+인플루언서 시딩</div><div>12월 메가와리 광고 영역 확대</div><div>ZOZOTOWN 입점 진행 검토</div><div>하반기 빅 쇼핑 시즌 재고 확보</div></div>
+        <div class="sum-kpi" style="color:#DC2626" spellcheck="false">월 매출 5,000만원+ 목표</div>
+      </div>
+      <div class="sum-card" style="border-top:3px solid var(--green)">
+        <div class="sum-phase" style="color:var(--green)" spellcheck="false">2027 상반기 ① · 01~03월</div>
+        <div class="sum-title" spellcheck="false">하츠우리 + 팝업 사전 준비</div>
+        <div class="sum-items" spellcheck="false"><div>1월 하츠우리·후쿠부쿠로 연계</div><div>2~3월 메가와리 집중 공략</div><div>팝업 스토어 준비·인프라 구축</div><div>PR·미디어 사전 세팅</div><div>SNS 라이브·인플루언서 강화</div><div>앰버서더 RS 계약 검토</div><div>퍼모먼스 광고 영역 확장</div></div>
+        <div class="sum-kpi" style="color:var(--green)" spellcheck="false">매출 볼륨 UP &amp; 오프라인 팝업 준비</div>
+      </div>
+      <div class="sum-card" style="border-top:3px solid var(--blue)">
+        <div class="sum-phase" style="color:var(--blue)" spellcheck="false">2027 상반기 ② · 04~06월</div>
+        <div class="sum-title" spellcheck="false">오프라인 그랜드 런칭</div>
+        <div class="sum-items" spellcheck="false"><div>오프라인 팝업 오픈</div><div>프레스데이 미디어 초청</div><div>O4O 온라인 리뷰 전환</div><div>오프라인 방문 체험단 운영</div><div>백화점·ZOZOTOWN 정식 입점 추진</div><div>앰버서더 공개 행사</div><div>LINE CRM 재구매 전환</div></div>
+        <div class="sum-kpi" style="color:var(--blue)" spellcheck="false">오프라인 확장 &amp; 월 매출 1억원+ 목표</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="slabel" spellcheck="false">시장 전제 &amp; 콘치웨어 현황</div>
+    <div class="ctx-grid">
+      <div class="ctx-card">
+        <div class="ctx-title" spellcheck="false">일본 소비자 구매 결정 구조</div>
+        <div class="tlist">
+          <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>쿠치코미(口コミ) 최우선</em> — 브랜드 광고보다 실사용자 후기를 압도적으로 신뢰. 리뷰 선확보가 모든 광고 효율의 전제</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><b>가성비·할인 민감도 높음</b> — 메가와리가 구매 결정의 핵심 트리거. 연 4회 행사 기준으로 전략 설계</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>급(Class) 한 번 박히면 바꾸기 어렵다</em> — 첫 팝업 장소·포지셔닝이 브랜드 위치 영구 고착</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><b>사이즈 정보 매우 중시</b> — cm·kg 실측 가이드 미비 시 반품 리뷰 급증</span></div>
+        </div>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-title" spellcheck="false">플랫폼 구조 (K-패션·애슬레저)</div>
+        <div class="tlist">
+          <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>Qoo10</em> — 여성 중심 K제품 구매 창구. 메가와리 연 4회가 매출 집중 포인트</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>Amazon Japan</em> — 고관여 소비자 플랫폼. FBA 통한 빠른 배송과&nbsp; 리뷰 확보를 통한 신뢰도 확보가 중요</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>SNS(인스타·X·틱톡)</em> — 나노 인플루언서 바이럴이 쿠치코미 신뢰 형성의 핵심 경로</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>X(트위터)</em> — 일본에서 영향력 매우 큼. <br>주요 행사 시, X 바이럴 연계 필수</span></div>
+        </div>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-title" spellcheck="false">콘치웨어 현황 &amp; 기회</div>
+        <div class="tlist">
+          <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false">Qoo10 입점 완료, 메가와리 기간 <em>일 매출 100만원</em> 달성 — 잠재 수요 검증</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">아마존 재팬 <em>미입점 상태</em> — FBA 인프라 구축 착수 필요</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">일본 소비자 체형 + 하의 상품(레깅스) — 콘치웨어에&nbsp;<em>높은 적합도</em>. <br>美脚·ヒップアップ 소구 직결</span></div>
+          <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>SNS 계정(인스타·틱톡·X) 약 2년간 미활성</em> — 활성화 필요</span></div>
+        </div>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-title" spellcheck="false">핵심 판단 포인트</div>
+        <div class="tlist">
+          <div class="titem"><span class="tdash">→</span><span class="ttext" spellcheck="false"><em>SNS 재활성화 선행</em> — 콘텐츠 10개+ 선제작 후 나노 시딩 착수. <br>비활성 계정 상태에서 시딩 시, 효율 하락.</span></div>
+          <div class="titem"><span class="tdash">→</span><span class="ttext" spellcheck="false"><em>리뷰 500건 → 메가와리 광고 집중</em> — 리뷰 자산 확보 전 광고 대량 투하 효율 저하</span></div>
+          <div class="titem"><span class="tdash">→</span><span class="ttext" spellcheck="false"><em>팝업 장소</em> — 시부야 PARCO가 현실적 선택. 이후 오모테산도·다이칸야마 확장 검토.</span></div>
+          <div class="titem"><span class="tdash">→</span><span class="ttext" spellcheck="false"><em>앰버서더</em> — 상반기 이후 투입. RS 계약으로 초기 고정비 분산</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="g3">
+      <div class="ins-card" style="border-top:3px solid var(--sl-red)">
+        <div class="ins-card-icon" spellcheck="false">📈</div>
+        <div class="ins-card-title" spellcheck="false">시장 기회</div>
+        <div class="ins-card-body" spellcheck="false">· 한국 애슬레저 브랜드 일본 진출 사례 희소<br>— K-패션 선점 효과 기대<br>· 하반기 성수기(오본·메가와리·블프) 집중<br>— 6개월 내 볼륨업 가능<br>· Qoo10 검증 완료<br>— Amazon·SNS 확장 기반 보유</div>
+      </div>
+      <div class="ins-card" style="border-top:3px solid var(--blue)">
+        <div class="ins-card-icon" spellcheck="false">🎯</div>
+        <div class="ins-card-title" spellcheck="false">핵심 실행 원칙</div>
+        <div class="ins-card-body" spellcheck="false">· SNS 재활성화 → 나노 시딩 순서 必<br>· 리뷰 500건 = 메가와리 투자 트리거<br>· 메가와리 3~4주 전 시딩 집중<br>— 타이밍이 성패 결정<br>· 체험단·시딩이 가장 먼저</div>
+      </div>
+      <div class="ins-card" style="border-top:3px solid var(--purple)">
+        <div class="ins-card-icon" spellcheck="false">⚠️</div>
+        <div class="ins-card-title" spellcheck="false">주요 리스크</div>
+        <div class="ins-card-body" spellcheck="false">· SNS 계정 약 2년 휴면<br>— 팔로워 신뢰 회복에 시간 필요<br>· 사이즈 가이드 미비<br>— 반품 리뷰 급증 원인<br>· 인지도 전 앰버서더 선투입<br>— 비용 대비 효과 낮음</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 미디어믹스 ===== -->
+<section class="phase-view" id="view-media" style="--phase-c:#EC4899">
+  <div class="chap">
+    <div class="chap-num" style="background:#EC4899" spellcheck="false">미디어믹스</div>
+    <div class="chap-info">
+      <div class="chap-title" spellcheck="false">채널 전략 &amp; 포인테일 서비스</div>
+      <div class="chap-sub" spellcheck="false">2026.07 ~ 2027.06 · 12개월 채널별 운영 타이밍 · 예산 배분 · 체험단/시딩 서비스 강화 계획</div>
+    </div>
+  </div>
+
+  <!-- 포인테일 서비스 -->
+  <div class="sec">
+    <div class="slabel" spellcheck="false">포인테일(Pointail) 체험단·시딩 서비스</div>
+    <div class="pink-box" spellcheck="false">
+      <div class="pk-title">🌸 스토어링크 일본 핵심 서비스 — 포인테일</div>
+      <div style="font-size:12px;margin-bottom:14px;color:#831843">체험단 및 나노 인플루언서 시딩을 통한 <strong>쿠치코미(口コミ) 신뢰 자산 구축</strong>이 모든 광고 투자의 전제 조건입니다. 아래 서비스를 이번 로드맵의 핵심 실행 엔진으로 활용합니다.</div>
+      <div class="pt-grid">
+        <!-- A: 큐텐/라쿠텐 -->
+        <div class="pt-card" style="background:#fff;border-color:#FBCFE8">
+          <div class="pt-card-label" style="color:var(--pink)" spellcheck="false">EC 구매 체험단</div>
+          <div class="pt-card-name" spellcheck="false">큐텐·라쿠텐<br><span style="font-size:10px;color:var(--txt-sub)">(구매 + 리뷰)</span></div>
+          <div class="pt-card-cond" spellcheck="false">최소 수량 10건 이상</div>
+          <div class="pt-card-price" style="color:var(--pink)" spellcheck="false">₩15,000<span style="font-size:10px;font-weight:400;color:var(--txt-sub)">/건</span></div>
+          <div class="pt-card-desc" spellcheck="false">구매 후 플랫폼 리뷰 작성. <br>쿠치코미 신뢰도 직결</div>
+        </div>
+        <!-- A: 앳코스메 -->
+        <div class="pt-card" style="background:#fff;border-color:#FBCFE8">
+          <div class="pt-card-label" style="color:var(--pink)" spellcheck="false">X 바이럴</div>
+          <div class="pt-card-name" spellcheck="false">X(트위터)<br><span style="font-size:10px;color:var(--txt-sub)">(리뷰)</span></div>
+          <div class="pt-card-cond" spellcheck="false">최소 수량 10건 이상 / 구매하기 옵션</div>
+          <div class="pt-card-price" style="color:var(--pink)" spellcheck="false">₩20,000<span style="font-size:10px;font-weight:400;color:var(--txt-sub)">/건</span></div>
+          <div class="pt-card-desc" spellcheck="false">EC몰 랜딩 링크 삽입으로 <br>구매하기 유도</div>
+        </div>
+        <!-- B: 큐텐+앳코스메 세트 -->
+        <div class="pt-card" style="background:#fff;border-color:#FBCFE8">
+          <div class="pt-card-label" style="color: var(--pink);" spellcheck="false">아마존 재팬 리뷰</div>
+          <div class="pt-card-name" spellcheck="false">아마존 재팬<br><span style="font-size:10px;color:var(--txt-sub)">(구매 + 리뷰)</span></div>
+          <div class="pt-card-cond" spellcheck="false">최소 수량 10건 이상</div><div class="pt-card-cond" spellcheck="false"><span style="background-color: rgba(255, 68, 68, 0.04); color: var(--pink); font-size: 14px; font-weight: 800; letter-spacing: -0.02em;">₩30,000</span><span style="letter-spacing: -0.02em; color: var(--txt-sub);">/건</span></div>
+          <div class="pt-card-desc" spellcheck="false">구매 후 플랫폼 리뷰 작성.&nbsp;<span style="background-color: rgba(255, 68, 68, 0.06);"><br></span><span style="background-color: rgba(255, 68, 68, 0.04);">쿠치코미 신뢰도 직결</span></div>
+        </div>
+        <!-- C: SNS 포스팅 -->
+        <div class="pt-card" style="background:#fff;border-color:#FBCFE8">
+          <div class="pt-card-label" style="color:var(--pink)" spellcheck="false">SNS 나노 시딩</div>
+          <div class="pt-card-name" spellcheck="false">SNS 포스팅 캠페인<br><span style="font-size:10px;color:var(--txt-sub)">(UGC 생산)</span></div>
+          <div class="pt-card-cond" spellcheck="false">상품페이지 有</div>
+          <div class="pt-card-price" style="color:var(--pink)" spellcheck="false">₩25,000<span style="color: var(--txt-sub); font-size: 10px; font-weight: 400; letter-spacing: -0.02em;">/건</span></div>
+          <div class="pt-card-desc" spellcheck="false"><div class="pt-card-desc" spellcheck="false">구매링크 직접 구매 → SNS 포스팅.</div><div class="pt-card-desc" spellcheck="false">- 피드 ₩25,000</div><div class="pt-card-desc" spellcheck="false">- 릴스 ₩45,000 (2차활용 가능, 2개월)</div></div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:#831843;margin-top:6px">※ 인플루언서 비딩(입찰방식): 상품페이지 有 · 단 건 진행 시, 캠페인당 보증금 10만원(최종 정산 시 제외)</div>
+    </div>
+  </div>
+
+  <!-- 체험단 강화 계획 -->
+  <div class="sec">
+    <div class="slabel" spellcheck="false">체험단·시딩 강화 플랜</div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="card">
+        <div class="ct" spellcheck="false">2026 하반기 체험단 운영 계획</div>
+        <table>
+          <thead><tr><th spellcheck="false">월</th><th spellcheck="false">주요 행사</th><th spellcheck="false">항목</th><th class="r" spellcheck="false">목표 건수</th><th class="r" spellcheck="false">예상 비용</th></tr></thead>
+          <tbody>
+            <tr><td spellcheck="false">7월</td><td spellcheck="false">오본 사전·7/7 더블데이</td><td spellcheck="false"><span class="bd bd-pk">EC몰 체험단</span></td><td class="r" spellcheck="false">50건</td><td class="r" spellcheck="false">750,000원</td></tr>
+            <tr><td spellcheck="false"><br></td><td spellcheck="false">SNS 재활성화 병행</td><td spellcheck="false"><span class="bd bd-pk">SNS</span></td><td class="r" spellcheck="false">50건</td><td class="r" spellcheck="false">1,250,000원</td></tr>
+            <tr><td spellcheck="false">8월</td><td spellcheck="false">오본 연휴·8/8 더블데이</td><td spellcheck="false"><span class="bd bd-pk">SNS</span></td><td class="r" spellcheck="false">80건</td><td class="r" spellcheck="false">2,000,000원</td></tr>
+            <tr><td spellcheck="false"><br></td><td spellcheck="false">9월 메가와리 사전</td><td spellcheck="false"><span class="bd bd-pk">EC몰 체험단</span></td><td class="r" spellcheck="false">50+30건</td><td class="r" spellcheck="false">1,650,000원</td></tr>
+            <tr><td spellcheck="false">9월</td><td spellcheck="false"><strong>메가와리 집중</strong></td><td spellcheck="false"><span class="bd bd-pk">복합</span></td><td class="r" spellcheck="false">200건</td><td class="r" spellcheck="false">6,000,000원</td></tr>
+            <tr><td spellcheck="false">10월</td><td spellcheck="false">블프 사전 시딩</td><td spellcheck="false"><span class="bd bd-pk">복합</span></td><td class="r" spellcheck="false">150건</td><td class="r" spellcheck="false">2,500,000원</td></tr>
+            <tr><td spellcheck="false">11월</td><td spellcheck="false"><strong>블랙프라이데이</strong></td><td spellcheck="false"><span class="bd bd-pk">복합</span></td><td class="r" spellcheck="false">150건</td><td class="r" spellcheck="false">4,000,000원</td></tr>
+            <tr><td spellcheck="false">12월</td><td spellcheck="false"><strong>메가와리+겨울 보너스</strong></td><td spellcheck="false"><span class="bd bd-pk">복합</span></td><td class="r" spellcheck="false">200건</td><td class="r" spellcheck="false">6,000,000원</td></tr>
+            <tr class="sub-total-row"><td colspan="3" spellcheck="false"><strong>하반기 합계</strong></td><td class="r" spellcheck="false"><strong>960건+</strong></td><td class="r" style="color:var(--amber)" spellcheck="false"><strong>24,150,000원</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="ins ins-pk" style="margin-top:10px" spellcheck="false"><b>26년 하반기 목표 :</b>&nbsp;<span style="background-color: rgb(253, 242, 248);">체험단·시딩 총 </span><span style="font-weight: 700;">960건 이상</span><span style="background-color: rgb(253, 242, 248);">.&nbsp;&nbsp;</span><span style="background-color: rgb(253, 242, 248);">9월 메가와리 전 층 460건+ 완료가 핵심 기준선. (비딩형 인플루언서 협업은 필요 시 진행)</span></div>
+      </div>
+      <div class="card">
+        <div class="ct" spellcheck="false">2027 상반기 체험단 운영 계획</div>
+        <table>
+          <thead><tr><th spellcheck="false">월</th><th spellcheck="false">주요 행사</th><th spellcheck="false">항목</th><th class="r" spellcheck="false">목표 건수</th><th class="r" spellcheck="false">예상 비용</th></tr></thead>
+          <tbody>
+            <tr><td spellcheck="false">1월</td><td spellcheck="false">하츠우리·후쿠부쿠로</td><td spellcheck="false"><span class="bd bd-pk">복합</span></td><td class="r" spellcheck="false">200건</td><td class="r" spellcheck="false">6,000,000원</td></tr>
+            <tr><td spellcheck="false">2월</td><td spellcheck="false"><strong>메가와리 집중</strong></td><td spellcheck="false"><span class="bd bd-pk">복합</span></td><td class="r" spellcheck="false">200건</td><td class="r" spellcheck="false">6,000,000원</td></tr>
+            <tr><td spellcheck="false">3월</td><td spellcheck="false">봄 시즌·팝업 사전</td><td spellcheck="false"><span class="bd bd-pk">SNS</span></td><td class="r" spellcheck="false">200건</td><td class="r" spellcheck="false">5,000,000원</td></tr>
+            <tr><td spellcheck="false">4월</td><td spellcheck="false"><strong>팝업 OPEN</strong></td><td spellcheck="false"><span class="bd bd-pk">오프라인 방문 체험단</span></td><td class="r" spellcheck="false">100건+</td><td class="r" spellcheck="false">별도 협의</td></tr>
+            <tr><td spellcheck="false"><br></td><td spellcheck="false">팝업 연계 시딩</td><td spellcheck="false"><span class="bd bd-pk">SNS 시딩 및 비딩형 연계</span></td><td class="r" spellcheck="false">500건+</td><td class="r" spellcheck="false">22,500,000원</td></tr>
+            <tr><td spellcheck="false">6월</td><td spellcheck="false">백화점·ZOZOTOWN 입점 홍보 시딩</td><td spellcheck="false"><span class="bd bd-pk">복합</span></td><td class="r" spellcheck="false">100건</td><td class="r" spellcheck="false">3,000,000원</td></tr>
+            <tr class="sub-total-row"><td colspan="3" spellcheck="false"><strong>상반기 합계</strong></td><td class="r" spellcheck="false"><strong>1,300건+</strong></td><td class="r" style="color:var(--amber)" spellcheck="false"><strong>42,500,000원+</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="ins ins-g" style="margin-top:10px" spellcheck="false"><b>27년 상반 목표:</b> 체험단·시딩 총 <b>1,300건+</b>, 팝업 오프라인 방문 체험단은 27년 4~5월 집중 운영.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12개월 채널 타임라인 -->
+  <div class="sec">
+    <div class="slabel" spellcheck="false">12개월 채널 운영 타임라인</div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <div class="mm-header">
+        <div class="mm-header-label">채널 / 서비스</div>
+        <div class="mm-months">
+          <div class="mm-month h1">7월</div><div class="mm-month h1">8월</div><div class="mm-month h1">9월</div>
+          <div class="mm-month h1">10월</div><div class="mm-month h1">11월</div><div class="mm-month h1">12월</div>
+          <div class="mm-month h2">1월</div><div class="mm-month h2">2월</div><div class="mm-month h2">3월</div>
+          <div class="mm-month h2">4월</div><div class="mm-month h2">5월</div><div class="mm-month h2">6월</div>
+        </div>
+      </div>
+      <!-- 포인테일 EC 체험단 -->
+      <div class="mm-row">
+        <div class="mm-row-label">🌸 EC 구매 체험단</div>
+        <div class="mm-cells">
+          <div class="mm-cell"><div class="mm-bar" style="background:#EC4899" spellcheck="false">50건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#EC4899" spellcheck="false">80건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D;font-size:9px" spellcheck="false"><span style="font-size: 8px;">메가100건</span></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#EC4899" spellcheck="false">100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false">블프100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false">메가100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#9D174D" spellcheck="false">하츠100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false">메가100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#EC4899" spellcheck="false"><br></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#EC4899" spellcheck="false">오프 체험단</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#EC4899" spellcheck="false"><br></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#EC4899" spellcheck="false"><br></div></div>
+        </div>
+      </div>
+      <!-- 포인테일 SNS 시딩 -->
+      <div class="mm-row">
+        <div class="mm-row-label">🌸 나노 인플루언서 시딩</div>
+        <div class="mm-cells">
+          <div class="mm-cell"><div class="mm-bar" style="background:#F472B6" spellcheck="false">50건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F472B6" spellcheck="false">80건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#EC4899" spellcheck="false">메가100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F472B6" spellcheck="false">50건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false">블프50건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false">메가100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F472B6" spellcheck="false">100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false">메가100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F472B6" spellcheck="false">100건</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#EC4899" spellcheck="false">팝업 홍보</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F472B6" spellcheck="false"><br></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F472B6" spellcheck="false">입점 홍보</div></div>
+        </div>
+      </div>
+      <!-- Qoo10 -->
+      <div class="mm-row">
+        <div class="mm-row-label">🛒 Qoo10</div>
+        <div class="mm-cells">
+          <div class="mm-cell"><div class="mm-bar" style="background:#FF4444" spellcheck="false">현지화</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#FF4444" spellcheck="false">오본</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#DC2626" spellcheck="false">메가와리</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F87171" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#DC2626" spellcheck="false">블프</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#DC2626" spellcheck="false">메가와리</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#3B82F6" spellcheck="false">하츠우리</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#DC2626" spellcheck="false">메가와리</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#3B82F6" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#3B82F6" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#3B82F6" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#3B82F6" spellcheck="false"></div></div>
+        </div>
+      </div>
+      <!-- Amazon -->
+      <div class="mm-row">
+        <div class="mm-row-label">📦 Amazon JP</div>
+        <div class="mm-cells">
+          <div class="mm-cell"><div class="mm-bar" style="background:#F59E0B" spellcheck="false">입점</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F59E0B" spellcheck="false">Vine</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F59E0B" spellcheck="false">SP광고</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#F59E0B" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#D97706" spellcheck="false">블프</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#D97706" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#059669" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#059669" spellcheck="false">SB광고</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#059669" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#059669" spellcheck="false">팝업연계</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#059669" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#059669" spellcheck="false"></div></div>
+        </div>
+      </div>
+      <!-- Instagram -->
+      <div class="mm-row">
+        <div class="mm-row-label">📸 Instagram</div>
+        <div class="mm-cells">
+          <div class="mm-cell"><div class="mm-bar" style="background:#E11D48" spellcheck="false">재활성화</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#E11D48" spellcheck="false">나노시딩</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#E11D48" spellcheck="false">메가와리</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#E11D48" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#9F1239" spellcheck="false">블프광고</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#9F1239" spellcheck="false">메가와리</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false">마이크로</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false">팝업</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#BE185D" spellcheck="false"></div></div>
+        </div>
+      </div>
+      <!-- X -->
+      <div class="mm-row">
+        <div class="mm-row-label">𝕏 X(트위터)</div>
+        <div class="mm-cells">
+          <div class="mm-cell"><div class="mm-bar" style="background:#374151" spellcheck="false">재활성화</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#374151" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#374151" spellcheck="false">RT이벤트</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#374151" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#111827" spellcheck="false">타이업</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#111827" spellcheck="false">타이업</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#111827" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#111827" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#111827" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#111827" spellcheck="false">팝업</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#111827" spellcheck="false"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#111827" spellcheck="false"></div></div>
+        </div>
+      </div>
+      <!-- 오프라인/PR -->
+      <div class="mm-row">
+        <div class="mm-row-label">🏪 오프라인·PR</div>
+        <div class="mm-cells">
+          <div class="mm-cell"><div class="mm-empty"></div></div>
+          <div class="mm-cell"><div class="mm-empty"></div></div>
+          <div class="mm-cell"><div class="mm-empty"></div></div>
+          <div class="mm-cell"><div class="mm-empty"></div></div>
+          <div class="mm-cell"><div class="mm-empty"></div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#D97706" spellcheck="false">장소확정</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#059669" spellcheck="false">시공준비</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#059669" spellcheck="false">PR세팅</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#059669" spellcheck="false">최종준비</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#2563EB" spellcheck="false">팝업OPEN</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#2563EB" spellcheck="false">백화점</div></div>
+          <div class="mm-cell"><div class="mm-bar" style="background:#2563EB" spellcheck="false">ZOZO</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 예산 배분 -->
+  <div class="sec">
+    <div class="slabel" spellcheck="false">예산 배분 개요</div>
+    <div class="g2">
+      <div class="card">
+        <div class="ct" spellcheck="false">2026 하반기 · 총 50,750,000원</div>
+        <table>
+          <thead><tr><th spellcheck="false">항목</th><th class="r" spellcheck="false">예산</th><th spellcheck="false">목적</th></tr></thead>
+          <tbody>
+            <tr><td spellcheck="false">현지화·리스팅 최적화</td><td class="r" spellcheck="false">5,000,000원</td><td spellcheck="false"><span class="bd bd-gray">기반</span></td></tr>
+            <tr><td spellcheck="false"><strong>EC 체험단·나노 시딩</strong></td><td class="r" spellcheck="false"><strong>25,750,000원</strong></td><td spellcheck="false"><span class="bd bd-pk">리뷰·시딩 핵심</span></td></tr>
+            <tr><td spellcheck="false"><div><b>비딩형 인플루언서 협업</b></div><div><b>및 2차 파트너십</b></div></td><td class="r" spellcheck="false">10,000,000원</td><td spellcheck="false"><span class="bd bd-p">선택 항목</span></td></tr>
+            <tr><td spellcheck="false">퍼포먼스 마케팅<br>(아마존 PPC, 메타 등)</td><td class="r" spellcheck="false">10,000,000원</td><td spellcheck="false"><span class="bd bd-b">광고 실비<br>운영비 별도</span></td></tr>
+            <tr class="total-row"><td spellcheck="false"><strong>하반기 합계</strong></td><td class="r" spellcheck="false">50,750,000원</td><td spellcheck="false"><span class="bd" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)">합계</span></td></tr>
+          </tbody>
+        </table>
+        <div class="ins ins-pk" style="margin-top:10px" spellcheck="false">체험단·나노 시딩 비중은&nbsp;<b>전체 예산의 약 51%</b><br>비딩형 인플루언서 협업의 경우 필요 시, 추가 진행<br><b>스토어링크에서는 상품페이지 현지화와 아마존 광고 운영 가능</b></div>
+      </div>
+      <div class="card">
+        <div class="ct" spellcheck="false">2027 상반기 · 총 67,500,000원+α</div>
+        <table>
+          <thead><tr><th spellcheck="false">항목</th><th class="r" spellcheck="false">예산</th><th spellcheck="false">목적</th></tr></thead>
+          <tbody>
+            <tr><td spellcheck="false">PR·미디어 마케팅</td><td class="r" spellcheck="false">5,000,000원</td><td spellcheck="false"><span class="bd bd-b">PR</span></td></tr>
+            <tr><td spellcheck="false"><strong>EC 체험단·나노 시딩</strong></td><td class="r" spellcheck="false">32,500,000원</td><td spellcheck="false"><span class="bd bd-gray"><span style="background-color: rgb(253, 242, 248); color: rgb(236, 72, 153);">리</span><span style="color: rgb(236, 72, 153); background-color: rgb(253, 242, 248);">뷰·시딩 핵심</span></span></td></tr>
+            <tr><td spellcheck="false"><div><b>비딩형 인플루언서 협업</b></div><div><b>및 2차 파트너십</b></div></td><td class="r" spellcheck="false"><strong>10,000,000원</strong></td><td spellcheck="false"><span class="bd bd-pk">인플루언서</span></td></tr>
+            <tr><td spellcheck="false"><div><b>퍼포먼스 광고</b></div><div><b>(아마존 PPC, 메타 등)</b></div></td><td class="r" spellcheck="false"><strong>20,000,000원</strong></td><td spellcheck="false"><span class="bd bd-pk"><span style="color: rgb(37, 99, 235); background-color: rgb(239, 246, 255);">광고 실비</span><br style="color: rgb(37, 99, 235);"><span style="color: rgb(37, 99, 235); background-color: rgb(239, 246, 255);">운영비 별도</span></span></td></tr>
+            <tr><td spellcheck="false">앰버서더 (RS 매출 연동)</td><td class="r" spellcheck="false">+α</td><td spellcheck="false"><span class="bd bd-r">앰버서더</span></td></tr>
+            <tr><td spellcheck="false"><br></td><td class="r" spellcheck="false"><br></td><td spellcheck="false"><br></td></tr>
+            <tr class="total-row"><td spellcheck="false"><strong>상반기 합계</strong></td><td class="r" spellcheck="false"><strong>67,500,000원+α</strong></td><td spellcheck="false"><span class="bd" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)">합계</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SNS 재활성화 -->
+  <div class="sec">
+    <div class="slabel" spellcheck="false">SNS 계정 재활성화 전략</div>
+    <div class="red-box" spellcheck="false"><strong>⚠️ 현황</strong> — 인스타그램·틱톡·X 공식 계정이 약 2년간 콘텐츠 발행 중단 상태. 나노 시딩 전에 계정 활성화가 반드시 선행되어야 합니다.</div>
+    <div class="g3">
+      <div class="card">
+        <div class="ct" spellcheck="false">📸 Instagram</div>
+        <div class="tlist">
+          <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>7월 포스팅 10개+ 선제작</em> 후 재오픈 <span class="tag tag-warn">선행 필수</span></span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">일본 전용 계정 운영 — 한국어 혼재 시 알고리즘 노출 저하</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">지속적인 브랜디드 콘텐츠 업로드</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">시딩 콘텐츠 → 콘텐츠 2차 활용</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct" spellcheck="false">🎵 TikTok</div>
+        <div class="tlist">
+          <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>나노 셀러&nbsp; 바이럴 우선</em> — 자사 계정 단독보다 훨씬 효과적 <span class="tag tag-key">핵심</span></span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">공식 계정은 셀러 콘텐츠 리포스팅 역할</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">상반기 마이크로급 협업 확장</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct" spellcheck="false">𝕏 X(트위터)</div>
+        <div class="tlist">
+          <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>일본 내 영향력 최강</em> — 96만뷰 → 당일 매출 급상승 사례 <span class="tag tag-key">핵심 채널</span></span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">7월 복귀 포스팅 + 팔로우·RT 이벤트</span></div>
+          <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><div>메가와리·블프 등 메인 행사 시즌에</div><div>공격적 운영</div></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2026 하반기 ===== -->
+<section class="phase-view" id="view-h1" style="--phase-c:#FF4444">
+  <div class="chap">
+    <div class="chap-num" style="background:#FF4444" spellcheck="false">2026 하반기</div>
+    <div class="chap-info">
+      <div class="chap-title" spellcheck="false">기반 구축 + 성수기 볼륨업</div>
+      <div class="chap-sub" spellcheck="false">오본 연휴 · 9월 메가와리 · 블랙프라이데이 · 겨울 보너스 성수기 관통</div>
+    </div>
+    <div class="chap-period" spellcheck="false">2026.07 ~ 2026.12 · 예산 50,750,000원</div>
+  </div>
+
+  <div class="sec">
+    <div class="target-box">
+      <div class="target-card realistic">
+        <div class="target-label realistic">현실적 목표</div>
+        <div class="target-val realistic">¥35M ~ ¥45M</div>
+        <div class="target-desc">하반기 성수기 관통으로 폭발적 볼륨업 달성</div>
+      </div>
+      <div class="target-card stretch">
+        <div class="target-label stretch">도전적 목표</div>
+        <div class="target-val stretch">¥70M ~ ¥90M</div>
+        <div class="target-desc">SNS 바이럴 + 리뷰 자산 시너지 극대화 시</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stabs" id="tabs-h1">
+    <div class="stab" onclick="switchTab(&#39;h1&#39;,&#39;base&#39;,this)">① 기반 구축</div>
+    <div class="stab" onclick="switchTab(&#39;h1&#39;,&#39;review&#39;,this)">② 체험단·리뷰 강화</div>
+    <div class="stab active" onclick="switchTab(&#39;h1&#39;,&#39;sns&#39;,this)">③ SNS 바이럴</div>
+  </div>
+
+  <div id="h1-base" class="stab-body">
+    <div class="season-band h1" spellcheck="false"><span class="season-icon">☀️</span><strong>7~8월 공략 포인트</strong> — 7월 여름 보너스·오본 연휴(8월 중순), SNS 더블 데이(7/7, 8/8) 저격</div>
+    <div class="tgroup">
+      <div class="tgroup-label">Qoo10 현지화 및 최적화</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false">상세페이지 일본어 재작성 — <em>美脚·スタイルアップ·ヒップアップ·骨盤サポート</em> 키워드 중심 소구 <span class="tag tag-key">7월 완료 필수</span></span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">cm·kg 실측 사이즈 가이드 보강 — 사이즈 불명확 시 반품 리뷰 급증</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">일본 소비자 체형(키 작은 편) 착장 컷 선별 — 썸네일 힙라인 강조</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">타임세일 가격 구조 재설계 — 메가와리 전 정가 기준 30~40% 할인 구조</span></div>
+      </div>
+    </div>
+    <div class="tgroup">
+      <div class="tgroup-label">아마존 재팬 입점 · 물류</div>
+      <div class="tlist">
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">아마존 재팬 계정 가입 및 브랜드 등록 착수 (Amazon Brand Registry)</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">타이틀: 브랜드명 + <em>美脚·ヒップアップ·レギンス·スタイルアップ</em> + 사이즈 표기</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">A+ 페이지 — 착용 전후 체형 비교, 사이즈 차트 시각화</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">FBA 입고 및 필요 시, 3PL 협력사 선정·계약 — 배송 리드타임 3일 이내 목표. FBA 재고 분리 입고</span></div>
+      </div>
+    </div>
+    <div class="tgroup">
+      <div class="tgroup-label">SNS 계정 재활성화 · 7월 착수 필수</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>인스타·X·틱톡 일본 전용 콘텐츠 10개+ 선제작 후 재오픈</em> — 빈 피드에서 시딩 착수 지양&nbsp;<span class="tag tag-warn">선행 필수</span></span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">X(트위터) 복귀 + 팔로우·RT 이벤트 — 알고리즘 재점화</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">인스타 릴스 주 3회 이상 업로드</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="h1-review" class="stab-body">
+    <div class="season-band h1" spellcheck="false"><span class="season-icon">🍂</span><strong>9월 메가와리 전후 리뷰 460건+ 완료 필수</strong></div>
+    <div class="tgroup">
+      <div class="tgroup-label">EC 구매 체험단</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>7~8월 EC몰 구매 체험단</em>&nbsp;— 사진+사이즈 실측 포함 리뷰 유도</span></div>
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>9월 메가와리 집중 운영</em>&nbsp;— 행사 2~3주 전부터 체험단 집중.&nbsp;</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">리뷰 가이드라인 — 착용 사이즈·신장·체형·착용감·세탁 후 변화 포함 방향 유도</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">아마존 초기 리뷰 확보(Vine+체험단) — 초기 리뷰 0건 해소. Amazon Vine 크레딧 활용</span></div>
+      </div>
+    </div>
+    <div class="tgroup">
+      <div class="tgroup-label">나노 인플루언서 시딩</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false">팔로워 <em>1만 이하 나노 인플루언서</em>&nbsp;— 피트니스·요가·필라테스 카테고리 중심</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">선정 기준: <em>Engagement Rate 3% 이상</em>·확산력 우선. 팔로워 수 기준 아님</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">소구 포인트: 키 작은 체형 보정·美脚見え·ヒップアップ — 일본 소비자 체형 적합도 높음</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">2차 활용권 확보 — 시딩 콘텐츠를 2차 활용 광고 소재로 전환</span></div>
+      </div>
+    </div>
+    <div class="warn-box" spellcheck="false"><strong>타이밍 주의</strong> — SNS 재활성화(7월 초) → 브랜디드 콘텐츠 제작 → 나노 시딩 착수(7월 중순) → 9월 메가와리 전 리뷰 460건 완료. 이 순서를 지켜야 메가와리 광고 투자 효율이 나온다.</div>
+    <div class="kpi-row">
+      <span class="kpi-tag" style="background:#FDF2F8;color:#9D174D;border-color:#FBCFE8">하반기 체험단 목표 960건+</span>
+      <span class="kpi-tag" style="background:#FDF2F8;color:#9D174D;border-color:#FBCFE8">9월 메가와리 전후 460건</span>
+      <span class="kpi-tag" style="background:#FDF2F8;color:#9D174D;border-color:#FBCFE8">EC몰 상품 평점 4.5 이상</span>
+    </div>
+  </div>
+
+  <div id="h1-sns" class="stab-body active">
+    <div class="season-band h1" spellcheck="false"><span class="season-icon">📱</span><strong>SNS 바이럴 — 하반기 전 기간 지속 가동</strong></div>
+    <div class="tgroup">
+      <div class="tgroup-label">비딩형 인플루언서 협업 콘텐츠 생산 (필요 시 진행)</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>피트니스 전문 나노 셀러</em> 릴스·착용 영상 생산 — SNS 셀러 계정 바이럴이 자사 계정보다 노출 효율 높음 <span class="tag tag-key">핵심</span></span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">7/7·8/8 SNS 더블 데이 및 대형 세일 겨냥 숏폼 집중 생산</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">X 공식 계정 팔로우·RT 이벤트 — 9월·12월 메가와리 예고 바이럴</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">11월 블프·12월 메가와리 3~4주 전 집중 투하 — 카테고리 랭킹 급상승 견인</span></div>
+      </div>
+    </div>
+    <div class="tgroup">
+      <div class="tgroup-label">나노 → 마이크로 스텝업 (10~12월)</div>
+      <div class="tlist">
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">7~9월 성과 높은 나노 인플루언서 → <em>마이크로(1만~5만) 스텝업</em> 협의</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">X 인플루언서 타이업 — 50만뷰+ 투고물 목표. 한정 컬러 선공개</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">우수 UGC → Meta 파트너십 광고 소재 전환 (CTR 5~11% 달성 구조)</span></div>
+      </div>
+    </div>
+    <div class="notice-box" spellcheck="false"><strong>공식 계정 vs 셀러 계정</strong> — 2년 휴면 공식 계정 단독보다, 나노 셀러 100명 바이럴 병행이 훨씬 효과적. 공식 계정은 셀러 콘텐츠 리포스팅·큐레이션 역할로 운영하며 알고리즘 신뢰를 회복.
+  </div>
+
+  <div class="kpi-row">
+    <span class="kpi-tag" style="background:#FFF2F2;color:#991B1B;border-color:#FCA5A5">리뷰+시딩 총 960건+</span>
+    <span class="kpi-tag" style="background:#FFF2F2;color:#991B1B;border-color:#FCA5A5">아마존 재팬 입점·활성화</span>
+    <span class="kpi-tag" style="background:#FFF2F2;color:#991B1B;border-color:#FCA5A5">SNS 채널 활성화</span>
+       <span class="kpi-tag" style="background:#FFF2F2;color:#991B1B;border-color:#FCA5A5">현실 ¥35M ~ 도전 ¥90M</span>
+  </div>
+</div></section>
+
+<!-- ===== 2027 상반기 ===== -->
+<section class="phase-view" id="view-h2" style="--phase-c:#059669">
+  <div class="chap">
+    <div class="chap-num" style="background:#059669" spellcheck="false">2027 상반기</div>
+    <div class="chap-info">
+      <div class="chap-title" spellcheck="false">하츠우리 + 팝업 그랜드 런칭</div>
+      <div class="chap-sub" spellcheck="false">1월 하츠우리 · 2~3월 메가와리 · 봄 시즌 오프라인 팝업 온오프 시너지</div>
+    </div>
+    <div class="chap-period" spellcheck="false">2027.01 ~ 2027.06 · 예산 67,500,000원+α</div>
+  </div>
+
+  <div class="sec">
+    <div class="target-box">
+      <div class="target-card realistic">
+        <div class="target-label realistic">현실적 목표</div>
+        <div class="target-val realistic">¥80M ~ ¥100M</div>
+        <div class="target-desc">하츠우리·메가와리 + 팝업 온오프 시너지로 월 1억원 궤도 안착</div>
+      </div>
+      <div class="target-card stretch">
+        <div class="target-label stretch">도전적 목표</div>
+        <div class="target-val stretch">¥140M ~ ¥180M</div>
+        <div class="target-desc">앰버서더 RS + ZOZOTOWN/백화점 입점 + 팝업 폭발적 성공 시</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stabs" id="tabs-h2">
+    <div class="stab" onclick="switchTab(&#39;h2&#39;,&#39;hatsuri&#39;,this)">① 하츠우리·메가와리</div>
+    <div class="stab" onclick="switchTab(&#39;h2&#39;,&#39;popup&#39;,this)">② 팝업 스토어</div>
+    <div class="stab" onclick="switchTab(&#39;h2&#39;,&#39;pr&#39;,this)">③ PR·미디어</div>
+    <div class="stab active" onclick="switchTab(&#39;h2&#39;,&#39;expand&#39;,this)">④ 유통 확장·CRM</div>
+  </div>
+
+  <div id="h2-hatsuri" class="stab-body">
+    <div class="season-band h2" spellcheck="false"><span class="season-icon">🎍</span><strong>1~3월 공략 포인트</strong> — 1월 하츠우리·후쿠부쿠로, 2~3월 큐텐 메가와리</div>
+    <div class="tgroup">
+      <div class="tgroup-label">1월 하츠우리·후쿠부쿠로 연계</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>후쿠부쿠로(럭키백) 패키지</em> 기획 — 신년 첫 세일 문화. 재고 소진 + 브랜드 노출 동시 달성 <span class="tag tag-key">1월 핵심</span></span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">Qoo10·아마존 동시 프로모션 — 후쿠부쿠로 특가 + 한정 수량 구조</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">LINE 공식 계정 연계 — 하반기 구매자 대상 신년 선공개 발송</span></div>
+      </div>
+    </div>
+    <div class="tgroup">
+      <div class="tgroup-label">2~3월 메가와리 집중 공략</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false">행사 <em>3~4주 전</em> 인플루언서 시딩 집중 투입 → 행사 기간 자연 검색 유입 폭발 <span class="tag tag-key">타이밍 핵심</span></span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">Amazon·Meta·X 광고 증액 — 봄 패션 시즌 소재 전환 (환절기 체형 보정 소구)</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">카테고리 상위 30위 진입 집중 — Qoo10 봄 기획전 참가</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="h2-popup" class="stab-body">
+    <div class="season-band h2" spellcheck="false"><span class="season-icon">🌸</span><strong>4~6월 공략 포인트</strong> — 봄 시즌 시부야 PARCO 오프라인 그랜드 런칭</div>
+    <div class="tgroup">
+      <div class="tgroup-label">팝업 스토어 인프라</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>시부야 PARCO</em> — K-패션 팝업 성공 사례 다수. 현 포지션에서 가장 현실적 첫 선택 <span class="tag tag-key">권장</span></span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">피트니스 클래스 공간 + 브랜드 세계관 인테리어 시공 — 1:1 스타일링 컨설팅 공간 포함</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">현장 QR코드 O4O 온라인 주문 시스템 — 팝업 방문 → 아마존·큐텐 즉시 구매 전환</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">한정 일본 스페셜 에디션 출시 — 희소성 + 현지화. SNS 자발적 확산 유도</span></div>
+      </div>
+    </div>
+    <div class="tgroup">
+      <div class="tgroup-label">팝업 오프라인 방문 체험단 · 포인테일 협의</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>일본 오프라인 매장 방문 체험단</em> 집중 운영 — 팝업 현장 착용 경험 → 온라인 리뷰 전환 <span class="tag tag-pk">포인테일 오프라인 서비스</span></span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">QR코드 기반 Qoo10·아마존 리뷰 페이지 직접 연결 — 방문 → 즉시 리뷰 전환 구조</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">나노·마이크로 인플루언서 현장 촬영 → 릴스·X 즉시 업로드 유도</span></div>
+      </div>
+    </div>
+    <div class="notice-box" spellcheck="false"><strong>아마존 K-Fashion 팝업 연계 검토</strong> — 아마존 재팬 자체 K-Fashion 팝업(롯폰기 힐스 등)과 일정 연계 시 비용 절감 + 미디어 자원 공유 가능.
+  </div>
+  </div>
+
+  <div id="h2-pr" class="stab-body">
+    <div class="season-band h2" spellcheck="false"><span class="season-icon">📰</span><strong>PR·미디어 마케팅 — 예산 5,000,000원</strong> · 팝업 오픈 기준 4~5월 집중 실행</div>
+
+    <div class="tgroup">
+      <div class="tgroup-label">PR 전략 개요 — 왜 지금 PR인가</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>일본 PR의 핵심은 "기사화(記事化)"</em> — 광고 소재가 아닌 미디어 편집 기사로 노출되어야 쿠치코미 신뢰 수준으로 전환됨 <span class="tag tag-key">핵심 원칙</span></span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">팝업 오픈은 <em>뉴스 앵글이 가장 명확한 시점</em> — "K-애슬레저 브랜드 첫 일본 오프라인 런칭"은 패션·라이프스타일 미디어 게재 확률이 높음</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">PR → SNS 바이럴 → 플랫폼 검색 유입 선순환 구조 — 기사 하나가 X·인스타 확산 트리거로 작동</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">예산 500만원 내 최대 임팩트 = <em>현지 PR 프리랜서 또는 소규모 대행사 단기 계약</em> + 자체 보도자료 배포 병행</span></div>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <div class="tgroup-label">타겟 미디어 리스트 — 게재 우선순위</div>
+      <div class="g2">
+        <div class="card" style="padding:15px">
+          <div class="ct" spellcheck="false">🥇 1순위 — 패션·라이프스타일 전문지</div>
+          <div class="tlist" style="margin-top:8px">
+            <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>WWD Japan</em> — 일본 패션업계 바이블. K-패션 코너 정기 게재. 팝업 런칭 기사 최적 <span class="tag tag-key">최우선</span></span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>VOGUE Japan / ELLE Japan</em> — 프리미엄 여성 패션. 애슬레저 특집 기획 연계 피칭</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>Oggi / Domani / with</em> — 20~30대 직장 여성 타겟. 体型カバー·스타일업 소구 적합</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>FRaU / LEE</em> — 30~40대 액티브 여성. 요가·필라테스 라이프스타일 독자층</span></div>
+          </div>
+        </div>
+        <div class="card" style="padding:15px">
+          <div class="ct" spellcheck="false">🥈 2순위 — 웹미디어·피트니스</div>
+          <div class="tlist" style="margin-top:8px">
+            <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>Ananweb / マイナビウーマン</em> — 월간 수백만 PV. 체형 보정·애슬레저 기획 빈번 <span class="tag tag-key">접근 쉬움</span></span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>FYTTE (フィッテ)</em> — 피트니스·다이어트 전문 웹미디어. 레깅스·스타일업 리뷰 특화</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>LDK the Beauty</em> — 기능성 의류 비교 기획. 着圧·美脚 카테고리 강함</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>Yahoo! Japan 뉴스</em> — 웹미디어 기사 재배포 경로. 자연 도달 수백만 가능</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <div class="tgroup-label">월별 PR 실행 플랜 (예산 5,000,000원 배분)</div>
+      <div class="card" style="padding:0;overflow:hidden">
+        <table>
+          <thead><tr><th spellcheck="false">시기</th><th spellcheck="false">액션</th><th spellcheck="false">담당</th><th class="r" spellcheck="false">예산</th></tr></thead>
+          <tbody>
+            <tr><td spellcheck="false"><strong>1~2월</strong></td><td spellcheck="false">보도자료 일본어 작성 · PR TIMES 배포<br><span style="font-size:10px;color:var(--txt-sub)">팝업 예고 + K-애슬레저 첫 일본 오프라인 런칭 앵글</span></td><td spellcheck="false"><span class="bd bd-gray">자체</span></td><td class="r" spellcheck="false">500,000원</td></tr>
+            <tr><td spellcheck="false"><strong>2~3월</strong></td><td spellcheck="false">현지 PR 프리랜서 계약 · 미디어 리스트 피칭<br><span style="font-size:10px;color:var(--txt-sub)">WWD Japan·웹미디어 편집부 직접 어프로치. 프레스데이 초청 제안 포함</span></td><td spellcheck="false"><span class="bd bd-b">대행</span></td><td class="r" spellcheck="false">2,000,000원</td></tr>
+            <tr><td spellcheck="false"><strong>4월 팝업 직전</strong></td><td spellcheck="false">프레스데이 운영 · 미디어·인플루언서 초청<br><span style="font-size:10px;color:var(--txt-sub)">팝업 오픈 전날 미디어 전용 행사. 제품 체험 → 즉시 SNS 포스팅 유도. 샘플 키트 제공</span></td><td spellcheck="false"><span class="bd bd-r">핵심</span></td><td class="r" spellcheck="false">1,500,000원</td></tr>
+            <tr><td spellcheck="false"><strong>4~5월</strong></td><td spellcheck="false">기사 모니터링 · SNS 앰플리파이<br><span style="font-size:10px;color:var(--txt-sub)">게재 기사 공식 SNS 리포스팅. LINE 배포. 아마존·Qoo10 상세페이지 미디어 로고 삽입</span></td><td spellcheck="false"><span class="bd bd-gray">자체</span></td><td class="r" spellcheck="false">500,000원</td></tr>
+            <tr><td spellcheck="false"><strong>5~6월</strong></td><td spellcheck="false">후속 피처링 · ZOZOTOWN·백화점 입점 PR 연계<br><span style="font-size:10px;color:var(--txt-sub)">입점 타이밍에 맞춰 추가 보도자료 배포</span></td><td spellcheck="false"><span class="bd bd-b">대행</span></td><td class="r" spellcheck="false">500,000원</td></tr>
+            <tr class="sub-total-row"><td colspan="3" spellcheck="false"><strong>합계</strong></td><td class="r" spellcheck="false"><strong>5,000,000원</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <div class="tgroup-label">보도자료 핵심 앵글 — 일본 미디어가 반응하는 스토리</div>
+      <div class="g3">
+        <div class="card" style="padding:14px">
+          <div class="ct" spellcheck="false">🇰🇷 K-애슬레저 스토리</div>
+          <div style="font-size:11px;color:var(--txt-sub);line-height:1.8;margin-top:6px">
+            "韓国発アスレジャーブランドが日本初上陸" — K-팝·K-뷰티 이후 K-패션 물결의 연장선. 일본 미디어가 가장 반응하는 K-컬처 코드
+          </div>
+        </div>
+        <div class="card" style="padding:14px">
+          <div class="ct" spellcheck="false">🦵 美脚テクノロジー 스토리</div>
+          <div style="font-size:11px;color:var(--txt-sub);line-height:1.8;margin-top:6px">
+            착압·골반 보정·ヒップアップ 기능성 소재 기술력 소구. FRaU·FYTTE·LDK 등 피트니스·기능성 의류 미디어 최적화 앵글
+          </div>
+        </div>
+        <div class="card" style="padding:14px">
+          <div class="ct" spellcheck="false">🏪 팝업 이벤트 스토리</div>
+          <div style="font-size:11px;color:var(--txt-sub);line-height:1.8;margin-top:6px">
+            "渋谷PARCOで韓国ブランド初の体験型ポップアップ" — 장소 자체의 뉴스성 활용. 피트니스 클래스 운영으로 체험형 뉴스 앵글 강화
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <div class="tgroup-label">앰버서더 (RS 매출 연동 계약) — 별도 협의</div>
+      <div class="tlist">
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">후보: 일본 내 인지도 높은 한국 배우 또는 일본 현지 피트니스 인플루언서</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>RS 계약 구조</em> — 보증금 최소화 + 매출 연동. 초기 고정비 부담 분산</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">팝업 오픈 행사 공개 연계 — 브랜드 클래스 영구 고착 효과 극대화</span></div>
+      </div>
+    </div>
+
+    <div class="notice-box" spellcheck="false"><strong>노이스(Noice) 레퍼런스</strong> — 박서준 앰버서더 RS 계약으로 월 매출 1억 → 10억~20억 성장. 단, 브랜드 인지도 기반 없이 재현 어려움. 앰버서더 없이도 단계적 접근 가능.</div>
+
+   
+  </div>
+
+  <div id="h2-expand" class="stab-body active">
+    <div class="season-band h2" spellcheck="false"><span class="season-icon">🏬</span><strong>유통 확장 — ZOZOTOWN · 백화점 입점 플랜</strong> · 2027년 5~6월 목표</div>
+
+    <div class="tgroup">
+      <div class="tgroup-label">ZOZOTOWN 입점 전략 — 일본 패션 EC 1위 플랫폼</div>
+      <div class="g2">
+        <div class="card" style="padding:15px">
+          <div class="ct" spellcheck="false">📊 ZOZOTOWN 플랫폼 특성</div>
+          <div class="tlist" style="margin-top:8px">
+            <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>월 이용자 1,100만+</em>, 연간 GMV 5,000억엔+ — 일본 패션 EC 압도적 1위 <span class="tag tag-key">필수 입점</span></span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">K-패션 섹션 운영 중 — 마르디메크르디·그라미 등 한국 브랜드 입점 전례 다수</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">ZOZOFIT(바디 사이즈 측정) 연동 — 사이즈 불안 해소. 반품률 감소 직결</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">마르디메크르디 입점 당일 1.5억원 사례 — K-패션 브랜드 파워 검증</span></div>
+          </div>
+        </div>
+        <div class="card" style="padding:15px">
+          <div class="ct" spellcheck="false">📋 ZOZOTOWN 입점 프로세스</div>
+          <div class="tlist" style="margin-top:8px">
+            <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>입점 신청(2026년 12월 착수)</em> → 심사 2~3개월 → 계약 → 상품 등록 → 오픈 <span class="tag tag-warn">리드타임 주의</span></span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">심사 포인트: ① 브랜드 인지도(Qoo10 리뷰 수·평점) ② SNS 팔로워 ③ 상품 퀄리티 사진</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">수수료 구조: 판매 수수료 20~30% + 물류비. FBA 재고와 별도 ZOZO 전용 재고 필요</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">오픈 타이밍: 2027년 5월 — 팝업 화제성 + SNS 바이럴 정점 시점과 일치</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <div class="tgroup-label">백화점 입점 전략 — 프리미엄 브랜드 포지셔닝</div>
+      <div class="g2">
+        <div class="card" style="padding:15px">
+          <div class="ct" spellcheck="false">🏢 타겟 백화점 우선순위</div>
+          <div class="tlist" style="margin-top:8px">
+            <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>이세탄 신주쿠(伊勢丹 新宿)</em> — 일본 최고 권위. K-패션·라이프스타일 매장 확대 중. 팝업 실적 기반 입점 상담 가능 <span class="tag tag-key">최우선</span></span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>한큐 우메다(阪急 梅田)</em> — 오사카 거점. 관서 지역 여성 패션 중심. 이세탄 이후 2차 타겟</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>마쓰야 긴자(松屋 銀座)</em> — 편집숍 형태 K-패션 코너. 입점 문턱 상대적으로 낮음. 단독 매장 전 테스트 채널</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>다이마루 도쿄(大丸 東京)</em> — 도쿄역 위치. 유동인구 多. 애슬레저·스포츠웨어 섹션 운영</span></div>
+          </div>
+        </div>
+        <div class="card" style="padding:15px">
+          <div class="ct" spellcheck="false">📋 백화점 입점 프로세스</div>
+          <div class="tlist" style="margin-top:8px">
+            <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false"><em>팝업 성과가 입점 레퍼런스</em> — 팝업 기간 매출액·방문자수·미디어 게재 이력을 입점 제안서에 첨부 <span class="tag tag-warn">핵심 조건</span></span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">접촉 경로: ① 백화점 바이어 직접 미팅 ② 현지 어패럴 에이전시 연계 ③ KOTRA 일본 지사 지원</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">입점 형태: 팝업인숍(Pop-up in Shop) 2~4주 → 성과 검증 → 상설 매장 전환 순서 권장</span></div>
+            <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">수수료: 위탁 판매 기준 30~40%. 재고 리스크 최소화 위해 초기 소수 SKU 집중</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <div class="tgroup-label">유통 확장 타임라인</div>
+      <div class="card" style="padding:0;overflow:hidden">
+        <table>
+          <thead><tr><th spellcheck="false">시기</th><th spellcheck="false">액션</th><th spellcheck="false">채널</th><th spellcheck="false">비고</th></tr></thead>
+          <tbody>
+            <tr><td spellcheck="false"><strong>2026년 12월</strong></td><td spellcheck="false">ZOZOTOWN 입점 신청 · 심사 서류 제출</td><td spellcheck="false"><span class="bd bd-b">ZOZO</span></td><td spellcheck="false">Qoo10 리뷰·SNS 데이터 첨부</td></tr>
+            <tr><td spellcheck="false"><strong>2027년 1~2월</strong></td><td spellcheck="false">이세탄 바이어 미팅 · 팝업 제안서 발송</td><td spellcheck="false"><span class="bd bd-p">백화점</span></td><td spellcheck="false">팝업 시공 확정 후 진행</td></tr>
+            <tr><td spellcheck="false"><strong>2027년 3월</strong></td><td spellcheck="false">ZOZOTOWN 계약·상품 등록 · 오픈 준비</td><td spellcheck="false"><span class="bd bd-b">ZOZO</span></td><td spellcheck="false">ZOZO 전용 재고 입고</td></tr>
+            <tr><td spellcheck="false"><strong>2027년 4월</strong></td><td spellcheck="false">팝업 OPEN — 입점 레퍼런스 본격 확보</td><td spellcheck="false"><span class="bd bd-r">팝업</span></td><td spellcheck="false">미디어·방문자 수 집계</td></tr>
+            <tr><td spellcheck="false"><strong>2027년 5월</strong></td><td spellcheck="false">ZOZOTOWN 정식 오픈 · SNS 동시 바이럴</td><td spellcheck="false"><span class="bd bd-b">ZOZO</span></td><td spellcheck="false">오픈 당일 1,000만원+ 목표</td></tr>
+            <tr><td spellcheck="false"><strong>2027년 6월</strong></td><td spellcheck="false">백화점 팝업인숍 입점 협의 확정</td><td spellcheck="false"><span class="bd bd-p">백화점</span></td><td spellcheck="false">이세탄 or 마쓰야 긴자</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <div class="tgroup-label">LINE CRM 재구매 전환</div>
+      <div class="tlist">
+        <div class="titem key"><span class="tdash">—</span><span class="ttext" spellcheck="false">팝업 방문자 LINE 등록 유도 — 재구매 전환 캠페인. 회원 전용 선공개·한정 이벤트 <span class="tag tag-key">핵심</span></span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">ZOZOTOWN·아마존·Qoo10 재구매 고객 분리 관리 — LINE + 각 플랫폼 쿠폰 조합</span></div>
+        <div class="titem"><span class="tdash">—</span><span class="ttext" spellcheck="false">백화점 입점 시 오프라인 LINE 등록 이벤트 병행 — QR코드 설치·즉시 쿠폰 지급</span></div>
+      </div>
+    </div>
+
+    <div class="ins ins-g" style="margin-top:12px" spellcheck="false"><b>유통 확장 시너지:</b> ZOZOTOWN 입점 → 브랜드 신뢰도 ↑ → 백화점 바이어 어프로치 용이. 팝업 실적 → ZOZO·백화점 레퍼런스 → 차기 앰버서더 협상력 ↑. 온·오프·EC 전 채널 동시 가동 시 월 1억원 목표 달성 가능.</div>
+
+</div></section>
+
+<!-- ===== 업무 분장 ===== -->
+<section class="phase-view active" id="view-role" style="--phase-c:#D97706">
+  <div class="chap">
+    <div class="chap-num" style="background:#D97706" spellcheck="false">업무 분장</div>
+    <div class="chap-info">
+      <div class="chap-title" spellcheck="false">콘치웨어 / 스토어링크 역할 분담</div>
+      <div class="chap-sub" spellcheck="false">항목별 담당 주체 선택</div>
+    </div>
+  </div>
+
+  <!-- 스토어링크 제공 서비스 배너 -->
+  <div class="sec">
+    <div class="slabel" spellcheck="false">스토어링크 제공 가능 서비스</div>
+    <div class="sl-service-grid">
+      <div class="sl-service-card">
+        <div class="sl-service-icon">🛒</div>
+        <div class="sl-service-name" spellcheck="false">일본 EC몰<br>구매 체험단 운영</div>
+        <span class="sl-service-type type-direct" spellcheck="false">직접 제공</span>
+      </div>
+      <div class="sl-service-card">
+        <div class="sl-service-icon">📱</div>
+        <div class="sl-service-name" spellcheck="false">팔로워 1만 미만<br>나노 인플루언서 시딩</div>
+        <span class="sl-service-type type-direct" spellcheck="false">직접 제공</span>
+      </div>
+      <div class="sl-service-card">
+        <div class="sl-service-icon">🏪</div>
+        <div class="sl-service-name" spellcheck="false">일본 오프라인<br>방문 체험단 운영</div>
+        <span class="sl-service-type type-direct" spellcheck="false">직접 제공</span>
+      </div>
+      <div class="sl-service-card">
+        <div class="sl-service-icon">🏥</div>
+        <div class="sl-service-name" spellcheck="false">후생노동성<br>인증 지원</div>
+        <span class="sl-service-type type-partner" spellcheck="false">협력업체 연계</span>
+      </div>
+      <div class="sl-service-card">
+        <div class="sl-service-icon">📦</div>
+        <div class="sl-service-name" spellcheck="false">일본 3PL·물류<br>풀필먼트 연계</div>
+        <span class="sl-service-type type-partner" spellcheck="false">협력업체 연계</span>
+      </div>
+    </div>
+    <div class="support-banner">
+      <div class="support-card blue">
+        <div class="support-icon">🏥</div>
+        <div>
+          <div class="support-title" spellcheck="false">후생노동성 인증 지원 가능</div>
+          <div class="support-desc" spellcheck="false">일본 의약외품·화장품 관련 후생노동성 인증이 필요한 경우 협력업체를 통해 진행 지원이 가능합니다. 레깅스 제품 특성상 직접 해당되지 않을 수 있으나, 기능성 소재·착압 관련 표기 시 참고 가능합니다.</div>
+        </div>
+      </div>
+      <div class="support-card green">
+        <div class="support-icon">📦</div>
+        <div>
+          <div class="support-title" spellcheck="false">일본 3PL·풀필먼트 연계 지원 가능</div>
+          <div class="support-desc" spellcheck="false">일본 현지 3PL 협력업체와의 연계를 통해 물류·풀필먼트 설정을 지원합니다. FBA 입고 전 현지 창고 활용, 배송 리드타임 단축 등 초기 물류 인프라 구축에 활용 가능합니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="ins ins-a" style="margin-top:0;margin-bottom:14px" spellcheck="false">콘치웨어와 스토어링크의 업무 항목별로 역할을 협의합니다.</div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <table class="role-table">
+        <thead>
+          <tr>
+            <th style="width:60px" spellcheck="false">구분</th>
+            <th style="width:180px" spellcheck="false">업무 항목</th>
+            <th style="width:90px" class="c" spellcheck="false">담당</th>
+            <th spellcheck="false">세부 내용</th>
+            <th style="width:170px" spellcheck="false">메모</th>
+          </tr>
+        </thead>
+        <tbody id="roleTableBody"><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">전략·기획</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">1</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">일본 진출 전략 수립</div><div class="task-sub" spellcheck="false">로드맵·채널 전략·예산</div></td>
+      <td class="c" spellcheck="false"><select class="role-select shared" data-idx="0" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared" selected="">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">Qoo10·아마존·SNS 바이럴 전략 전반</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="0" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">2</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">월별 KPI 설정 및 리뷰</div><div class="task-sub" spellcheck="false">성과 지표 관리</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="1" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">월간 매출·리뷰 수·팔로워·광고 ROAS</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="1" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">플랫폼 운영</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">3</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">Qoo10 스토어 운영</div><div class="task-sub" spellcheck="false">상품 등록·CS·타임세일</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="2" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">현지화 및 최적화, 메가와리 대응 포함</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="2" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">4</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">아마존 재팬 FBA 입점·운영</div><div class="task-sub" spellcheck="false">리스팅·재고·광고</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="3" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">브랜드 등록·상품 최적화 및 등록·FBA관리·광고 세팅</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="3" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">콘텐츠</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">5</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">SNS 계정 활성화</div><div class="task-sub" spellcheck="false">인스타·X·틱톡 콘텐츠 제작</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="4" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">활성화를 위한 콘텐츠 지속 업로드.</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="4" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">6</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">일본어 상세페이지 작성</div><div class="task-sub" spellcheck="false">번역·현지화 재창작</div></td>
+      <td class="c" spellcheck="false"><select class="role-select shared" data-idx="5" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared" selected="">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">일본 소비자 고려한 상세페이지 현지화 제작</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="5" onchange="onMemo(this)" placeholder="메모...">스토어링크 진행 가능</textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">7</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">A+ 페이지·크리에이티브</div><div class="task-sub" spellcheck="false">아마존 A+ / 광고 소재</div></td>
+      <td class="c" spellcheck="false"><select class="role-select shared" data-idx="6" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared" selected="">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">착용 전후 비교·사이즈 차트 등 주요 소구점 반영</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="6" onchange="onMemo(this)" placeholder="메모...">스토어링크 진행 가능</textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">체험단·리뷰 (포인테일)</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">8</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">EC 구매 체험단 운영</div><div class="task-sub" spellcheck="false">Qoo10·아마존 구매+리뷰</div></td>
+      <td class="c" spellcheck="false"><select class="role-select sl" data-idx="7" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl" selected="">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">포인테일 연계. 하반기 목표 500건+</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="7" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">9</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">나노 인플루언서 시딩</div><div class="task-sub" spellcheck="false">팔로워 1만 미만, SNS 포스팅</div></td>
+      <td class="c" spellcheck="false"><select class="role-select sl" data-idx="8" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl" selected="">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">포인테일 연계. 월 50~100건.&nbsp;</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="8" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">10</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">오프라인 방문 체험단</div><div class="task-sub" spellcheck="false">팝업 스토어 현장 체험단</div></td>
+      <td class="c" spellcheck="false"><select class="role-select sl" data-idx="9" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl" selected="">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">포인테일 오프라인 서비스. 팜업 연계</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="9" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">11</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">인플루언서 비딩 (D항)</div><div class="task-sub" spellcheck="false">마이크로급 입찰 방식 섭외</div></td>
+      <td class="c" spellcheck="false"><select class="role-select sl" data-idx="10" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl" selected="">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">포인테일 연계. 상반기 스텝업 단계</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="10" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">인플루언서·광고</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">12</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">나노→마이크로 스텝업 협의</div><div class="task-sub" spellcheck="false">1만~5만 장기 파트너십</div></td>
+      <td class="c" spellcheck="false"><select class="role-select shared" data-idx="11" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared" selected="">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">하반기 성과 기반 27년 상반기 진행</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="11" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">13</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">Meta Ads 운영</div><div class="task-sub" spellcheck="false">파트너십 광고·유사타겟</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="12" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">시딩 UGC 2차 적극 활용. CTR 5~11% 목표</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="12" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">14</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">Amazon Sponsored 광고</div><div class="task-sub" spellcheck="false">Sponsored Products·Brands</div></td>
+      <td class="c" spellcheck="false"><select class="role-select sl" data-idx="13" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl" selected="">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">캠페인 전략 구축·키워드 타겟팅·광고 최적화</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="13" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">물류·CS</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">15</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">3PL 협력사 선정·계약</div><div class="task-sub" spellcheck="false">현지 배송 인프라 구축</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="14" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">스토어링크 협력업체 연계 가능.</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="14" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">16</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">FBA 재고 관리</div><div class="task-sub" spellcheck="false">FBA 입고·재고 산정</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="15" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">메가와리·블프 시즌 등 주요 시즌 재고 확보</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="15" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">17</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">CS 대응 체계 구축</div><div class="task-sub" spellcheck="false">일본어 응대 프로세스</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="16" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">일본 현지 소비자에 적합한 CS 체계 구축 필요</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="16" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">오프라인·PR</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">18</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">팝업 스토어 기획·섭외</div><div class="task-sub" spellcheck="false">시부야 PARCO 장소 협의</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="17" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">2027년 봄 오픈 목표</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="17" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">19</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">팝업 시공·인테리어</div><div class="task-sub" spellcheck="false">현지 시공사 관리</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="18" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">피트니스 클래스 공간·포토존</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="18" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">20</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">프레스데이·미디어 초청</div><div class="task-sub" spellcheck="false">현지 PR 대행사 연계</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="19" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">WWD Japan 등 10건+ 목표</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="19" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">기타 지원</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">21</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">후생노동성 인증 지원</div><div class="task-sub" spellcheck="false">협력업체 연계</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="20" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">스토어링크 협력업체. 기능성 소재 표기 시 필요</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="20" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px" spellcheck="false">CRM</td></tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">22</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">LINE 공식 계정 운영</div><div class="task-sub" spellcheck="false">재구매 전환 캠페인</div></td>
+      <td class="c" spellcheck="false"><select class="role-select brand" data-idx="21" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand" selected="">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">주요 CRM 매체</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="21" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr><tr>
+      <td style="font-size:10px;color:var(--txt-muted)" spellcheck="false">23</td>
+      <td spellcheck="false"><div class="task-name" spellcheck="false">앰버서더 계약 협의</div><div class="task-sub" spellcheck="false">RS 매출 연동 계약</div></td>
+      <td class="c" spellcheck="false"><select class="role-select shared" data-idx="22" onchange="onOwner(this)">
+        <option value="">— 미정 —</option>
+        <option value="brand">콘치웨어</option>
+        <option value="sl">스토어링크</option>
+        <option value="shared" selected="">공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)" spellcheck="false">기획사 직접 계약. 2027년 상반기</td>
+      <td spellcheck="false"><textarea class="role-memo" data-idx="22" onchange="onMemo(this)" placeholder="메모..."></textarea></td>
+    </tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer class="footer">
+  <div class="footer-logo">storelink<span class="dot">.</span></div>
+  <div class="footer-meta" spellcheck="false">콘치웨어 · Amazon Japan &amp; Qoo10 진출 로드맵 · 2026.07~2027.06 · 포인테일 서비스 연계</div>
+  <div class="footer-copy" spellcheck="false">© Storelink. All rights reserved.</div>
+</footer>
+
+<script>
+const sidebarData = {
+  sum:  { eyebrow:'전체 요약', items:['매출 목표 (하반기/상반기)','실행 단계 요약','시장 전제 & 현황','핵심 인사이트'] },
+  media:{ eyebrow:'미디어믹스', items:['포인테일 체험단 서비스','체험단 강화 플랜','12개월 채널 타임라인','예산 배분 개요','SNS 재활성화 전략'] },
+  h1:   { eyebrow:'2026 하반기 07~12월', items:['① 기반 구축·SNS 재활성화','② 체험단·리뷰 강화','③ SNS 바이럴'], kpis:['현실 ¥35M~¥45M','도전 ¥70M~¥90M','예산 50,750,000원','리뷰 목표 960건+'] },
+  h2:   { eyebrow:'2027 상반기 01~06월', items:['① 하츠우리·메가와리','② 팝업 스토어','③ PR·미디어','④ 유통 확장·CRM'], kpis:['현실 ¥80M~¥100M','도전 ¥140M~¥180M','예산 67,500,000원+α'] },
+  role: { eyebrow:'업무 분장', items:['스토어링크 제공 서비스','후생노동성 인증 지원','3PL 물류 연계 지원','업무 항목별 담당 분장'] }
+};
+const phaseColors = { sum:'#2563EB', media:'#EC4899', h1:'#FF4444', h2:'#059669', role:'#D97706' };
+const phaseBgs    = { sum:'#EFF6FF', media:'#FDF2F8', h1:'#FFF2F2', h2:'#ECFDF5', role:'#FFFBEB' };
+
+function renderSidebar(phase){
+  const d=sidebarData[phase], color=phaseColors[phase], bg=phaseBgs[phase];
+  let html=`<div class="sidebar-section"><div class="sidebar-eyebrow">${d.eyebrow}</div>`;
+  d.items.forEach(i=>{ html+=`<div class="sidebar-item" style="--phase-c:${color};--phase-bg:${bg}"><div class="nav-dot" style="background:${color}"></div>${i}</div>`; });
+  html+='</div>';
+  if(d.kpis){
+    html+=`<div class="sidebar-section"><div class="sidebar-eyebrow">KPI 목표</div>`;
+    d.kpis.forEach(k=>{ html+=`<div class="kpi-mini"><div class="kpi-mini-label">목표</div><div class="kpi-mini-val" style="color:${color}">${k}</div></div>`; });
+    html+='</div>';
+  }
+  document.getElementById('sidebar').innerHTML=html;
+}
+
+function switchPhase(phase,el){
+  document.querySelectorAll('.phase-view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.tl-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('view-'+phase).classList.add('active');
+  el.classList.add('active');
+  renderSidebar(phase);
+  window.scrollTo({top:document.querySelector('.timeline-nav').offsetTop-52,behavior:'smooth'});
+}
+
+function switchTab(phase,tab,el){
+  document.getElementById('tabs-'+phase).querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  ['base','review','tiktok','ad','logistics','sns','hatsuri','popup','pr','live','expand'].forEach(id=>{
+    const e=document.getElementById(phase+'-'+id); if(e) e.classList.remove('active');
+  });
+  const t=document.getElementById(phase+'-'+tab); if(t) t.classList.add('active');
+}
+
+// 업무분장
+const roleItems=[
+  {cat:'전략·기획', task:'일본 진출 전략 수립', sub:'로드맵·채널 전략·예산', detail:'Qoo10·아마존·SNS 바이럴 전략 전반'},
+  {cat:'전략·기획', task:'월별 KPI 설정 및 리뷰', sub:'성과 지표 관리', detail:'월간 매출·리뷰 수·팔로워·광고 ROAS'},
+  {cat:'플랫폼 운영', task:'Qoo10 스토어 운영', sub:'상품 등록·CS·타임세일', detail:'현지화 재작성, 메가와리 대응 포함'},
+  {cat:'플랫폼 운영', task:'아마존 재팬 FBA 입점·운영', sub:'리스팅·재고·광고', detail:'브랜드 등록·Vine·Sponsored Products'},
+  {cat:'콘텐츠', task:'SNS 계정 재활성화', sub:'인스타·X·틱톡 콘텐츠 제작', detail:'재오픈 선제작 10개+ 포함. 7월 착수'},
+  {cat:'콘텐츠', task:'일본어 상세페이지 작성', sub:'번역·현지화 재창작', detail:'美脚·ヒップアップ 키워드 중심'},
+  {cat:'콘텐츠', task:'A+ 페이지·크리에이티브', sub:'아마존 A+ / 광고 소재', detail:'착용 전후 비교·사이즈 차트'},
+  {cat:'체험단·리뷰 (포인테일)', task:'EC 구매 체험단 운영', sub:'Qoo10·아마존 구매+리뷰', detail:'포인테일 A·B항. 하반기 목표 500건+'},
+  {cat:'체험단·리뷰 (포인테일)', task:'나노 인플루언서 시딩', sub:'팔로워 1만 미만, SNS 포스팅', detail:'포인테일 C항. 월 50~200건. 7월 착수'},
+  {cat:'체험단·리뷰 (포인테일)', task:'오프라인 방문 체험단', sub:'팝업 스토어 현장 체험단', detail:'포인테일 오프라인 서비스. 2027년 4~5월'},
+  {cat:'체험단·리뷰 (포인테일)', task:'인플루언서 비딩 (D항)', sub:'마이크로급 입찰 방식 섭외', detail:'포인테일 D항. 상반기 스텝업 단계'},
+  {cat:'인플루언서·광고', task:'나노→마이크로 스텝업 협의', sub:'1만~5만 장기 파트너십', detail:'하반기 성과 기반 27년 상반기 진행'},
+  {cat:'인플루언서·광고', task:'Meta Ads 운영', sub:'파트너십 광고·유사타겟', detail:'시딩 UGC 2차 활용. CTR 5~11% 목표'},
+  {cat:'인플루언서·광고', task:'Amazon SP·SB 광고', sub:'Sponsored Products·Brands', detail:'키워드 타겟팅·Deal 신청'},
+  {cat:'물류·CS', task:'3PL 협력사 선정·계약', sub:'현지 배송 인프라 구축', detail:'스토어링크 협력업체 연계 가능. 리드타임 3일'},
+  {cat:'물류·CS', task:'FBA 재고 관리', sub:'FBA 입고·재고 산정', detail:'메가와리·블프 시즌 버퍼 재고'},
+  {cat:'물류·CS', task:'CS 대응 체계 구축', sub:'일본어 응대 프로세스', detail:'번역 툴 + 표준 템플릿'},
+  {cat:'오프라인·PR', task:'팝업 스토어 기획·섭외', sub:'시부야 PARCO 장소 협의', detail:'2027년 봄 오픈 목표'},
+  {cat:'오프라인·PR', task:'팝업 시공·인테리어', sub:'현지 시공사 관리', detail:'피트니스 클래스 공간·포토존'},
+  {cat:'오프라인·PR', task:'프레스데이·미디어 초청', sub:'현지 PR 대행사 연계', detail:'WWD Japan 등 10건+ 목표'},
+  {cat:'기타 지원', task:'후생노동성 인증 지원', sub:'협력업체 연계', detail:'스토어링크 협력업체. 기능성 소재 표기 시 필요'},
+  {cat:'CRM', task:'LINE 공식 계정 운영', sub:'재구매 전환 캠페인', detail:'팝업 방문자 등록 유도'},
+  {cat:'CRM', task:'앰버서더 계약 협의', sub:'RS 매출 연동 계약', detail:'기획사 직접 계약. 2027년 상반기'},
+];
+
+const STORAGE_KEY='conchwear_role_v3';
+function loadData(){ try{return JSON.parse(localStorage.getItem(STORAGE_KEY))||{};}catch(e){return{};} }
+function saveData(d){ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(d));}catch(e){} }
+function getCls(v){ return v==='sl'?'sl':v==='brand'?'brand':v==='shared'?'shared':''; }
+
+function buildTable(){
+  const saved=loadData(); const tbody=document.getElementById('roleTableBody');
+  let lastCat=''; let html='';
+  roleItems.forEach((item,i)=>{
+    const s=saved[i]||{}; const sv=s.owner||''; const memo=s.memo||'';
+    if(item.cat!==lastCat){
+      html+=`<tr><td colspan="5" style="background:var(--bg-gray);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt-muted);padding:7px 14px">${item.cat}</td></tr>`;
+      lastCat=item.cat;
+    }
+    html+=`<tr>
+      <td style="font-size:10px;color:var(--txt-muted)">${i+1}</td>
+      <td><div class="task-name">${item.task}</div><div class="task-sub">${item.sub}</div></td>
+      <td class="c"><select class="role-select ${getCls(sv)}" data-idx="${i}" onchange="onOwner(this)">
+        <option value="" ${!sv?'selected':''}>— 미정 —</option>
+        <option value="brand" ${sv==='brand'?'selected':''}>콘치웨어</option>
+        <option value="sl" ${sv==='sl'?'selected':''}>스토어링크</option>
+        <option value="shared" ${sv==='shared'?'selected':''}>공동</option>
+      </select></td>
+      <td style="font-size:11px;color:var(--txt-sub)">${item.detail}</td>
+      <td><textarea class="role-memo" data-idx="${i}" onchange="onMemo(this)" placeholder="메모...">${memo}</textarea></td>
+    </tr>`;
+  });
+  tbody.innerHTML=html;
+}
+
+function onOwner(sel){
+  sel.className='role-select '+getCls(sel.value);
+  const d=loadData(); if(!d[sel.dataset.idx])d[sel.dataset.idx]={};
+  d[sel.dataset.idx].owner=sel.value; saveData(d);
+}
+function onMemo(ta){
+  const d=loadData(); if(!d[ta.dataset.idx])d[ta.dataset.idx]={};
+  d[ta.dataset.idx].memo=ta.value; saveData(d);
+}
+
+
+/* ===== INLINE EDIT LOGIC ===== */
+let editMode = false;
+
+// 편집 가능한 텍스트 요소 선택자
+const EDITABLE_SELECTORS = [
+  '.chap-title','.chap-sub','.chap-period',
+  '.hero-title','.hero-desc',
+  '.gnav-logo','.gnav-sub',
+  '.sum-phase','.sum-title','.sum-items','.sum-kpi',
+  '.kpi-l','.kpi-v','.kpi-s',
+  '.ttext','.ins','.ins-card-title','.ins-card-body',
+  '.ct','.slabel',
+  '.ctx-title',
+  '.pt-card-name','.pt-card-cond','.pt-card-price','.pt-card-desc','.pt-card-label',
+  '.pink-box',
+  '.warn-box','.notice-box','.amz-box','.red-box',
+  '.notice-box',
+  '.season-band',
+  '.mm-bar',
+  '.kpi-mini-val',
+  '.chap-num',
+  '.hero-stat-box-label','.hero-stat-period',
+  '.hero-stat-end-val','.hero-stat-end-label',
+  '.footer-meta','.footer-copy',
+  'th','td',
+  '.titem .ttext',
+  '.decision-item',
+  '.support-title','.support-desc',
+  '.sl-service-name','.sl-service-type',
+  '.task-name','.task-sub',
+  'h1','h2','h3','p',
+  '.ins-card-icon'
+];
+
+function toggleEdit(){
+  editMode = !editMode;
+  const btn = document.getElementById('btn-toggle');
+  const exportBtn = document.getElementById('btn-export');
+  const hint = document.getElementById('edit-hint');
+
+  if(editMode){
+    // 편집 가능하게 설정
+    EDITABLE_SELECTORS.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        // role-select, role-memo, input 등은 건드리지 않음
+        if(el.tagName === 'SELECT' || el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+        el.setAttribute('contenteditable','true');
+        el.setAttribute('spellcheck','false');
+      });
+    });
+    document.body.classList.add('edit-mode');
+    btn.classList.add('on');
+    btn.textContent = '✏️ 편집 종료';
+    exportBtn.style.display = 'flex';
+    hint.classList.add('show');
+    setTimeout(()=>hint.classList.remove('show'), 3000);
+  } else {
+    // 편집 불가로 되돌리기
+    document.querySelectorAll('[contenteditable]').forEach(el=>{
+      el.removeAttribute('contenteditable');
+    });
+    document.body.classList.remove('edit-mode');
+    btn.classList.remove('on');
+    btn.textContent = '✏️ 편집 모드';
+  }
+}
+
+function exportHTML(){
+  // 편집 상태에서 내보내기 시 contenteditable 속성 제거한 클린 버전 생성
+  const clone = document.documentElement.cloneNode(true);
+
+  // clone에서 contenteditable 제거
+  clone.querySelectorAll('[contenteditable]').forEach(el=>{
+    el.removeAttribute('contenteditable');
+  });
+  // edit-mode 클래스 제거
+  clone.querySelector('body').classList.remove('edit-mode');
+  // edit FAB 제거
+  const fab = clone.querySelector('#edit-fab');
+  if(fab) fab.remove();
+  const hint2 = clone.querySelector('#edit-hint');
+  if(hint2) hint2.remove();
+  // 내보내기 버튼 '저장' → '편집 모드' 원래대로 (이미 FAB 제거했으므로 불필요)
+
+  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
+  const blob = new Blob([html], {type:'text/html;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'conchwear_japan_roadmap_edited.html';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},1000);
+}
+
+renderSidebar('sum');
+buildTable();
+</script>
+
+
+</body></html>
