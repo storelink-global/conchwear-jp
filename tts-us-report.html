@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Shop — 스포츠웨어 레깅스 카테고리 분석</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal: #1D9E75; --teal-dark: #0F6E56; --teal-light: #E1F5EE;
+    --navy: #1B2E4B; --blue: #185FA5; --blue-light: #E6F1FB;
+    --purple: #534AB7; --purple-light: #EEEDFE;
+    --amber: #BA7517; --amber-light: #FAEEDA;
+    --coral: #D85A30; --coral-light: #FAECE7;
+    --pink: #C0386E; --pink-light: #FCEEF4;
+    --gray-50: #F8F9FA; --gray-100: #F1F2F4; --gray-300: #CBD0D8;
+    --gray-500: #6B7280; --gray-700: #374151; --black: #111827; --white: #fff;
+    --ff: 'DM Sans', 'Noto Sans KR', sans-serif;
+    --radius: 10px; --shadow: 0 2px 12px rgba(0,0,0,.07);
+  }
+  body { font-family: var(--ff); background: var(--gray-50); color: var(--black); padding: 32px 24px; max-width: 1100px; margin: 0 auto; }
+
+  /* Storelink Top Bar */
+  .sl-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 2px solid var(--navy); }
+  .sl-logo { font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: -0.03em; }
+  .sl-logo span { color: var(--blue); }
+  .sl-tag { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); background: var(--gray-100); border-radius: 20px; padding: 4px 10px; }
+
+  /* Header */
+  .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+  .page-header { font-size: 30px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.25; }
+  .page-sub { font-size: 13px; color: var(--gray-500); margin-bottom: 32px; }
+
+  /* Chapter badges */
+  .chap { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border-radius: var(--radius); margin-bottom: 20px; }
+  .ch1 { background: var(--blue-light); border: 1px solid #85B7EB; }
+  .ch2 { background: #E8EDF4; border: 1px solid #8FA4C2; }
+  .ch3 { background: var(--purple-light); border: 1px solid #AFA9EC; }
+  .ch4 { background: var(--teal-light); border: 1px solid #5DCAA5; }
+  .chap-num { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .c1 { background: var(--blue); } .c2 { background: var(--navy); } .c3 { background: var(--purple); } .c4 { background: var(--teal); }
+  .chap-title { font-size: 17px; font-weight: 700; color: var(--navy); }
+  .chap-sub { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
+
+  /* Section */
+  .sec { margin-bottom: 28px; }
+  .st { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); padding-bottom: 8px; margin-bottom: 14px; border-bottom: 1px solid var(--gray-300); }
+
+  /* Cards */
+  .card { background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+
+  /* Grids */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 14px; }
+  .g6 { display: grid; grid-template-columns: repeat(6,1fr); gap: 10px; margin-bottom: 14px; }
+
+  /* KPI tiles */
+  .kpi { background: var(--gray-50); border-radius: 8px; padding: 12px 14px; border-top: 3px solid; }
+  .kpi-l { font-size: 10px; color: var(--gray-500); margin-bottom: 3px; line-height: 1.4; }
+  .kpi-v { font-size: 24px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+  .kpi-s { font-size: 10px; color: var(--gray-500); margin-top: 3px; line-height: 1.4; }
+
+  /* Badges */
+  .bd { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+  .bt { background: var(--teal-light); color: var(--teal-dark); }
+  .bp { background: var(--purple-light); color: var(--purple); }
+  .ba { background: var(--amber-light); color: var(--amber); }
+  .bc { background: var(--coral-light); color: var(--coral); }
+  .bg { background: var(--gray-100); color: var(--gray-700); }
+  .bb { background: var(--blue-light); color: var(--blue); }
+  .bpk { background: var(--pink-light); color: var(--pink); }
+
+  /* Bar rows */
+  .bw { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .bl { font-size: 11px; color: var(--gray-700); min-width: 150px; flex-shrink: 0; }
+  .bo { flex: 1; background: var(--gray-100); border-radius: 3px; height: 8px; overflow: hidden; }
+  .bi { height: 100%; border-radius: 3px; }
+  .bv { font-size: 11px; color: var(--gray-500); min-width: 80px; text-align: right; white-space: nowrap; }
+
+  /* Insight / callout */
+  .ins { font-size: 11px; line-height: 1.7; color: var(--teal-dark); background: var(--teal-light); border-left: 3px solid var(--teal); border-radius: 0 6px 6px 0; padding: 9px 13px; margin-top: 10px; }
+  .ins-blue { font-size: 11px; line-height: 1.7; color: var(--blue); background: var(--blue-light); border-left: 3px solid var(--blue); border-radius: 0 6px 6px 0; padding: 9px 13px; margin-top: 10px; }
+  .ins-amber { font-size: 11px; line-height: 1.7; color: var(--amber); background: var(--amber-light); border-left: 3px solid var(--amber); border-radius: 0 6px 6px 0; padding: 9px 13px; margin-top: 10px; }
+  .ins-purple { font-size: 11px; line-height: 1.7; color: var(--purple); background: var(--purple-light); border-left: 3px solid var(--purple); border-radius: 0 6px 6px 0; padding: 9px 13px; margin-top: 10px; }
+
+  /* Table */
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { font-size: 10px; font-weight: 600; color: var(--white); text-align: left; padding: 8px 10px; background: var(--navy); }
+  th.r { text-align: right; }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--gray-100); color: var(--black); vertical-align: middle; }
+  td.r { text-align: right; white-space: nowrap; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: var(--gray-50); }
+
+  /* Divider */
+  .dv { height: 1px; background: var(--gray-100); margin: 8px 0; }
+
+  /* Keyword pill grid */
+  .kw-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .kw-pill { display: flex; align-items: center; gap: 6px; background: var(--gray-50); border: 1px solid var(--gray-300); border-radius: 20px; padding: 4px 12px 4px 8px; }
+  .kw-bar-outer { width: 60px; height: 5px; background: var(--gray-100); border-radius: 3px; overflow: hidden; }
+  .kw-bar-inner { height: 100%; border-radius: 3px; }
+  .kw-label { font-size: 11px; font-weight: 600; color: var(--navy); }
+  .kw-pct { font-size: 10px; color: var(--gray-500); }
+
+  /* Product type cards */
+  .type-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 10px; }
+  .type-card { border-radius: var(--radius); padding: 13px 14px; border: 1px solid var(--gray-300); background: var(--white); box-shadow: var(--shadow); }
+  .type-icon { font-size: 18px; margin-bottom: 6px; }
+  .type-name { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .type-rev { font-size: 20px; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 3px; }
+  .type-sub { font-size: 10px; color: var(--gray-500); line-height: 1.4; }
+  .type-bar { height: 4px; border-radius: 2px; margin-top: 8px; }
+
+  /* Brand rank */
+  .brand-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--gray-100); }
+  .brand-row:last-child { border-bottom: none; }
+  .brand-rank { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .brand-name { font-size: 12px; font-weight: 600; color: var(--navy); flex: 1; min-width: 100px; }
+  .brand-meta { font-size: 10px; color: var(--gray-500); }
+  .brand-rev { font-size: 13px; font-weight: 700; color: var(--navy); white-space: nowrap; }
+  .brand-subrev { font-size: 10px; color: var(--gray-500); white-space: nowrap; }
+
+  /* Price tier */
+  .tier-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .tier-label { font-size: 12px; font-weight: 600; color: var(--navy); min-width: 70px; }
+  .tier-bar-outer { flex: 1; background: var(--gray-100); border-radius: 4px; height: 10px; overflow: hidden; }
+  .tier-bar-inner { height: 100%; border-radius: 4px; }
+  .tier-meta { font-size: 11px; color: var(--gray-500); min-width: 150px; text-align: right; }
+
+  .footer-bar { background: var(--navy); border-radius: var(--radius); padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; color: var(--white); font-size: 11px; font-weight: 600; margin-top: 28px; }
+  .footer-logo { font-size: 14px; font-weight: 700; letter-spacing: -0.02em; }
+  .footer-logo span { color: #4fa3e8; }
+  .footer-copy { color: rgba(255,255,255,0.6); font-weight: 400; }
+
+  @media (max-width: 700px) {
+    .g4 { grid-template-columns: 1fr 1fr; }
+    .g6 { grid-template-columns: 1fr 1fr 1fr; }
+    .g2 { grid-template-columns: 1fr; }
+    .g3 { grid-template-columns: 1fr; }
+    .type-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sl-topbar">
+  <div class="sl-logo">Storelink<span>.</span></div>
+  <div class="sl-tag">Market Intelligence Report</div>
+</div>
+
+<div class="page-eyebrow">TikTok Shop US · 스토어링크 시장 분석</div>
+<div class="page-header">스포츠웨어 레깅스 카테고리 분석</div>
+<div class="page-sub">상품 3,000개 기준  ·  7일 판매량 / 매출 / 크리에이터 / 키워드 분석  ·  Analyzed by Storelink.</div>
+
+<!-- ① 카테고리 전체 현황 -->
+<div class="chap ch1">
+  <div class="chap-num c1">1</div>
+  <div>
+    <div class="chap-title">카테고리 전체 현황</div>
+    <div class="chap-sub">최근 7일 판매량 · 매출 · 누적 총매출 · 크리에이터 · 가격 · 커미션</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">핵심 성과 지표 — 전체 3,000 상품 기준</div>
+  <div class="g4">
+    <div class="kpi" style="border-color:var(--teal)">
+      <div class="kpi-l">7일 전체 판매량</div>
+      <div class="kpi-v">73,444</div>
+      <div class="kpi-s">상품당 평균 24.5개<br>최대 단품 3,662개 (BRXL)</div>
+    </div>
+    <div class="kpi" style="border-color:var(--blue)">
+      <div class="kpi-l">7일 전체 매출</div>
+      <div class="kpi-v">$2.16M</div>
+      <div class="kpi-s">상품당 평균 $719<br>최대 단품 $210K (BRXL)</div>
+    </div>
+    <div class="kpi" style="border-color:var(--purple)">
+      <div class="kpi-l">전체 총 누적 매출</div>
+      <div class="kpi-v">$235M</div>
+      <div class="kpi-s">상품당 평균 $78.5K<br>누적 최강 Halara US</div>
+    </div>
+    <div class="kpi" style="border-color:var(--amber)">
+      <div class="kpi-l">협업 크리에이터 수 평균</div>
+      <div class="kpi-v">90.2명</div>
+      <div class="kpi-s">최다 Halara US 14,515명<br>크리에이터 밀도 높음</div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="kpi" style="border-color:var(--coral)">
+      <div class="kpi-l">평균 판매가</div>
+      <div class="kpi-v">$24.37</div>
+      <div class="kpi-s">저가 $6~15 / 중가 $15~35 / 프리미엄 $35+<br>$25~35존이 7일 매출 최강 ($780K)</div>
+    </div>
+    <div class="kpi" style="border-color:var(--teal)">
+      <div class="kpi-l">평균 커미션 비율</div>
+      <div class="kpi-v">10.1%</div>
+      <div class="kpi-s">범위 1%~20%<br>대부분 8~12% 구간 집중</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">가격대별 7일 매출 분포</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">가격 구간 · 상품 수 · 7일 매출 합계</div>
+    <div class="tier-row">
+      <div class="tier-label">$0 – $15</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:23%;background:var(--gray-300)"></div></div>
+      <div class="tier-meta">1,181개 상품 · $182K (8.5%)</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">$15 – $25</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:30%;background:var(--blue)"></div></div>
+      <div class="tier-meta">695개 상품 · $236K (11.0%)</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">$25 – $35</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:100%;background:var(--teal)"></div></div>
+      <div class="tier-meta">549개 상품 · $781K (36.2%) ← <b>최강</b></div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">$35 – $50</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:74%;background:var(--purple)"></div></div>
+      <div class="tier-meta">356개 상품 · $577K (26.7%)</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">$50 이상</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:49%;background:var(--amber)"></div></div>
+      <div class="tier-meta">219개 상품 · $380K (17.6%)</div>
+    </div>
+    <div class="ins">$25~$35 구간이 7일 매출의 36%를 독식 — 가성비와 품질을 동시에 요구하는 소비자 심리 반영. $35~$50 프리미엄존도 전체의 27%로 건재. 실질 구매 중심가는 <b>$28~38</b> 구간.</div>
+  </div>
+</div>
+
+<!-- ② 브랜드별 매출 데이터 -->
+<div class="chap ch2" style="margin-top:32px">
+  <div class="chap-num c2">2</div>
+  <div>
+    <div class="chap-title">브랜드별 매출 데이터</div>
+    <div class="chap-sub">스토어 기준 Top 15 · 7일 매출 / 총매출 / 크리에이터 / 평균가 / 커미션</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">7일 매출 Top 5 브랜드 — 상세 비교</div>
+  <div class="g4" style="margin-bottom:14px">
+    <div class="kpi" style="border-color:var(--teal)">
+      <div class="kpi-l"><span class="bd bt">🥇 BRXL</span></div>
+      <div class="kpi-v">$332K</div>
+      <div class="kpi-s">7일 판매 6,405개<br>평균가 $39.2 · 커미션 6.9%<br>총매출 $8.6M · 크리에이터 251명</div>
+    </div>
+    <div class="kpi" style="border-color:var(--blue)">
+      <div class="kpi-l"><span class="bd bb">🥈 Halara US</span></div>
+      <div class="kpi-v">$314K</div>
+      <div class="kpi-s">7일 판매 9,247개<br>평균가 $48.8 · 커미션 10%<br>총매출 $80.1M · 크리에이터 864명</div>
+    </div>
+    <div class="kpi" style="border-color:var(--purple)">
+      <div class="kpi-l"><span class="bd bp">🥉 YEOREO</span></div>
+      <div class="kpi-v">$206K</div>
+      <div class="kpi-s">7일 판매 6,140개<br>평균가 $34.5 · 커미션 10%<br>총매출 $9.0M · 크리에이터 1,118명</div>
+    </div>
+    <div class="kpi" style="border-color:var(--amber)">
+      <div class="kpi-l"><span class="bd ba">4위 G4Free Store</span></div>
+      <div class="kpi-v">$155K</div>
+      <div class="kpi-s">7일 판매 3,986개<br>평균가 $37.2 · 커미션 10%<br>총매출 $11.5M · 크리에이터 2,741명</div>
+    </div>
+  </div>
+
+  <div class="sec" style="margin-bottom:0">
+    <div class="st">Top 15 브랜드 전체 비교표</div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>브랜드 (스토어)</th>
+            <th>상품수</th>
+            <th class="r">7일 판매량</th>
+            <th class="r">7일 매출</th>
+            <th class="r">총 누적 매출</th>
+            <th class="r">평균 크리에이터</th>
+            <th class="r">평균가</th>
+            <th class="r">커미션</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><b>BRXL</b> <span class="bd bc">신진</span></td><td>40</td><td class="r">6,405</td><td class="r">$332K</td><td class="r">$8.6M</td><td class="r">251</td><td class="r">$39.2</td><td class="r">6.9%</td></tr>
+          <tr><td>2</td><td><b>Halara US</b> <span class="bd bt">강자</span></td><td>51</td><td class="r">9,247</td><td class="r">$314K</td><td class="r">$80.1M</td><td class="r">864</td><td class="r">$48.8</td><td class="r">10%</td></tr>
+          <tr><td>3</td><td><b>YEOREO</b> <span class="bd bt">강자</span></td><td>10</td><td class="r">6,140</td><td class="r">$206K</td><td class="r">$9.0M</td><td class="r">1,118</td><td class="r">$34.5</td><td class="r">10%</td></tr>
+          <tr><td>4</td><td><b>G4Free Store</b> <span class="bd bt">강자</span></td><td>3</td><td class="r">3,986</td><td class="r">$155K</td><td class="r">$11.5M</td><td class="r">2,741</td><td class="r">$37.2</td><td class="r">10%</td></tr>
+          <tr><td>5</td><td><b>Halara Glam</b></td><td>43</td><td class="r">2,604</td><td class="r">$85K</td><td class="r">$1.1M</td><td class="r">20</td><td class="r">$38.1</td><td class="r">10%</td></tr>
+          <tr><td>6</td><td><b>Halara shop</b></td><td>14</td><td class="r">1,749</td><td class="r">$61K</td><td class="r">$18.7M</td><td class="r">776</td><td class="r">$43.8</td><td class="r">10%</td></tr>
+          <tr><td>7</td><td><b>YEOREO Shop</b></td><td>13</td><td class="r">1,636</td><td class="r">$47K</td><td class="r">$1.9M</td><td class="r">254</td><td class="r">$32.4</td><td class="r">10%</td></tr>
+          <tr><td>8</td><td><b>SHAPELLX</b></td><td>6</td><td class="r">895</td><td class="r">$45K</td><td class="r">$4.0M</td><td class="r">475</td><td class="r">$37.5</td><td class="r">8.5%</td></tr>
+          <tr><td>9</td><td><b>Comfrt</b></td><td>5</td><td class="r">1,007</td><td class="r">$43K</td><td class="r">$4.7M</td><td class="r">1,185</td><td class="r">$41.1</td><td class="r">10%</td></tr>
+          <tr><td>10</td><td><b>ChicCurve US</b> <span class="bd bpk">신진</span></td><td>1</td><td class="r">603</td><td class="r">$29K</td><td class="r">$1.1M</td><td class="r">641</td><td class="r">$48.2</td><td class="r">12%</td></tr>
+          <tr><td>11</td><td><b>hearuisavy</b></td><td>9</td><td class="r">1,388</td><td class="r">$27K</td><td class="r">$3.5M</td><td class="r">249</td><td class="r">$16.1</td><td class="r">8%</td></tr>
+          <tr><td>12</td><td><b>Kecols</b></td><td>3</td><td class="r">565</td><td class="r">$24K</td><td class="r">$2.8M</td><td class="r">1,248</td><td class="r">$42.0</td><td class="r">10%</td></tr>
+          <tr><td>13</td><td><b>Fanka</b></td><td>10</td><td class="r">309</td><td class="r">$24K</td><td class="r">$1.1M</td><td class="r">153</td><td class="r">$80.9</td><td class="r">11.2%</td></tr>
+          <tr><td>14</td><td><b>Colorfulkoala</b></td><td>6</td><td class="r">611</td><td class="r">$20K</td><td class="r">$805K</td><td class="r">418</td><td class="r">$34.8</td><td class="r">8.3%</td></tr>
+          <tr><td>15</td><td><b>Three cougars</b></td><td>10</td><td class="r">659</td><td class="r">$20K</td><td class="r">$104K</td><td class="r">11</td><td class="r">$29.3</td><td class="r">1.9%</td></tr>
+        </tbody>
+      </table>
+      <div class="ins-blue" style="margin-top:12px">Halara (US + Glam + shop 합산)는 총 누적 매출 <b>$99.8M</b>으로 압도적 1위. BRXL은 7일 매출 1위지만 누적 총매출은 상대적으로 낮아 <b>최근 급부상</b> 중인 신진 브랜드. YEOREO는 크리에이터 1,118명 평균으로 <b>크리에이터 생태계 구축</b> 강점.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">브랜드 포지셔닝 — 7일 매출 기준</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">7일 매출 규모 비교 (전체 $2.16M 대비 비중)</div>
+    <div class="bw"><div class="bl" style="font-weight:700">BRXL</div><div class="bo"><div class="bi" style="width:100%;background:var(--coral)"></div></div><div class="bv">$332K · 15.4%</div></div>
+    <div class="bw"><div class="bl" style="font-weight:700">Halara US</div><div class="bo"><div class="bi" style="width:94%;background:var(--teal)"></div></div><div class="bv">$314K · 14.6%</div></div>
+    <div class="bw"><div class="bl">YEOREO</div><div class="bo"><div class="bi" style="width:62%;background:var(--purple)"></div></div><div class="bv">$206K · 9.5%</div></div>
+    <div class="bw"><div class="bl">G4Free Store</div><div class="bo"><div class="bi" style="width:47%;background:var(--blue)"></div></div><div class="bv">$155K · 7.2%</div></div>
+    <div class="bw"><div class="bl">Halara Glam</div><div class="bo"><div class="bi" style="width:26%;background:var(--teal)"></div></div><div class="bv">$85K · 3.9%</div></div>
+    <div class="bw"><div class="bl">Halara shop</div><div class="bo"><div class="bi" style="width:18%;background:var(--teal)"></div></div><div class="bv">$61K · 2.8%</div></div>
+    <div class="bw"><div class="bl">기타 브랜드 합산</div><div class="bo"><div class="bi" style="width:46%;background:var(--gray-300)"></div></div><div class="bv">$1.0M · 46.6%</div></div>
+    <div class="ins">상위 4개 브랜드(BRXL · Halara US · YEOREO · G4Free)가 7일 매출의 <b>46.7%</b>를 차지. Halara 3개 스토어 합산 시 전체의 <b>21.3%</b>. 시장은 소수 강자 + 롱테일 구조.</div>
+  </div>
+</div>
+
+<!-- ③ 제품 유형 분류 -->
+<div class="chap ch3" style="margin-top:32px">
+  <div class="chap-num c3">3</div>
+  <div>
+    <div class="chap-title">제품 유형 분류</div>
+    <div class="chap-sub">상품명 분석 기반 · 15개 유형으로 분류 · 7일 매출 / 누적 매출 비교</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">유형별 7일 매출 Top 8</div>
+  <div class="type-grid">
+    <div class="type-card">
+      <div class="type-icon">🩱</div>
+      <div class="type-name">기본 레깅스</div>
+      <div class="type-rev">$588K</div>
+      <div class="type-sub">1,126개 상품 · 7일 21,560개 판매<br>평균가 $23.1 · 총매출 $120M</div>
+      <div class="type-bar" style="width:100%;background:var(--teal)"></div>
+    </div>
+    <div class="type-card">
+      <div class="type-icon">🪡</div>
+      <div class="type-name">심리스 레깅스</div>
+      <div class="type-rev">$366K</div>
+      <div class="type-sub">500개 상품 · 7일 10,433개 판매<br>평균가 $20.6 · 총매출 $28.8M</div>
+      <div class="type-bar" style="width:62%;background:var(--blue)"></div>
+    </div>
+    <div class="type-card">
+      <div class="type-icon">👖</div>
+      <div class="type-name">와이드레그 팬츠</div>
+      <div class="type-rev">$258K</div>
+      <div class="type-sub">196개 상품 · 7일 8,625개 판매<br>평균가 $23.1 · 총매출 $18.4M</div>
+      <div class="type-bar" style="width:44%;background:var(--purple)"></div>
+    </div>
+    <div class="type-card">
+      <div class="type-icon">🔔</div>
+      <div class="type-name">플레어 레깅스</div>
+      <div class="type-rev">$249K</div>
+      <div class="type-sub">318개 상품 · 7일 8,732개 판매<br>평균가 $22.2 · 총매출 $19.6M</div>
+      <div class="type-bar" style="width:42%;background:var(--amber)"></div>
+    </div>
+    <div class="type-card">
+      <div class="type-icon">➡️</div>
+      <div class="type-name">스트레이트 레깅스</div>
+      <div class="type-rev">$158K</div>
+      <div class="type-sub">68개 상품 · 7일 5,479개 판매<br>평균가 $24.4 · 총매출 $6.8M</div>
+      <div class="type-bar" style="width:27%;background:var(--coral)"></div>
+    </div>
+    <div class="type-card">
+      <div class="type-icon">🩳</div>
+      <div class="type-name">카프리 / 숏 레깅스</div>
+      <div class="type-rev">$141K</div>
+      <div class="type-sub">141개 상품 · 7일 5,924개 판매<br>평균가 $25.7 · 총매출 $1.9M</div>
+      <div class="type-bar" style="width:24%;background:var(--pink)"></div>
+    </div>
+    <div class="type-card">
+      <div class="type-icon">👟</div>
+      <div class="type-name">부츠컷 레깅스</div>
+      <div class="type-rev">$122K</div>
+      <div class="type-sub">77개 상품 · 7일 3,471개 판매<br>평균가 $30.5 · 총매출 $18.6M</div>
+      <div class="type-bar" style="width:21%;background:var(--teal-dark)"></div>
+    </div>
+    <div class="type-card">
+      <div class="type-icon">🧦</div>
+      <div class="type-name">스웨트팬츠/조거</div>
+      <div class="type-rev">$94K</div>
+      <div class="type-sub">305개 상품 · 7일 3,822개 판매<br>평균가 $32.1 · 총매출 $16.2M</div>
+      <div class="type-bar" style="width:16%;background:var(--gray-500)"></div>
+    </div>
+  </div>
+  <div class="ins-purple">기본 레깅스 + 심리스 레깅스가 전체 7일 매출의 <b>44.3%</b> 독식. 플레어·부츠컷은 상품 수 대비 매출 효율이 높음 — 상품당 7일 매출: 부츠컷 <b>$1,580</b> vs 기본레깅스 $522. 와이드레그 팬츠는 상품 수 196개 대비 $258K로 <b>단위 효율 2위</b>.</div>
+</div>
+
+<div class="sec">
+  <div class="st">유형별 누적 총매출 — 장기 포텐셜 비교</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">누적 총매출 기준 (TikTok Shop 개설 이래)</div>
+    <div class="bw"><div class="bl">기본 레깅스</div><div class="bo"><div class="bi" style="width:100%;background:var(--teal)"></div></div><div class="bv">$120M · 51.1%</div></div>
+    <div class="bw"><div class="bl">심리스 레깅스</div><div class="bo"><div class="bi" style="width:24%;background:var(--blue)"></div></div><div class="bv">$28.8M · 12.2%</div></div>
+    <div class="bw"><div class="bl">플레어 레깅스</div><div class="bo"><div class="bi" style="width:16%;background:var(--amber)"></div></div><div class="bv">$19.6M · 8.3%</div></div>
+    <div class="bw"><div class="bl">부츠컷 레깅스</div><div class="bo"><div class="bi" style="width:16%;background:var(--teal-dark)"></div></div><div class="bv">$18.6M · 7.9%</div></div>
+    <div class="bw"><div class="bl">와이드레그 팬츠</div><div class="bo"><div class="bi" style="width:15%;background:var(--purple)"></div></div><div class="bv">$18.4M · 7.8%</div></div>
+    <div class="bw"><div class="bl">스웨트팬츠/조거</div><div class="bo"><div class="bi" style="width:14%;background:var(--gray-500)"></div></div><div class="bv">$16.2M · 6.9%</div></div>
+    <div class="bw"><div class="bl">스트레이트 레깅스</div><div class="bo"><div class="bi" style="width:6%;background:var(--coral)"></div></div><div class="bv">$6.8M · 2.9%</div></div>
+    <div class="ins-amber">부츠컷 레깅스는 77개 상품으로 총매출 $18.6M — 상품당 누적 평균 <b>$241K</b>. 기본 레깅스(1,126개)의 상품당 $107K 대비 2.3배. 소수 제품이 장기간 높은 매출을 유지하는 <b>롱런 카테고리</b> 특성.</div>
+  </div>
+</div>
+
+<!-- ④ 키워드 및 소구점 분석 -->
+<div class="chap ch4" style="margin-top:32px">
+  <div class="chap-num c4">4</div>
+  <div>
+    <div class="chap-title">주요 키워드 & 소구점 분석</div>
+    <div class="chap-sub">상품명 텍스트 분석 · 기능 키워드 출현 빈도 · 마케팅 인사이트</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">기능 키워드 출현 빈도 Top 13</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">상품명 3,000개 기준 · 해당 키워드를 상품명에 포함한 상품 비율</div>
+    <div class="bw"><div class="bl" style="font-weight:700;color:var(--navy)">🏆 High Waist</div><div class="bo"><div class="bi" style="width:100%;background:var(--teal)"></div></div><div class="bv">1,868개 · 62.3%</div></div>
+    <div class="bw"><div class="bl">Pockets</div><div class="bo"><div class="bi" style="width:45%;background:var(--blue)"></div></div><div class="bv">837개 · 27.9%</div></div>
+    <div class="bw"><div class="bl">Seamless</div><div class="bo"><div class="bi" style="width:30%;background:var(--purple)"></div></div><div class="bv">558개 · 18.6%</div></div>
+    <div class="bw"><div class="bl">Tummy Control</div><div class="bo"><div class="bi" style="width:29%;background:var(--amber)"></div></div><div class="bv">539개 · 18.0%</div></div>
+    <div class="bw"><div class="bl">Butt Lifting</div><div class="bo"><div class="bi" style="width:27%;background:var(--coral)"></div></div><div class="bv">506개 · 16.9%</div></div>
+    <div class="bw"><div class="bl">Compression</div><div class="bo"><div class="bi" style="width:11%;background:var(--gray-500)"></div></div><div class="bv">212개 · 7.1%</div></div>
+    <div class="bw"><div class="bl">Scrunch</div><div class="bo"><div class="bi" style="width:10%;background:var(--teal)"></div></div><div class="bv">193개 · 6.4%</div></div>
+    <div class="bw"><div class="bl">Quick Dry</div><div class="bo"><div class="bi" style="width:10%;background:var(--blue)"></div></div><div class="bv">186개 · 6.2%</div></div>
+    <div class="bw"><div class="bl">Plus Size</div><div class="bo"><div class="bi" style="width:6%;background:var(--amber)"></div></div><div class="bv">112개 · 3.7%</div></div>
+    <div class="bw"><div class="bl">No Front Seam</div><div class="bo"><div class="bi" style="width:4%;background:var(--coral)"></div></div><div class="bv">70개 · 2.3%</div></div>
+    <div class="bw"><div class="bl">4-Way Stretch</div><div class="bo"><div class="bi" style="width:2%;background:var(--purple)"></div></div><div class="bv">42개 · 1.4%</div></div>
+    <div class="bw"><div class="bl">Squat Proof</div><div class="bo"><div class="bi" style="width:2%;background:var(--gray-300)"></div></div><div class="bv">33개 · 1.1%</div></div>
+    <div class="bw"><div class="bl">Moisture Wicking</div><div class="bo"><div class="bi" style="width:1%;background:var(--gray-300)"></div></div><div class="bv">11개 · 0.4%</div></div>
+    <div class="ins">High Waist는 62.3%로 사실상 카테고리 표준. Tummy Control(18%) + Butt Lifting(17%)은 항상 함께 언급되는 <b>바디쉐이핑 2대 소구점</b>. No Front Seam(2.3%)은 출현 빈도 대비 TikTok 바이럴 파워가 강한 <b>숨겨진 차별화 포인트</b>.</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">소구점 클러스터 분석</div>
+  <div class="g2">
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">① 바디쉐이핑 클러스터 — 가장 강력한 소구</div>
+      <div class="bw"><div class="bl">High Waist</div><div class="bo"><div class="bi" style="width:100%;background:var(--teal)"></div></div><div class="bv">62.3%</div></div>
+      <div class="bw"><div class="bl">Tummy Control</div><div class="bo"><div class="bi" style="width:29%;background:var(--teal)"></div></div><div class="bv">18.0%</div></div>
+      <div class="bw"><div class="bl">Butt Lifting</div><div class="bo"><div class="bi" style="width:27%;background:var(--teal)"></div></div><div class="bv">16.9%</div></div>
+      <div class="bw"><div class="bl">Scrunch</div><div class="bo"><div class="bi" style="width:10%;background:var(--teal)"></div></div><div class="bv">6.4%</div></div>
+      <div class="ins" style="margin-top:8px">복부 슬리밍 + 엉덩이 리프팅을 조합한 바디쉐이핑이 카테고리 핵심 구매 동기. TikTok GRWM/OOD 콘텐츠와 직결.</div>
+    </div>
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">② 기능성 클러스터 — 퍼포먼스 소구</div>
+      <div class="bw"><div class="bl">Seamless</div><div class="bo"><div class="bi" style="width:100%;background:var(--blue)"></div></div><div class="bv">18.6%</div></div>
+      <div class="bw"><div class="bl">Compression</div><div class="bo"><div class="bi" style="width:38%;background:var(--blue)"></div></div><div class="bv">7.1%</div></div>
+      <div class="bw"><div class="bl">Quick Dry</div><div class="bo"><div class="bi" style="width:33%;background:var(--blue)"></div></div><div class="bv">6.2%</div></div>
+      <div class="bw"><div class="bl">No Front Seam</div><div class="bo"><div class="bi" style="width:12%;background:var(--blue)"></div></div><div class="bv">2.3%</div></div>
+      <div class="bw"><div class="bl">Squat Proof</div><div class="bo"><div class="bi" style="width:6%;background:var(--blue)"></div></div><div class="bv">1.1%</div></div>
+      <div class="ins-blue" style="margin-top:8px">Seamless은 핏감과 심미성, No Front Seam은 착용 편의성으로 차별화. 가성비 브랜드도 Seamless 키워드를 전략적으로 사용.</div>
+    </div>
+  </div>
+  <div class="g2" style="margin-top:12px">
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">③ 편의성 클러스터 — 일상복 소구</div>
+      <div class="bw"><div class="bl">Pockets</div><div class="bo"><div class="bi" style="width:100%;background:var(--purple)"></div></div><div class="bv">27.9%</div></div>
+      <div class="bw"><div class="bl">4-Way Stretch</div><div class="bo"><div class="bi" style="width:5%;background:var(--purple)"></div></div><div class="bv">1.4%</div></div>
+      <div class="bw"><div class="bl">Moisture Wicking</div><div class="bo"><div class="bi" style="width:1%;background:var(--purple)"></div></div><div class="bv">0.4%</div></div>
+      <div class="ins-purple" style="margin-top:8px">Pockets는 전체의 27.9%로 매우 높음 — 애슬레저 일상화 트렌드와 직결. 포켓 유무는 구매 결정 핵심 요소.</div>
+    </div>
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">④ 상품명 패턴 — TikTok 마케팅 특징</div>
+      <div style="font-size:11px;color:var(--gray-700);line-height:1.8;margin-bottom:6px">
+        <b>다중 키워드 적재</b> — 상품명 평균 20~40단어, 검색 최적화 목적<br>
+        <b>해시태그 삽입</b> — #SwimWeek, #Summervibes, #GymWorkout<br>
+        <b>숫자 번들 표기</b> — 1/3/6-PACK, 4 Pack, 3PCS 등 번들 전략<br>
+        <b>시즌 타깃</b> — Summer, Spring Refresh, 2026 키워드 삽입<br>
+        <b>구체적 수치</b> — 25" Inseam, 3/4 Length, 31.5" 등 사이즈 명시
+      </div>
+      <div class="ins-amber" style="margin-top:6px">TikTok 검색 알고리즘 최적화를 위해 경쟁 브랜드명(crz yoga), 사용 시나리오(gym, yoga, running), 체형 케어(tummy, butt)를 모두 상품명에 포함하는 전략이 보편화.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">핵심 인사이트 요약</div>
+  <div class="g3">
+    <div class="card">
+      <div style="font-size:11px;font-weight:700;color:var(--teal);margin-bottom:6px">📈 시장 기회</div>
+      <div style="font-size:11px;color:var(--gray-700);line-height:1.7">
+        • $25~35 구간이 매출의 36% — 품질 좋은 중가 제품 수요 강함<br>
+        • 부츠컷/플레어 레깅스는 상품당 효율 최상위 — 아직 포화 전<br>
+        • 크리에이터 생태계 구축한 브랜드(Halara, YEOREO)가 장기 우위
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:6px">🎯 필수 소구 포인트</div>
+      <div style="font-size:11px;color:var(--gray-700);line-height:1.7">
+        • High Waist + Tummy Control + Butt Lifting = 바디쉐이핑 삼각 조합 필수<br>
+        • Pockets 여부는 구매 결정 핵심 요소 (27.9%)<br>
+        • No Front Seam은 저출현 고효율 차별화 포인트
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:11px;font-weight:700;color:var(--purple);margin-bottom:6px">⚠️ 경쟁 구조</div>
+      <div style="font-size:11px;color:var(--gray-700);line-height:1.7">
+        • Halara 3개 스토어 합산 총매출 $99.8M — 압도적 시장 지배<br>
+        • BRXL은 최근 7일 1위로 급부상 — 신진 강자 주시 필요<br>
+        • 상위 4개 브랜드가 7일 매출의 47% 집중 — 진입장벽 높음
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div class="footer-logo">Storelink<span>.</span></div>
+  <div>TikTok Shop US · 스포츠웨어-레깅스 카테고리 · 상품 3,000개 분석</div>
+  <div class="footer-copy">© Storelink. All rights reserved.</div>
+</div>
+
+</body>
+</html>
