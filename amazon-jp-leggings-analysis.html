@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Japan — 레깅스 카테고리 베스트셀러 100 분석</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red: #C0392B; --red-dark: #922B21; --red-light: #FADBD8;
+    --navy: #1B2E4B; --blue: #185FA5; --blue-light: #E6F1FB;
+    --purple: #534AB7; --purple-light: #EEEDFE;
+    --amber: #BA7517; --amber-light: #FAEEDA;
+    --coral: #D85A30; --coral-light: #FAECE7;
+    --teal: #1D9E75; --teal-dark: #0F6E56; --teal-light: #E1F5EE;
+    --gray-50: #F8F9FA; --gray-100: #F1F2F4; --gray-300: #CBD0D8;
+    --gray-500: #6B7280; --gray-700: #374151; --black: #111827; --white: #fff;
+    --ff: 'DM Sans', 'Noto Sans KR', sans-serif;
+    --radius: 10px; --shadow: 0 2px 12px rgba(0,0,0,.07);
+  }
+  body { font-family: var(--ff); background: var(--gray-50); color: var(--black); padding: 32px 24px; max-width: 1100px; margin: 0 auto; }
+
+  .sl-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 2px solid var(--navy); }
+  .sl-logo { font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: -0.03em; }
+  .sl-logo span { color: var(--red); }
+  .sl-tag { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); background: var(--gray-100); border-radius: 20px; padding: 4px 10px; }
+
+  .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .page-header { font-size: 30px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.25; }
+  .page-sub { font-size: 13px; color: var(--gray-500); margin-bottom: 32px; }
+
+  .chap { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border-radius: var(--radius); margin-bottom: 20px; }
+  .ch1 { background: var(--red-light); border: 1px solid #E59D98; }
+  .ch2 { background: #E8EDF4; border: 1px solid #8FA4C2; }
+  .ch3 { background: var(--purple-light); border: 1px solid #AFA9EC; }
+  .ch4 { background: var(--teal-light); border: 1px solid #5DCAA5; }
+  .chap-num { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .c1 { background: var(--red); } .c2 { background: var(--navy); } .c3 { background: var(--purple); } .c4 { background: var(--teal); }
+  .chap-title { font-size: 17px; font-weight: 700; color: var(--navy); }
+  .chap-sub { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
+
+  .sec { margin-bottom: 28px; }
+  .st { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); padding-bottom: 8px; margin-bottom: 14px; border-bottom: 1px solid var(--gray-300); }
+
+  .card { background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 14px; }
+
+  .kpi { background: var(--gray-50); border-radius: 8px; padding: 12px 14px; border-top: 3px solid; }
+  .kpi-l { font-size: 10px; color: var(--gray-500); margin-bottom: 3px; line-height: 1.4; }
+  .kpi-v { font-size: 24px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+  .kpi-s { font-size: 10px; color: var(--gray-500); margin-top: 3px; line-height: 1.4; }
+
+  .bd { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+  .bt { background: var(--teal-light); color: var(--teal-dark); }
+  .bp { background: var(--purple-light); color: var(--purple); }
+  .ba { background: var(--amber-light); color: var(--amber); }
+  .bc { background: var(--coral-light); color: var(--coral); }
+  .bg { background: var(--gray-100); color: var(--gray-700); }
+  .bb { background: var(--blue-light); color: var(--blue); }
+  .br { background: var(--red-light); color: var(--red-dark); }
+
+  .bw { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .bl { font-size: 11px; color: var(--gray-700); min-width: 160px; flex-shrink: 0; }
+  .bo { flex: 1; background: var(--gray-100); border-radius: 3px; height: 8px; overflow: hidden; }
+  .bi { height: 100%; border-radius: 3px; }
+  .bv { font-size: 11px; color: var(--gray-500); min-width: 100px; text-align: right; white-space: nowrap; }
+
+  .ins { font-size: 11px; line-height: 1.7; color: var(--teal-dark); background: var(--teal-light); border-left: 3px solid var(--teal); border-radius: 0 6px 6px 0; padding: 9px 13px; margin-top: 10px; }
+  .ins-blue { font-size: 11px; line-height: 1.7; color: var(--blue); background: var(--blue-light); border-left: 3px solid var(--blue); border-radius: 0 6px 6px 0; padding: 9px 13px; margin-top: 10px; }
+  .ins-amber { font-size: 11px; line-height: 1.7; color: var(--amber); background: var(--amber-light); border-left: 3px solid var(--amber); border-radius: 0 6px 6px 0; padding: 9px 13px; margin-top: 10px; }
+  .ins-purple { font-size: 11px; line-height: 1.7; color: var(--purple); background: var(--purple-light); border-left: 3px solid var(--purple); border-radius: 0 6px 6px 0; padding: 9px 13px; margin-top: 10px; }
+  .ins-red { font-size: 11px; line-height: 1.7; color: var(--red-dark); background: var(--red-light); border-left: 3px solid var(--red); border-radius: 0 6px 6px 0; padding: 9px 13px; margin-top: 10px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { font-size: 10px; font-weight: 600; color: var(--white); text-align: left; padding: 8px 10px; background: var(--navy); }
+  th.r { text-align: right; }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--gray-100); color: var(--black); vertical-align: middle; }
+  td.r { text-align: right; white-space: nowrap; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: var(--gray-50); }
+
+  .tier-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .tier-label { font-size: 12px; font-weight: 600; color: var(--navy); min-width: 90px; }
+  .tier-bar-outer { flex: 1; background: var(--gray-100); border-radius: 4px; height: 10px; overflow: hidden; }
+  .tier-bar-inner { height: 100%; border-radius: 4px; }
+  .tier-meta { font-size: 11px; color: var(--gray-500); min-width: 190px; text-align: right; }
+
+  .footer-bar { background: var(--navy); border-radius: var(--radius); padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; color: var(--white); font-size: 11px; font-weight: 600; margin-top: 28px; }
+  .footer-logo { font-size: 14px; font-weight: 700; letter-spacing: -0.02em; }
+  .footer-logo span { color: #E87070; }
+  .footer-copy { color: rgba(255,255,255,0.6); font-weight: 400; }
+
+  .note { font-size: 9.5px; color: var(--gray-500); margin-top: 4px; }
+
+  @media (max-width: 700px) {
+    .g4 { grid-template-columns: 1fr 1fr; }
+    .g2 { grid-template-columns: 1fr; }
+    .g3 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sl-topbar">
+  <div class="sl-logo">Storelink<span>.</span></div>
+  <div class="sl-tag">Market Intelligence Report</div>
+</div>
+
+<div class="page-eyebrow">Amazon Japan · 스토어링크 시장 분석</div>
+<div class="page-header">일본 아마존 레깅스 카테고리<br>베스트셀러 100 분석</div>
+<div class="page-sub">레깅스 카테고리 베스트셀러 100개 상품 기준 · 판매량 / 매출 / 브랜드 / 판매자 / 키워드 분석 · 가격 단위: 엔화(¥) · Analyzed by Storelink.</div>
+
+
+<!-- ① 카테고리 전체 현황 -->
+<div class="chap ch1">
+  <div class="chap-num c1">1</div>
+  <div>
+    <div class="chap-title">카테고리 전체 현황</div>
+    <div class="chap-sub">월간 판매량 · 매출 · 평균가 · 평점 · 판매자 구조</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">핵심 성과 지표 — 베스트셀러 100개 상품 기준</div>
+  <div class="g4">
+    <div class="kpi" style="border-color:var(--red)">
+      <div class="kpi-l">월 판매량 합계</div>
+      <div class="kpi-v">30,648개</div>
+      <div class="kpi-s">상품당 평균 306개<br>최대 단품 6,550개 (RIZAP×그운제)</div>
+    </div>
+    <div class="kpi" style="border-color:var(--blue)">
+      <div class="kpi-l">월 매출 합계</div>
+      <div class="kpi-v">¥55.0M</div>
+      <div class="kpi-s">상품당 평균 ¥550,306<br>최대 단품 ¥9.79M</div>
+    </div>
+    <div class="kpi" style="border-color:var(--purple)">
+      <div class="kpi-l">평균 판매가</div>
+      <div class="kpi-v">¥1,856</div>
+      <div class="kpi-s">중앙값 ¥1,687<br>최저 ¥132 · 최고 ¥5,582</div>
+    </div>
+    <div class="kpi" style="border-color:var(--amber)">
+      <div class="kpi-l">평균 평점</div>
+      <div class="kpi-v">4.01점</div>
+      <div class="kpi-s">평점 보유 97개 상품 기준<br>최저 3.2점 · 최고 5.0점</div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="kpi" style="border-color:var(--teal)">
+      <div class="kpi-l">판매자 국적 구성</div>
+      <div class="kpi-v">일본 61%</div>
+      <div class="kpi-s">아마존 직판 20% · 중국 19%<br>일본 판매자가 과반 점유</div>
+    </div>
+    <div class="kpi" style="border-color:var(--coral)">
+      <div class="kpi-l">판매자 계정 연령 (중앙값)</div>
+      <div class="kpi-v">37.5개월</div>
+      <div class="kpi-s">3~5년 구간이 판매량 최다 (43.7%)<br>신규(1년 미만) 19개 상품</div>
+    </div>
+  </div>
+  <div class="note" style="margin-top:8px">* 가격(Price)은 원화(₩) 기준 데이터를 엔화(¥)로 환산 적용 (환율: 1원 ≈ ¥0.107 / 1달러 기준 1,450원 · 155엔)</div>
+</div>
+
+<div class="sec">
+  <div class="st">가격대별 판매 분포</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">가격 구간(엔화 환산) · 상품 수 · 월 판매량 합계 · 월 매출 합계</div>
+    <div class="tier-row">
+      <div class="tier-label">~¥1,000</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:22%;background:var(--gray-300)"></div></div>
+      <div class="tier-meta">13개 · 4,030개 판매 · 매출 ¥3.52M</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">¥1,001~2,000</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:100%;background:var(--red)"></div></div>
+      <div class="tier-meta">53개 · 18,380개 판매 · 매출 ¥25.7M ← <b>최강</b></div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">¥2,001~3,000</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:27%;background:var(--blue)"></div></div>
+      <div class="tier-meta">22개 · 4,974개 판매 · 매출 ¥11.7M</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">¥3,001~5,000</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:8%;background:var(--purple)"></div></div>
+      <div class="tier-meta">9개 · 1,475개 판매 · 매출 ¥4.55M</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">¥5,001 이상</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:10%;background:var(--amber)"></div></div>
+      <div class="tier-meta">3개 · 1,789개 판매 · 매출 ¥9.64M</div>
+    </div>
+    <div class="ins">¥1,001~¥2,000 구간이 상품 수 53개(53%)로 가장 많고, 판매량의 <b>59.9%</b>를 차지하는 핵심 스위트존. ¥5,000 이상은 단 3개 상품이지만 매출 ¥9.64M으로 상품당 효율이 압도적 — 고가 착압·기능성 레깅스가 프리미엄 수요를 흡수.</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">물류 유형별 현황</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">물류 방식 · 상품 수 · 월 판매량 · 월 매출 · 평균가</div>
+    <div class="bw">
+      <div class="bl" style="font-weight:700">FBA (아마존 물류 대행)</div>
+      <div class="bo"><div class="bi" style="width:100%;background:var(--red)"></div></div>
+      <div class="bv">59개 · 14,403개 · ¥32.8M</div>
+    </div>
+    <div class="bw">
+      <div class="bl">AMZ (아마존 직판)</div>
+      <div class="bo"><div class="bi" style="width:86%;background:var(--navy)"></div></div>
+      <div class="bv">20개 · 12,400개 · ¥16.8M</div>
+    </div>
+    <div class="bw">
+      <div class="bl">MFN (판매자 직접 배송)</div>
+      <div class="bo"><div class="bi" style="width:27%;background:var(--gray-500)"></div></div>
+      <div class="bv">20개 · 3,845개 · ¥5.49M</div>
+    </div>
+    <div class="ins">FBA가 상품 수 59%·매출 59.5%로 선두. AMZ 직판은 20개 상품으로 12,400개 판매 — 상품당 평균 620개로 <b>FBA 상품당 244개의 2.5배</b>. MFN은 상품당 평균 192개로 가장 낮아 <b>빠른 배송 인프라 보유 여부</b>가 판매량을 직접 결정.</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">판매자 국적별 분포</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">판매자 소재 국가 기준 · 상품 수 · 월 판매량</div>
+    <div class="bw">
+      <div class="bl" style="font-weight:700">일본 (JP)</div>
+      <div class="bo"><div class="bi" style="width:100%;background:var(--red)"></div></div>
+      <div class="bv">61개 · 13,789개 (45.0%)</div>
+    </div>
+    <div class="bw">
+      <div class="bl">아마존 직판 (AMZ)</div>
+      <div class="bo"><div class="bi" style="width:90%;background:var(--navy)"></div></div>
+      <div class="bv">20개 · 12,400개 (40.5%)</div>
+    </div>
+    <div class="bw">
+      <div class="bl">중국 (CN)</div>
+      <div class="bo"><div class="bi" style="width:32%;background:var(--amber)"></div></div>
+      <div class="bv">19개 · 4,459개 (14.5%)</div>
+    </div>
+    <div class="ins-amber">일본 판매자 + 아마존 직판 합산 판매량 비중이 <b>85.5%</b>. 중국 판매자 19개 상품의 점유율은 14.5%에 그침. 한국 판매자는 데이터 내 <b>0개</b> — 일본 아마존 레깅스 시장에서 한국 셀러 진출은 아직 사실상 공백 상태.</div>
+  </div>
+</div>
+
+
+<!-- ② 브랜드별 판매 데이터 -->
+<div class="chap ch2" style="margin-top:32px">
+  <div class="chap-num c2">2</div>
+  <div>
+    <div class="chap-title">브랜드별 판매 데이터</div>
+    <div class="chap-sub">브랜드 기준 Top 15 · 판매량 / 매출 / 상품 수 / 평균가 / 평점</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">판매량 Top 4 브랜드 — 상세 비교</div>
+  <div class="g4" style="margin-bottom:14px">
+    <div class="kpi" style="border-color:var(--red)">
+      <div class="kpi-l"><span class="bd br">🥇 GUNZE (그운제)</span></div>
+      <div class="kpi-v">9,279개</div>
+      <div class="kpi-s">12개 ASIN · 매출 ¥13.8M<br>평균가 ¥1,619 · 평점 3.84<br>일본 대표 내의류 브랜드</div>
+    </div>
+    <div class="kpi" style="border-color:var(--blue)">
+      <div class="kpi-l"><span class="bd bb">🥈 nissen (닛센)</span></div>
+      <div class="kpi-v">2,705개</div>
+      <div class="kpi-s">13개 ASIN · 매출 ¥7.08M<br>평균가 ¥2,775 · 평점 4.19<br>통신판매 기반 의류 강자</div>
+    </div>
+    <div class="kpi" style="border-color:var(--purple)">
+      <div class="kpi-l"><span class="bd bp">🥉 ATSUGI (아쓰기)</span></div>
+      <div class="kpi-v">2,289개</div>
+      <div class="kpi-s">3개 ASIN · 매출 ¥1.80M<br>평균가 ¥902 · 평점 3.60<br>레깅스·스타킹 전문</div>
+    </div>
+    <div class="kpi" style="border-color:var(--amber)">
+      <div class="kpi-l"><span class="bd ba">4위 Liapom</span></div>
+      <div class="kpi-v">1,656개</div>
+      <div class="kpi-s">6개 ASIN · 매출 ¥2.11M<br>평균가 ¥1,454 · 평점 3.95<br>중국계 저가 공략 브랜드</div>
+    </div>
+  </div>
+
+  <div class="sec" style="margin-bottom:0">
+    <div class="st">Top 15 브랜드 전체 비교표</div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>브랜드명</th>
+            <th class="r">상품수</th>
+            <th class="r">월 판매량</th>
+            <th class="r">월 매출</th>
+            <th class="r">평균가</th>
+            <th class="r">평점</th>
+            <th class="r">특징</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><b>GUNZE (그운제)</b></td><td class="r">12</td><td class="r">9,279</td><td class="r">¥13.8M</td><td class="r">¥1,619</td><td class="r">3.84</td><td class="r"><span class="bd br">일본 1위</span></td></tr>
+          <tr><td>2</td><td><b>nissen (닛센)</b></td><td class="r">13</td><td class="r">2,705</td><td class="r">¥7.08M</td><td class="r">¥2,775</td><td class="r">4.19</td><td class="r"><span class="bd bt">고평점</span></td></tr>
+          <tr><td>3</td><td><b>ATSUGI (아쓰기)</b></td><td class="r">3</td><td class="r">2,289</td><td class="r">¥1.80M</td><td class="r">¥902</td><td class="r">3.60</td><td class="r"><span class="bd bg">저가</span></td></tr>
+          <tr><td>4</td><td><b>Liapom</b></td><td class="r">6</td><td class="r">1,656</td><td class="r">¥2.11M</td><td class="r">¥1,454</td><td class="r">3.95</td><td class="r"><span class="bd bc">중국계</span></td></tr>
+          <tr><td>5</td><td><b>Belmise (벨미스)</b></td><td class="r">1</td><td class="r">937</td><td class="r">¥5.70M</td><td class="r">¥5,582</td><td class="r">4.20</td><td class="r"><span class="bd ba">고가 효율</span></td></tr>
+          <tr><td>6</td><td><b>okamoto (오카모토)</b></td><td class="r">4</td><td class="r">797</td><td class="r">¥886K</td><td class="r">¥1,230</td><td class="r">4.48</td><td class="r"><span class="bd bt">최고 평점</span></td></tr>
+          <tr><td>7</td><td><b>ベルシリーズ (벨시리즈)</b></td><td class="r">1</td><td class="r">681</td><td class="r">¥3.09M</td><td class="r">¥5,064</td><td class="r">4.00</td><td class="r"><span class="bd ba">고가 신진</span></td></tr>
+          <tr><td>8</td><td><b>aimoha (아이모하)</b></td><td class="r">2</td><td class="r">680</td><td class="r">¥1.00M</td><td class="r">¥900</td><td class="r">3.60</td><td class="r"><span class="bd bg">저가</span></td></tr>
+          <tr><td>9</td><td><b>NAKAMAJITA</b></td><td class="r">2</td><td class="r">651</td><td class="r">¥666K</td><td class="r">¥1,017</td><td class="r">3.55</td><td class="r"><span class="bd bg">중저가</span></td></tr>
+          <tr><td>10</td><td><b>白鷺ニット (시라사기 니트)</b></td><td class="r">4</td><td class="r">641</td><td class="r">¥1.21M</td><td class="r">¥1,912</td><td class="r">4.28</td><td class="r"><span class="bd bt">고평점</span></td></tr>
+          <tr><td>11</td><td><b>MELERIO</b></td><td class="r">1</td><td class="r">525</td><td class="r">¥836K</td><td class="r">¥1,087</td><td class="r">4.40</td><td class="r"><span class="bd bt">고평점</span></td></tr>
+          <tr><td>12</td><td><b>Forall-e (포라레)</b></td><td class="r">5</td><td class="r">518</td><td class="r">¥419K</td><td class="r">¥830</td><td class="r">3.96</td><td class="r"><span class="bd bg">초저가</span></td></tr>
+          <tr><td>13</td><td><b>MKY factory</b></td><td class="r">1</td><td class="r">508</td><td class="r">¥653K</td><td class="r">¥1,403</td><td class="r">4.10</td><td class="r"><span class="bd bt">고평점</span></td></tr>
+          <tr><td>14</td><td><b>Daily Compass</b></td><td class="r">1</td><td class="r">508</td><td class="r">¥503K</td><td class="r">¥1,007</td><td class="r">4.00</td><td class="r"><span class="bd bg">중저가</span></td></tr>
+          <tr><td>15</td><td><b>ALICE Leg</b></td><td class="r">1</td><td class="r">504</td><td class="r">¥1.26M</td><td class="r">¥2,532</td><td class="r">4.00</td><td class="r"><span class="bd bp">착압 특화</span></td></tr>
+        </tbody>
+      </table>
+      <div class="ins-blue" style="margin-top:12px">GUNZE 단일 브랜드 판매량 9,279개 — 전체의 <b>30.3%</b>를 혼자 차지. Belmise 1개 ASIN으로 월 ¥5.70M 매출은 <b>상품당 최고 효율</b>. okamoto는 평균 평점 4.48로 최고점 — 적은 상품 수로도 안정적 판매를 유지하는 고품질 포지셔닝.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">브랜드 판매량 비교 — 시장 점유 구조</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">월 판매량 기준 (전체 30,648개 대비 비중)</div>
+    <div class="bw"><div class="bl" style="font-weight:700">GUNZE (그운제)</div><div class="bo"><div class="bi" style="width:100%;background:var(--red)"></div></div><div class="bv">9,279개 · 30.3%</div></div>
+    <div class="bw"><div class="bl">nissen (닛센)</div><div class="bo"><div class="bi" style="width:29%;background:var(--blue)"></div></div><div class="bv">2,705개 · 8.8%</div></div>
+    <div class="bw"><div class="bl">ATSUGI (아쓰기)</div><div class="bo"><div class="bi" style="width:25%;background:var(--purple)"></div></div><div class="bv">2,289개 · 7.5%</div></div>
+    <div class="bw"><div class="bl">Liapom</div><div class="bo"><div class="bi" style="width:18%;background:var(--amber)"></div></div><div class="bv">1,656개 · 5.4%</div></div>
+    <div class="bw"><div class="bl">Belmise (벨미스)</div><div class="bo"><div class="bi" style="width:10%;background:var(--teal)"></div></div><div class="bv">937개 · 3.1%</div></div>
+    <div class="bw"><div class="bl">기타 브랜드 합산</div><div class="bo"><div class="bi" style="width:47%;background:var(--gray-300)"></div></div><div class="bv">13,782개 · 45.0%</div></div>
+    <div class="ins">상위 5개 브랜드가 전체 판매의 <b>55.0%</b> 집중. GUNZE 혼자 30%를 점유하는 초집중 구조. 나머지 45%는 롱테일 군소 브랜드에 분산 — 틈새 수요를 노린 <b>특화 상품 전략으로 진입 가능성</b> 존재.</div>
+  </div>
+</div>
+
+
+<!-- ③ 상품 특성 분석 -->
+<div class="chap ch3" style="margin-top:32px">
+  <div class="chap-num c3">3</div>
+  <div>
+    <div class="chap-title">상품 특성 분석</div>
+    <div class="chap-sub">평점 · 리뷰 · 이미지 수 · 판매자 계정 연령 · Buy Box</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">리뷰 평점 분포</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">평점 보유 상품 97개 기준 · 구간별 분포</div>
+    <div class="tier-row">
+      <div class="tier-label">3.5점 미만</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:8%;background:var(--coral)"></div></div>
+      <div class="tier-meta">8개 (8.2%) — 개선 필요</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">3.5~4.0점</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:100%;background:var(--blue)"></div></div>
+      <div class="tier-meta">47개 (48.5%) ← <b>최다 구간</b></div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">4.0~4.5점</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:70%;background:var(--teal)"></div></div>
+      <div class="tier-meta">33개 (34.0%) — 우수</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-label">4.5점 이상</div>
+      <div class="tier-bar-outer"><div class="tier-bar-inner" style="width:19%;background:var(--red)"></div></div>
+      <div class="tier-meta">9개 (9.3%) — 최우수</div>
+    </div>
+    <div class="ins">평균 평점 <b>4.01점</b>으로 이전 분석(3.78점) 대비 높은 수준 — 베스트셀러 100개는 전체 시장보다 품질 신뢰도가 높음. 4.0 이상 달성 시 상위 43% 진입. 평점과 판매량의 상관계수는 0.009 — <b>평점이 높다고 판매량이 높지 않음</b>. 리뷰 수(상관 0.618)가 실질적 판매 견인 요소.</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">리뷰 수 · 이미지 수 · 활성 판매자 수 분포</div>
+  <div class="g2">
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">등록 이미지 수 분포</div>
+      <div class="bw"><div class="bl">3~5장</div><div class="bo"><div class="bi" style="width:10%;background:var(--gray-300)"></div></div><div class="bv">10개 (10.4%)</div></div>
+      <div class="bw"><div class="bl">6장</div><div class="bo"><div class="bi" style="width:50%;background:var(--blue)"></div></div><div class="bv">12개 (12.5%)</div></div>
+      <div class="bw"><div class="bl">7장</div><div class="bo"><div class="bi" style="width:100%;background:var(--red)"></div></div><div class="bv">29개 (30.2%) ← 최다</div></div>
+      <div class="bw"><div class="bl">8장</div><div class="bo"><div class="bi" style="width:87%;background:var(--purple)"></div></div><div class="bv">21개 (21.9%)</div></div>
+      <div class="bw"><div class="bl">9~10장</div><div class="bo"><div class="bi" style="width:100%;background:var(--teal)"></div></div><div class="bv">24개 (25.0%)</div></div>
+      <div class="ins" style="margin-top:8px">7장이 최다(30%)이지만, 8장 이상도 전체의 47%. 평균 7.3장 — 이전 분석보다 다소 낮으나 <b>7장 이상은 경쟁 최저선</b>으로 볼 수 있음.</div>
+    </div>
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">활성 판매자 수 분포</div>
+      <div class="bw"><div class="bl">1명 (단독)</div><div class="bo"><div class="bi" style="width:100%;background:var(--red)"></div></div><div class="bv">68개 (68.0%)</div></div>
+      <div class="bw"><div class="bl">2~3명</div><div class="bo"><div class="bi" style="width:34%;background:var(--blue)"></div></div><div class="bv">23개 (23.0%)</div></div>
+      <div class="bw"><div class="bl">4~5명</div><div class="bo"><div class="bi" style="width:9%;background:var(--purple)"></div></div><div class="bv">6개 (6.0%)</div></div>
+      <div class="bw"><div class="bl">6명 이상</div><div class="bo"><div class="bi" style="width:4%;background:var(--amber)"></div></div><div class="bv">3개 (3.0%)</div></div>
+      <div class="ins-purple" style="margin-top:8px">68%가 단독 판매자 구조 — Buy Box 경쟁 없이 안정적 가격 유지. 멀티 판매자 상품은 가격 경쟁 압박이 있어 <b>단독 ASIN 구성이 수익성에 유리.</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">판매자 계정 연령별 판매 성과</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">판매자 계정 개설 후 경과 기간별 · 상품 수 · 판매량 합계 · 매출 합계</div>
+    <div class="bw">
+      <div class="bl" style="font-weight:700">1년 미만 신규</div>
+      <div class="bo"><div class="bi" style="width:34%;background:var(--red)"></div></div>
+      <div class="bv">19개 · 4,522개 · ¥13.9M</div>
+    </div>
+    <div class="bw">
+      <div class="bl">1~2년</div>
+      <div class="bo"><div class="bi" style="width:25%;background:var(--coral)"></div></div>
+      <div class="bv">15개 · 3,364개 · ¥6.55M</div>
+    </div>
+    <div class="bw">
+      <div class="bl">2~3년</div>
+      <div class="bo"><div class="bi" style="width:24%;background:var(--blue)"></div></div>
+      <div class="bv">12개 · 3,260개 · ¥5.51M</div>
+    </div>
+    <div class="bw">
+      <div class="bl">3~5년</div>
+      <div class="bo"><div class="bi" style="width:100%;background:var(--purple)"></div></div>
+      <div class="bv">27개 · 13,408개 · ¥21.4M</div>
+    </div>
+    <div class="bw">
+      <div class="bl">5년 이상</div>
+      <div class="bo"><div class="bi" style="width:45%;background:var(--teal)"></div></div>
+      <div class="bv">23개 · 6,094개 · ¥7.63M</div>
+    </div>
+    <div class="ins-blue">3~5년 계정이 판매량 13,408개(43.7%)로 압도적 1위 — 이 구간이 <b>베스트셀러 핵심 생산 주기</b>. 신규(1년 미만)도 매출 ¥13.9M으로 높은데, 이는 GUNZE·아쓰기 같은 기존 브랜드의 신규 AMZ 계정 효과. 순수 신규 진입자에게 3~5년 성숙은 <b>장기 전략 필수</b>임을 의미.</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">Buy Box 점유 현황</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">Buy Box 보유 판매자 Top 10</div>
+    <div class="bw"><div class="bl" style="font-weight:700">Amazon (아마존 직판)</div><div class="bo"><div class="bi" style="width:100%;background:var(--red)"></div></div><div class="bv">21개 (21.0%)</div></div>
+    <div class="bw"><div class="bl">nissen (닛센)</div><div class="bo"><div class="bi" style="width:62%;background:var(--blue)"></div></div><div class="bv">13개 (13.0%)</div></div>
+    <div class="bw"><div class="bl">ケアレ・スミス (케어레스미스)</div><div class="bo"><div class="bi" style="width:33%;background:var(--purple)"></div></div><div class="bv">7개 (7.0%)</div></div>
+    <div class="bw"><div class="bl">Forall-e (포라레)</div><div class="bo"><div class="bi" style="width:24%;background:var(--amber)"></div></div><div class="bv">5개 (5.0%)</div></div>
+    <div class="bw"><div class="bl">白鷺ニット (시라사기 니트)</div><div class="bo"><div class="bi" style="width:19%;background:var(--teal)"></div></div><div class="bv">4개 (4.0%)</div></div>
+    <div class="bw"><div class="bl">기타 판매자</div><div class="bo"><div class="bi" style="width:48%;background:var(--gray-300)"></div></div><div class="bv">50개 (50.0%)</div></div>
+    <div class="ins">Amazon 직판이 Buy Box 21개로 1위. nissen이 13개로 독자 Buy Box를 지배하는 강한 채널 파워 보유. <b>Buy Box 확보 = 매출 직결</b> — FBA 이용 및 가격 경쟁력 유지가 Buy Box 획득의 핵심 조건.</div>
+  </div>
+</div>
+
+
+<!-- ④ 키워드 및 소구점 분석 -->
+<div class="chap ch4" style="margin-top:32px">
+  <div class="chap-num c4">4</div>
+  <div>
+    <div class="chap-title">주요 키워드 & 소구점 분석</div>
+    <div class="chap-sub">상품명 텍스트 분석 · 일본 레깅스 시장 핵심 소구점 · Top 10 베스트셀러</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">기능 키워드 출현 빈도</div>
+  <div class="card">
+    <div style="font-size:11px;font-weight:500;color:var(--gray-500);margin-bottom:12px">상품명 100개 기준 · 해당 키워드를 포함한 상품 수 및 비율</div>
+    <div class="bw"><div class="bl" style="font-weight:700;color:var(--navy)">🏆 냉감·쿨터치 (Cool)</div><div class="bo"><div class="bi" style="width:100%;background:var(--red)"></div></div><div class="bv">38개 · 38%</div></div>
+    <div class="bw"><div class="bl">흡한속건 (Quick-Dry)</div><div class="bo"><div class="bi" style="width:82%;background:var(--blue)"></div></div><div class="bv">31개 · 31%</div></div>
+    <div class="bw"><div class="bl">UV 차단 (UV Cut)</div><div class="bo"><div class="bi" style="width:79%;background:var(--purple)"></div></div><div class="bv">30개 · 30%</div></div>
+    <div class="bw"><div class="bl">스트레치 (Stretch)</div><div class="bo"><div class="bi" style="width:45%;background:var(--amber)"></div></div><div class="bv">17개 · 17%</div></div>
+    <div class="bw"><div class="bl">스포츠·요가·운동</div><div class="bo"><div class="bi" style="width:42%;background:var(--teal)"></div></div><div class="bv">16개 · 16%</div></div>
+    <div class="bw"><div class="bl">이너웨어 (Inner)</div><div class="bo"><div class="bi" style="width:37%;background:var(--blue)"></div></div><div class="bv">14개 · 14%</div></div>
+    <div class="bw"><div class="bl">대형 사이즈 (Plus/XL)</div><div class="bo"><div class="bi" style="width:24%;background:var(--coral)"></div></div><div class="bv">9개 · 9%</div></div>
+    <div class="bw"><div class="bl">착압 (Compression)</div><div class="bo"><div class="bi" style="width:21%;background:var(--purple)"></div></div><div class="bv">8개 · 8%</div></div>
+    <div class="bw"><div class="bl">실키·실크 (Silky)</div><div class="bo"><div class="bi" style="width:8%;background:var(--gray-500)"></div></div><div class="bv">3개 · 3%</div></div>
+    <div class="bw"><div class="bl">보습·보온 (Warm)</div><div class="bo"><div class="bi" style="width:8%;background:var(--gray-300)"></div></div><div class="bv">3개 · 3%</div></div>
+    <div class="ins">냉감(38%) · 흡한속건(31%) · UV차단(30%)이 <b>여름 시즌 3대 필수 소구점</b>으로 절반 이상 상품에 동시 등장. 착압(8%)은 출현 빈도 대비 상품당 매출이 가장 높아 — Belmise 1개 상품 월 ¥5.7M이 이를 증명하는 <b>고수익 니치 영역.</b></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">소구점 클러스터 분석</div>
+  <div class="g2">
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">① 여름 시즌 기능 클러스터 — 현재 최강 소구</div>
+      <div class="bw"><div class="bl">냉감·쿨터치</div><div class="bo"><div class="bi" style="width:100%;background:var(--red)"></div></div><div class="bv">38%</div></div>
+      <div class="bw"><div class="bl">흡한속건</div><div class="bo"><div class="bi" style="width:82%;background:var(--red)"></div></div><div class="bv">31%</div></div>
+      <div class="bw"><div class="bl">UV 차단</div><div class="bo"><div class="bi" style="width:79%;background:var(--red)"></div></div><div class="bv">30%</div></div>
+      <div class="ins" style="margin-top:8px">세 키워드를 모두 상품명에 포함한 제품이 베스트셀러 내 다수. 여름 시즌 레깅스 진입 시 이 3가지 조합은 <b>선택이 아닌 필수.</b></div>
+    </div>
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">② 착용감·핏 클러스터</div>
+      <div class="bw"><div class="bl">스트레치</div><div class="bo"><div class="bi" style="width:100%;background:var(--blue)"></div></div><div class="bv">17%</div></div>
+      <div class="bw"><div class="bl">스포츠·요가·운동</div><div class="bo"><div class="bi" style="width:94%;background:var(--blue)"></div></div><div class="bv">16%</div></div>
+      <div class="bw"><div class="bl">이너웨어</div><div class="bo"><div class="bi" style="width:82%;background:var(--purple)"></div></div><div class="bv">14%</div></div>
+      <div class="ins-blue" style="margin-top:8px">스포츠 특화 vs 이너웨어(일상 착용) 양대 포지셔닝이 공존. 일본 레깅스는 <b>운동복+일상복 겸용</b>으로 포지셔닝할 때 수요가 더 넓음.</div>
+    </div>
+  </div>
+  <div class="g2" style="margin-top:12px">
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">③ 고수익 니치 클러스터</div>
+      <div class="bw"><div class="bl">착압 (Compression)</div><div class="bo"><div class="bi" style="width:100%;background:var(--purple)"></div></div><div class="bv">8개 · 평균 ¥3,800+</div></div>
+      <div class="bw"><div class="bl">대형 사이즈</div><div class="bo"><div class="bi" style="width:56%;background:var(--amber)"></div></div><div class="bv">9개 · 틈새 수요</div></div>
+      <div class="bw"><div class="bl">실키·고급 소재</div><div class="bo"><div class="bi" style="width:19%;background:var(--gray-500)"></div></div><div class="bv">3개 · 프리미엄</div></div>
+      <div class="ins-purple" style="margin-top:8px">착압 레깅스는 출현 빈도 8%로 낮지만 평균가 ¥3,800~5,500으로 고마진. Belmise(¥5,582) · ベルシリーズ(¥5,064) · ALICE Leg(¥2,532)가 이 구간 독점 — <b>신규 진입 여지 있는 프리미엄 틈새.</b></div>
+    </div>
+    <div class="card">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px">④ 일본 특유 상품 패턴</div>
+      <div style="font-size:11px;color:var(--gray-700);line-height:1.8;margin-bottom:6px">
+        <b>세트 판매</b> — "2매 세트", "3매 세트" 구성으로 객단가 상승 전략<br>
+        <b>길이 단위 명기</b> — 10부장(풀렝스) · 7부장 · 3부장 구체적 표기<br>
+        <b>소재 성분 비율</b> — 메리노울 56%, 면혼방 등 구체적 성분 기재<br>
+        <b>칼로리 소모 주장</b> — "걸으면서 칼로리 소모↑" (RIZAP 협업 제품)<br>
+        <b>의료기기 등록</b> — 일반 의료기기 인증 착압 제품 (ReD 브랜드)
+      </div>
+      <div class="ins-amber" style="margin-top:6px">일본 소비자는 <b>구체적 수치·성분·인증</b>을 중시. 막연한 "기능성"보다 수치화된 근거가 구매 신뢰를 형성 — 리뷰 수와 판매량의 높은 상관(0.618)도 이를 뒷받침.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">판매량 Top 10 베스트셀러 상품</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>상품명 / 브랜드</th>
+          <th class="r">가격 (엔화 환산)</th>
+          <th class="r">월 판매량</th>
+          <th class="r">월 매출</th>
+          <th class="r">리뷰 수</th>
+          <th class="r">평점</th>
+          <th class="r">물류</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><b>RIZAP 쉐이프 레깅스 — 걷기만 해도 칼로리 소모</b><br><span style="font-size:10px;color:var(--gray-500)">GUNZE (그운제) · AMZ 직판</span></td>
+          <td class="r">¥1,695</td><td class="r">6,550</td><td class="r">¥9.79M</td><td class="r">7,847</td><td class="r">4.2</td><td class="r"><span class="bd br">AMZ</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><b>냉감 레깅스 10부장 UV차단 여성용</b><br><span style="font-size:10px;color:var(--gray-500)">ATSUGI (아쓰기) · AMZ 직판</span></td>
+          <td class="r">¥784</td><td class="r">1,429</td><td class="r">¥1.07M</td><td class="r">359</td><td class="r">3.7</td><td class="r"><span class="bd br">AMZ</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><b>착압 레깅스 블랙 여름용 강착압 미다리 UV차단</b><br><span style="font-size:10px;color:var(--gray-500)">Belmise (벨미스) · FBA</span></td>
+          <td class="r">¥5,582</td><td class="r">937</td><td class="r">¥5.70M</td><td class="r">1,362</td><td class="r">4.2</td><td class="r"><span class="bd bb">FBA</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><b>냉감 UV가공 레깅스 쿨터치 흡한속건 여름용</b><br><span style="font-size:10px;color:var(--gray-500)">Liapom · FBA</span></td>
+          <td class="r">¥1,413</td><td class="r">719</td><td class="r">¥815K</td><td class="r">1,596</td><td class="r">3.7</td><td class="r"><span class="bd bb">FBA</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><b>벨 시리즈 착압 레깅스 쿨 타입</b><br><span style="font-size:10px;color:var(--gray-500)">ベルシリーズ (벨시리즈) · FBA</span></td>
+          <td class="r">¥5,064</td><td class="r">681</td><td class="r">¥3.09M</td><td class="r">36</td><td class="r">4.0</td><td class="r"><span class="bd bb">FBA</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><b>여성 스키니 팬츠 앙클 레깅스 스트레치</b><br><span style="font-size:10px;color:var(--gray-500)">GUNZE (그운제) · MFN</span></td>
+          <td class="r">¥1,981</td><td class="r">592</td><td class="r">¥1.17M</td><td class="r">178</td><td class="r">3.9</td><td class="r"><span class="bd bg">MFN</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><b>여성 3부장 여름 레깅스 흡한속건 이너웨어</b><br><span style="font-size:10px;color:var(--gray-500)">MELERIO · FBA</span></td>
+          <td class="r">¥1,087</td><td class="r">525</td><td class="r">¥836K</td><td class="r">10,115</td><td class="r">4.4</td><td class="r"><span class="bd bb">FBA</span></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><b>실키 레깅스 크롭 냉감 흡한속건</b><br><span style="font-size:10px;color:var(--gray-500)">NAKAMAJITA · FBA</span></td>
+          <td class="r">¥1,017</td><td class="r">519</td><td class="r">¥536K</td><td class="r">41</td><td class="r">3.4</td><td class="r"><span class="bd bb">FBA</span></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><b>가을용 모달 130데니어 UV차단 레깅스</b><br><span style="font-size:10px;color:var(--gray-500)">Daily Compass · MFN</span></td>
+          <td class="r">¥1,007</td><td class="r">508</td><td class="r">¥503K</td><td class="r">179</td><td class="r">4.0</td><td class="r"><span class="bd bg">MFN</span></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><b>네스트리 시리즈 여름 레깅스 쿨터치 흡한속건</b><br><span style="font-size:10px;color:var(--gray-500)">MKY factory · FBA</span></td>
+          <td class="r">¥1,403</td><td class="r">508</td><td class="r">¥653K</td><td class="r">83</td><td class="r">4.1</td><td class="r"><span class="bd bb">FBA</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="ins-red" style="margin-top:12px">1위 RIZAP×GUNZE는 리뷰 7,847개 + AMZ 직판 파워로 6,550개 독주. 7위 MELERIO는 리뷰 10,115개로 최다 보유 — <b>리뷰 누적이 장기 안정 판매의 핵심.</b> 착압 프리미엄(Belmise·벨시리즈)은 가격이 5배 이상 높아도 베스트셀러권 진입 — 고가 착압 시장은 유효한 진입 전략.</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="st">핵심 인사이트 요약</div>
+  <div class="g3">
+    <div class="card">
+      <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:6px">📈 시장 기회</div>
+      <div style="font-size:11px;color:var(--gray-700);line-height:1.7">
+        • ¥1,001~¥2,000 구간이 판매의 59.9% — 진입 필수 가격대<br>
+        • 착압 레깅스 8개 상품만으로 월 ¥10M+ 매출 — 고가 니치 공략 유효<br>
+        • 한국 판매자 0개 — 일본 시장 진출 시 경쟁자 부재 상태
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:6px">🎯 필수 소구 포인트</div>
+      <div style="font-size:11px;color:var(--gray-700);line-height:1.7">
+        • 냉감 + 흡한속건 + UV차단 = 여름 시즌 3대 필수 키워드 조합<br>
+        • 리뷰 수가 판매량의 실질 견인 (상관계수 0.618) — 초기 리뷰 확보 최우선<br>
+        • FBA 이용 + 단독 ASIN + 7장 이상 이미지가 Buy Box 확보 기반
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:11px;font-weight:700;color:var(--purple);margin-bottom:6px">⚠️ 경쟁 구조</div>
+      <div style="font-size:11px;color:var(--gray-700);line-height:1.7">
+        • GUNZE 단독 점유 30.3% — 브랜드 인지도 기반 진입장벽 매우 높음<br>
+        • 상위 5개 브랜드가 판매의 55% 집중 — 롱테일 틈새 공략이 현실적<br>
+        • 일본 판매자 + AMZ 직판 합산 85.5% — 중국산과의 가격 경쟁은 무의미
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div class="footer-logo">Storelink<span>.</span></div>
+  <div>Amazon Japan · 레깅스 베스트셀러 100 분석 · 2026.06 · 가격: 엔화(¥) 환산 기준</div>
+  <div class="footer-copy">© Storelink. All rights reserved.</div>
+</div>
+
+</body>
+</html>
